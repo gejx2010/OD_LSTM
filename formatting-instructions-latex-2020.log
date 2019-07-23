@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  23 JUL 2019 17:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  23 JUL 2019 17:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -198,12 +198,25 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 279.
- [3]
+
+
+LaTeX Warning: Reference `table1' on page 3 undefined on input line 349.
+
+
+LaTeX Warning: Reference `table2' on page 3 undefined on input line 349.
+
+[3]
 Underfull \hbox (badness 2035) in paragraph at lines 376--377
 \OT1/ptm/m/n/10 in-clude \OMS/cmsy/m/n/10 n\OT1/ptm/m/n/10 columnsep, \OMS/cmsy
 /m/n/10 n\OT1/ptm/m/n/10 topmargin, \OMS/cmsy/m/n/10 n\OT1/ptm/m/n/10 topskip, 
 \OMS/cmsy/m/n/10 n\OT1/ptm/m/n/10 textheight,
  []
+
+
+LaTeX Warning: Reference `fig1' on page 4 undefined on input line 381.
+
+
+LaTeX Warning: Reference `fig2' on page 4 undefined on input line 381.
 
 <figure1.pdf, id=18, 250.7769pt x 87.6876pt>
 File: figure1.pdf Graphic file (type pdf)
@@ -332,24 +345,32 @@ Underfull \hbox (badness 1087) in paragraph at lines 669--670
 \OT1/ptm/m/n/10 2002/08/13) about ob-tain-ing cor-rect PS/PDF out-put on
  []
 
-[9] (./formatting-instructions-latex-2020.aux) ) 
+[9
+
+] (./formatting-instructions-latex-2020.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 1749 strings out of 493014
- 25552 string characters out of 6132870
- 95785 words of memory out of 5000000
- 5260 multiletter control sequences out of 15000+600000
- 26293 words of font info for 54 fonts, out of 8000000 for 9000
+ 1747 strings out of 493014
+ 25532 string characters out of 6132870
+ 95753 words of memory out of 5000000
+ 5259 multiletter control sequences out of 15000+600000
+ 25778 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,10n,23p,1034b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
-{d:/software/texlive/2016/texmf
--dist/fonts/enc/dvips/base/8r.enc}<d:/software/texlive/2016/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb><d:/software/texlive/2016/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy9.pfb><d:/software/texlive/2016/texmf-dist/fonts/typ
-e1/urw/courier/ucrr8a.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/urw/
-times/utmb8a.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/urw/times/utm
-r8a.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-
-Output written on formatting-instructions-latex-2020.pdf (9 pages, 3648149 byte
+{d:/software/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/software
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/software
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><d:/software/
+texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><d:/software/texlive
+/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d:/software/texlive/2016/tex
+mf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/software/texlive/2016/texmf-dist/f
+onts/type1/urw/times/utmri8a.pfb>
+Output written on formatting-instructions-latex-2020.pdf (9 pages, 3647533 byte
 s).
 PDF statistics:
  65 PDF objects out of 1000 (max. 8388607)
