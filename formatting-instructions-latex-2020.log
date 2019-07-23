@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  23 JUL 2019 17:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  23 JUL 2019 19:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -198,25 +198,12 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 279.
-
-
-LaTeX Warning: Reference `table1' on page 3 undefined on input line 349.
-
-
-LaTeX Warning: Reference `table2' on page 3 undefined on input line 349.
-
-[3]
+ [3]
 Underfull \hbox (badness 2035) in paragraph at lines 376--377
 \OT1/ptm/m/n/10 in-clude \OMS/cmsy/m/n/10 n\OT1/ptm/m/n/10 columnsep, \OMS/cmsy
 /m/n/10 n\OT1/ptm/m/n/10 topmargin, \OMS/cmsy/m/n/10 n\OT1/ptm/m/n/10 topskip, 
 \OMS/cmsy/m/n/10 n\OT1/ptm/m/n/10 textheight,
  []
-
-
-LaTeX Warning: Reference `fig1' on page 4 undefined on input line 381.
-
-
-LaTeX Warning: Reference `fig2' on page 4 undefined on input line 381.
 
 <figure1.pdf, id=18, 250.7769pt x 87.6876pt>
 File: figure1.pdf Graphic file (type pdf)
@@ -330,51 +317,104 @@ Underfull \hbox (badness 10000) in paragraph at lines 638--639
 ne / about /
  []
 
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+
+Underfull \hbox (badness 2119) in paragraph at lines 643--645
+\OT1/ptm/m/n/10 Ronan Col-lobert, Ja-son We-ston, Lon Bot-tou, Michael
+ []
+
+
+Underfull \hbox (badness 1845) in paragraph at lines 652--654
+\OT1/ptm/m/n/10 Gard-ner, Christo-pher Clark, Ken-ton Lee, Luke Zettle-
+ []
+
 [8]
-Underfull \hbox (badness 1028) in paragraph at lines 669--670
+Underfull \hbox (badness 1845) in paragraph at lines 655--657
+\OT1/ptm/m/n/10 Gard-ner, Christo-pher Clark, Ken-ton Lee, Luke Zettle-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 661--663
+\OT1/ptm/m/n/10 Xuezhe Ma, Ed-uard Hovy. 2016. End-to-end Se-
+ []
+
+
+Underfull \hbox (badness 3078) in paragraph at lines 661--663
+\OT1/ptm/m/n/10 quence La-bel-ing via Bi-directional LSTM-CNNs-CRF.
+ []
+
+
+Underfull \hbox (badness 8132) in paragraph at lines 670--672
+\OT1/ptm/m/n/10 Zhiheng Huang, Wei Xu, Kai Yu. 2015. Bidi-rec-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 670--672
+\OT1/ptm/m/n/10 tional LSTM-CRF Mod-els for Se-quence Tag-ging.
+ []
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 682--684
+\OT1/ptm/m/n/10 2010. Learn-ing Con-tin-u-ous Phrase Rep-re-sen-ta-tions and
+ []
+
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 703--705
+\OT1/ptm/m/n/10 Tomas Mikolov, Edouard Grave, Pi-otr Bo-janowski,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 703--705
+\OT1/ptm/m/n/10 Chris-tian Puhrsch, Ar-mand Joulin. 2017. Ad-vances
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 703--705
+\OT1/ptm/m/n/10 in Pre-Training Dis-tributed Word Rep-re-sen-ta-tions.
+ []
+
+[9]
+Underfull \hbox (badness 1028) in paragraph at lines 733--734
 \OT1/ptm/m/n/10 L[]T[]X is a dif-fi-cult pro-gram to mas-ter. If you've used
  []
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 669--670
+Underfull \hbox (badness 1389) in paragraph at lines 733--734
 \OT1/ptm/m/n/10 that soft-ware, and this doc-u-ment didn't help or some
  []
 
 
-Underfull \hbox (badness 1087) in paragraph at lines 669--670
+Underfull \hbox (badness 1087) in paragraph at lines 733--734
 \OT1/ptm/m/n/10 2002/08/13) about ob-tain-ing cor-rect PS/PDF out-put on
  []
 
-[9
+[10
 
-] (./formatting-instructions-latex-2020.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+] (./formatting-instructions-latex-2020.aux) ) 
 Here is how much of TeX's memory you used:
  1747 strings out of 493014
  25532 string characters out of 6132870
- 95753 words of memory out of 5000000
+ 95785 words of memory out of 5000000
  5259 multiletter control sequences out of 15000+600000
  25778 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,10n,23p,1034b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
-{d:/software/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/software
-/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/software
-/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><d:/software/
-texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><d:/software/texlive
-/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d:/software/texlive/2016/tex
-mf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/software/texlive/2016/texmf-dist/f
-onts/type1/urw/times/utmri8a.pfb>
-Output written on formatting-instructions-latex-2020.pdf (9 pages, 3647533 byte
-s).
+{d:/software/texlive/2016/texmf-d
+ist/fonts/enc/dvips/base/8r.enc}<d:/software/texlive/2016/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb><d:/software/texlive/2016/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy9.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1
+/urw/courier/ucrr8a.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/urw/ti
+mes/utmb8a.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8
+a.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on formatting-instructions-latex-2020.pdf (10 pages, 3651359 byt
+es).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 43 compressed objects within 1 object stream
+ 68 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
