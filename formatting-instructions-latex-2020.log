@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  23 JUL 2019 19:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  26 JUL 2019 17:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -73,19 +73,19 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 (./formatting-instructions-latex-2020.aux)
 \openout1 = `formatting-instructions-latex-2020.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 98.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 99.
 
 (d:/software/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -151,55 +151,67 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 101.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 100.
+(Font)              <7> on input line 101.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 100.
+(Font)              <5> on input line 101.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 100.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 101.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 101.
 
 
 (d:/software/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 100.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 101.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 103.
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 114.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 115.
+Missing character: There is no è in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+Missing character: There is no æ in font ptmr7t!
+Missing character: There is no ˜ in font ptmr7t!
+Missing character: There is no ¯ in font ptmr7t!
+Missing character: There is no ä in font ptmr7t!
+Missing character: There is no » in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ä in font ptmr7t!
+Missing character: There is no ¹ in font ptmr7t!
+Missing character: There is no ˆ in font ptmr7t!
  [1{d:/software/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 183.
+(Font)              <12> on input line 184.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 183.
+(Font)              <8> on input line 184.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 183.
+(Font)              <6> on input line 184.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 183.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 184.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 187.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 188.
  [2]
-Underfull \hbox (badness 1776) in paragraph at lines 193--194
+Underfull \hbox (badness 1776) in paragraph at lines 194--195
 \OT1/ptm/m/n/10 fit within the spec-i-fied height al-lowed, put \OMS/cmsy/m/n/1
 0 n\OT1/ptm/m/n/10 setlength
  []
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 197.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 198.
 
 (d:/software/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 279.
+(Font)              <10.95> on input line 280.
  [3]
-Underfull \hbox (badness 2035) in paragraph at lines 376--377
+Underfull \hbox (badness 2035) in paragraph at lines 377--378
 \OT1/ptm/m/n/10 in-clude \OMS/cmsy/m/n/10 n\OT1/ptm/m/n/10 columnsep, \OMS/cmsy
 /m/n/10 n\OT1/ptm/m/n/10 topmargin, \OMS/cmsy/m/n/10 n\OT1/ptm/m/n/10 topskip, 
 \OMS/cmsy/m/n/10 n\OT1/ptm/m/n/10 textheight,
@@ -208,90 +220,90 @@ Underfull \hbox (badness 2035) in paragraph at lines 376--377
 <figure1.pdf, id=18, 250.7769pt x 87.6876pt>
 File: figure1.pdf Graphic file (type pdf)
  <use figure1.pdf>
-Package pdftex.def Info: figure1.pdf used on input line 387.
+Package pdftex.def Info: figure1.pdf used on input line 388.
 (pdftex.def)             Requested size: 215.45348pt x 75.33894pt.
 
 <figure2.pdf, id=19, 505.89pt x 159.9576pt>
 File: figure2.pdf Graphic file (type pdf)
  <use figure2.pdf>
-Package pdftex.def Info: figure2.pdf used on input line 394.
+Package pdftex.def Info: figure2.pdf used on input line 395.
 (pdftex.def)             Requested size: 404.71353pt x 127.96867pt.
  [4]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 417.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 418.
 
-Underfull \hbox (badness 1264) in paragraph at lines 417--419
+Underfull \hbox (badness 1264) in paragraph at lines 418--420
  \OT1/ptm/b/n/10 Ob-tain-ing Type 1 Com-puter Mod-ern for L[]T[]X. \OT1/ptm/m/n
 /10 If
  []
 
 
-Underfull \hbox (badness 1281) in paragraph at lines 417--419
+Underfull \hbox (badness 1281) in paragraph at lines 418--420
 \OT1/ptm/m/n/10 pa-per (you can-not use it for the text) you may need
  []
 
 [5 <./figure1.pdf>]
-Underfull \hbox (badness 1231) in paragraph at lines 479--480
+Underfull \hbox (badness 1231) in paragraph at lines 480--481
 \OT1/ptm/m/n/10 The copy-right no-tice au-to-mat-i-cally ap-pears if you use
  []
 
 [6 <./figure2.pdf>]
-Underfull \hbox (badness 3209) in paragraph at lines 526--527
+Underfull \hbox (badness 3209) in paragraph at lines 527--528
  \OT1/ptm/b/n/10 Sec-tion Head-ings. \OT1/ptm/m/n/10 Sec-tions should be ar-ran
 ged and
  []
 
 
-Underfull \hbox (badness 1248) in paragraph at lines 529--530
+Underfull \hbox (badness 1248) in paragraph at lines 530--531
 \OT1/ptm/m/n/10 ``Ac-knowl-edg-ments." This sec-tion in-cludes ac-knowl-edg-
  []
 
 
-Underfull \hbox (badness 2158) in paragraph at lines 532--533
+Underfull \hbox (badness 2158) in paragraph at lines 533--534
  \OT1/ptm/b/n/10 Ap-pen-dices. \OT1/ptm/m/n/10 Any ap-pen-dices fol-low the ac-
 knowl-edg-
  []
 
 
-Underfull \hbox (badness 2035) in paragraph at lines 535--536
+Underfull \hbox (badness 2035) in paragraph at lines 536--537
  \OT1/ptm/b/n/10 Ref-er-ences \OT1/ptm/m/n/10 The ref-er-ences sec-tion should 
 be la-beled
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 547--548
+Underfull \hbox (badness 10000) in paragraph at lines 548--549
  \OT1/ptm/b/n/10 Low-Resolution Bitmaps. \OT1/ptm/m/n/10 You may not use low-
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 547--548
+Underfull \hbox (badness 5403) in paragraph at lines 548--549
 \OT1/ptm/m/n/10 resolution (such as 72 dpi) screen-dumps and GIF
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 585--586
+Underfull \hbox (badness 10000) in paragraph at lines 586--587
 []\OT1/ptm/m/n/10 Please note that you are re-quired to use
  []
 
 
-Underfull \hbox (badness 1603) in paragraph at lines 585--586
+Underfull \hbox (badness 1603) in paragraph at lines 586--587
 \OMS/cmsy/m/n/10 n\OT1/ptm/m/n/10 bibliographystyle\OMS/cmsy/m/n/10 f\OT1/ptm/m
 /n/10 aaai\OMS/cmsy/m/n/10 g \OT1/ptm/m/n/10 for your ref-er-ences. You may
  []
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 585--586
+Underfull \hbox (badness 1478) in paragraph at lines 586--587
 \OT1/ptm/m/n/10 with the hy-per-ref and nav-i-ga-tor pack-ages. If you use
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 588--591
+Underfull \hbox (badness 10000) in paragraph at lines 589--592
 \OMS/cmsy/m/n/9 n\OT1/ptm/m/n/9 newcommand\OMS/cmsy/m/n/9 fn\OT1/ptm/m/n/9 cite
 p\OMS/cmsy/m/n/9 gfn\OT1/ptm/m/n/9 cite\OMS/cmsy/m/n/9 g
  []
 
 
-Overfull \hbox (4.90749pt too wide) in paragraph at lines 588--591
+Overfull \hbox (4.90749pt too wide) in paragraph at lines 589--592
 \OMS/cmsy/m/n/9 n\OT1/ptm/m/n/9 newcommand\OMS/cmsy/m/n/9 fn\OT1/ptm/m/n/9 cite
 alp\OMS/cmsy/m/n/9 g\OT1/ptm/m/n/9 [1]\OMS/cmsy/m/n/9 fn\OT1/ptm/m/n/9 citeauth
 or\OMS/cmsy/m/n/9 f\OT1/ptm/m/n/9 #1\OMS/cmsy/m/n/9 g n\OT1/ptm/m/n/9 citeyear\
@@ -299,20 +311,20 @@ OMS/cmsy/m/n/9 f\OT1/ptm/m/n/9 #1\OMS/cmsy/m/n/9 gg
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 598--599
+Underfull \hbox (badness 1953) in paragraph at lines 599--600
 \OT1/ptm/m/n/10 You must re-duce the size equally for both font size
  []
 
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 604.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 605.
 
-Underfull \hbox (badness 2221) in paragraph at lines 638--639
+Underfull \hbox (badness 2221) in paragraph at lines 639--640
 \OT1/ptm/m/n/10 style, please con-sult the \OT1/ptm/m/it/10 AI Mag-a-zine \OT1/
 ptm/m/n/10 Au-thor Guide-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 638--639
+Underfull \hbox (badness 10000) in paragraph at lines 639--640
 \OT1/ptm/m/n/10 lines at $https : / / aaai . org / ojs / index . php / aimagazi
 ne / about /
  []
@@ -320,42 +332,42 @@ ne / about /
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
 
-Underfull \hbox (badness 2119) in paragraph at lines 643--645
+Underfull \hbox (badness 2119) in paragraph at lines 644--646
 \OT1/ptm/m/n/10 Ronan Col-lobert, Ja-son We-ston, Lon Bot-tou, Michael
  []
 
 
-Underfull \hbox (badness 1845) in paragraph at lines 652--654
+Underfull \hbox (badness 1845) in paragraph at lines 653--655
 \OT1/ptm/m/n/10 Gard-ner, Christo-pher Clark, Ken-ton Lee, Luke Zettle-
  []
 
 [8]
-Underfull \hbox (badness 1845) in paragraph at lines 655--657
+Underfull \hbox (badness 1845) in paragraph at lines 656--658
 \OT1/ptm/m/n/10 Gard-ner, Christo-pher Clark, Ken-ton Lee, Luke Zettle-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 661--663
+Underfull \hbox (badness 10000) in paragraph at lines 662--664
 \OT1/ptm/m/n/10 Xuezhe Ma, Ed-uard Hovy. 2016. End-to-end Se-
  []
 
 
-Underfull \hbox (badness 3078) in paragraph at lines 661--663
+Underfull \hbox (badness 3078) in paragraph at lines 662--664
 \OT1/ptm/m/n/10 quence La-bel-ing via Bi-directional LSTM-CNNs-CRF.
  []
 
 
-Underfull \hbox (badness 8132) in paragraph at lines 670--672
+Underfull \hbox (badness 8132) in paragraph at lines 671--673
 \OT1/ptm/m/n/10 Zhiheng Huang, Wei Xu, Kai Yu. 2015. Bidi-rec-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 670--672
+Underfull \hbox (badness 10000) in paragraph at lines 671--673
 \OT1/ptm/m/n/10 tional LSTM-CRF Mod-els for Se-quence Tag-ging.
  []
 
 
-Underfull \hbox (badness 1199) in paragraph at lines 682--684
+Underfull \hbox (badness 1199) in paragraph at lines 683--685
 \OT1/ptm/m/n/10 2010. Learn-ing Con-tin-u-ous Phrase Rep-re-sen-ta-tions and
  []
 
@@ -363,32 +375,32 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 703--705
+Underfull \hbox (badness 10000) in paragraph at lines 704--706
 \OT1/ptm/m/n/10 Tomas Mikolov, Edouard Grave, Pi-otr Bo-janowski,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 703--705
+Underfull \hbox (badness 10000) in paragraph at lines 704--706
 \OT1/ptm/m/n/10 Chris-tian Puhrsch, Ar-mand Joulin. 2017. Ad-vances
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 703--705
+Underfull \hbox (badness 10000) in paragraph at lines 704--706
 \OT1/ptm/m/n/10 in Pre-Training Dis-tributed Word Rep-re-sen-ta-tions.
  []
 
 [9]
-Underfull \hbox (badness 1028) in paragraph at lines 733--734
+Underfull \hbox (badness 1028) in paragraph at lines 734--735
 \OT1/ptm/m/n/10 L[]T[]X is a dif-fi-cult pro-gram to mas-ter. If you've used
  []
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 733--734
+Underfull \hbox (badness 1389) in paragraph at lines 734--735
 \OT1/ptm/m/n/10 that soft-ware, and this doc-u-ment didn't help or some
  []
 
 
-Underfull \hbox (badness 1087) in paragraph at lines 733--734
+Underfull \hbox (badness 1087) in paragraph at lines 734--735
 \OT1/ptm/m/n/10 2002/08/13) about ob-tain-ing cor-rect PS/PDF out-put on
  []
 
@@ -398,7 +410,7 @@ Underfull \hbox (badness 1087) in paragraph at lines 733--734
 Here is how much of TeX's memory you used:
  1747 strings out of 493014
  25532 string characters out of 6132870
- 95785 words of memory out of 5000000
+ 95802 words of memory out of 5000000
  5259 multiletter control sequences out of 15000+600000
  25778 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -410,7 +422,7 @@ ist/fonts/enc/dvips/base/8r.enc}<d:/software/texlive/2016/texmf-dist/fonts/type
 /urw/courier/ucrr8a.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/urw/ti
 mes/utmb8a.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on formatting-instructions-latex-2020.pdf (10 pages, 3651359 byt
+Output written on formatting-instructions-latex-2020.pdf (10 pages, 3651397 byt
 es).
 PDF statistics:
  68 PDF objects out of 1000 (max. 8388607)
