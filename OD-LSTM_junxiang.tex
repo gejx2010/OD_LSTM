@@ -79,7 +79,7 @@
 \setlength\titlebox{2.5in} % If your paper contains an overfull \vbox too high warning at the beginning of the document, use this
 % command to correct it. You may not alter the value below 2.5 in
 %\title{AAAI Press Formatting Instructions \\for Authors Using \LaTeX{} --- A Guide }
-\title{ OD-LSTM: An Efficient Network For Named Entity Recognition }
+\title{ Outer Dictionary LSTM: An Efficient Network For Named Entity Recognition }
 %Your title must be in mixed case, not sentence case. 
 % That means all verbs (including short verbs like be, is, using,and go), 
 % nouns, adverbs, adjectives should be capitalized, including both words in hyphenated terms, while
@@ -127,11 +127,11 @@ To accomplish this task, many method has been explored.  Convolution Neural Netw
 
 Among these years, many method focus on base layer of NN structure, usually the embedding input layer, and then directly use it to do NLP tasks (Peters et al. 2018; Radford et al. 2018; Devlin et al. 2018; Yang et al. 2019). Though will it make improvement, it usually pays a long time to train the model. But in these way, it tell us that embedding input can directly infect the result of NLP tasks. 
 
-There exists a little difference between English NER tasks and Chinese NER tasks. English word is composed by acharacters, for which character level CNN can help improve NER tasks (Chiu and Nichols 2016; Ma and Hovy 2016; Peters et al. 2017; Yang, Liang, and Zhang 2018); but that can not be use in Chinese NER tasks, which is Hieroglyphics. For this reason, Chinese NER tasks is usually done by word baseline or character baseline structure. Word baseline structure refer to using word segmentor to split sentence into word tokens and then use their word vector (Peng and Dredez 2015; Peng and Dredez 2016); while character structure simply treat each sentence into combination of single Chinese character, and then using character embedding to do NLP tasks (Zhang and Yang 2018; Gui et al. 2019). In these methods, it seems useful when using word embedding within character baseline structure, or the oppisite. 
+There exists a little difference between English NER tasks and Chinese NER tasks. In Chinsese or other hieroglyphics language, character means a single word; and word is a character phrase which has length longer than one. In English or other letter base language, character means a single letter, and word is a composition of letters. English word is composed by characters, for which character level CNN can help improve NER tasks (Huang et al. 2015; Chiu and Nichols 2016; Ma and Hovy 2016; Peters et al. 2017; Yang, Liang, and Zhang 2018); but that can not be use in Chinese NER tasks, which is hieroglyphics. For this reason, Chinese NER tasks is usually done by word baseline or character baseline structure. Word baseline structure refer to using word segmentor to split sentence into word tokens and then use their word vector (Peng and Dredez 2015; Peng and Dredez 2016); while character structure simply treat each sentence into combination of single Chinese character, and then using character embedding to do NLP tasks (Zhang and Yang 2018; Gui et al. 2019). In these methods, it seems useful when using word embedding within character baseline structure, or the oppisite. 
 
 Most of state-of-the-art NER methods uses Conditional Random Fields (CRF) (Lafferty, McCallum, and Pereira 2011) to decode the sequence labelling result. CRF can work even without any NN cells. Hand-writing trait can sometimes already achieve high performance (Finkel, Grenager, and Manning 2005; Okazaki 2007). 
 
-In some situations, word backgound knowledge, namely dictionary (the same meaning as lexicon and gazette), is neccessary to do NER jobs. For example, in music service case, “You Raise Me Up'' would be treated more likely as a chat information rather than a song, unless the model is given that knowledge. Most of the state-of-the-art methods using word embedding to complete these task. But it then gives two problems: 
+In some situations, word backgound knowledge, namely dictionary (the same meaning as lexicon and gazette), is neccessary to do NER jobs. For example, in music service case, “You Raise Me Up'' would be treated more likely as a chat information rather than a song, unless the model is given that knowledge (see in Figure \ref{fig1}). Most of the state-of-the-art methods using word embedding to complete these task. But it then gives two problems: 
 
 \begin{itemize}
 \item Out Of Vacabulary (OOV) problem. As for \textbf{song} entity in music service, word embedding size will be too large; and sometimes will the length of song be too long to make word vector. 
@@ -139,6 +139,13 @@ In some situations, word backgound knowledge, namely dictionary (the same meanin
 \end{itemize}
 
 Faced with this problem, we proposed a new conception, called Outer Dictionary (OD) models, which means using the dictionary's outer trait, without using its specific content. For example, we use the word type `` song ``, rather than a specific song name, to help model understand the outer information. In these way, word embedding is no longer needed for Chinese NER task. Exprement result show that in gazzete depended-on task, OD model gives the best result among state-of-the-art method. And when the content of dictionary changed, the model can synchronously update its result without retraining.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.9\columnwidth]{gazzete_is_needed} % Reduce the figure size so that it is slightly narrower than the column. Don't use precise values for figure width.This setup will avoid overfull boxes. 
+\caption{In certain NER situation, dictionary info is neccessary, as cases showed in figure. With knowing the certain name is a song, we tend to denote the word as a song rather a common sentence.}
+\label{fig1}
+\end{figure}
 
 \subsection{Contributions}
 
@@ -152,7 +159,7 @@ In summary, we make these contributions:
 \end{itemize}
 
 \section{Related Work}
-Success of BERT (Devlin et al. 2018) and XLNet (Yang et al. 2019) show that word embedding is important and useful for many upper NLP tasks. More useful information is there in the vector, more efficient the model would work. To a great degree, embedding layer decides the performance. Same conclusion can be made from a lot of NER models, as for character level message, word level message, position message, handwriting message and so on. Especially in some specific NER task, like music service, gazzete is heavilly depended on to make better performance. 
+Success of BERT (Devlin et al. 2018) and XLNet (Yang et al. 2019) show that word embedding is important and useful for many upper NLP tasks. More useful information is there in the vector, more efficiently the model would work. To a great degree, embedding layer decides the performance. Same conclusion can be made from a lot of NER models, as for character level message, word level message, position message, handwriting message and so on. Especially in some specific NER task, like music service, gazzete is heavilly depended on to make better performance. 
 
 Most of the recent models use gazette as word embedding input, or its string format, to give the model related message. Lattice LSTM (Zhang and Yang 2018) use the embedding as additional input to character baseline LSTM, which can give the model more sentence information. Lexivon Rethinking CNN (Gui et al. 2019), corparate the word embedding vector to correlated CNN layer, and the coflict word segment could be learned by rethinking. Stanford NER (Finkel, Grenager, and Manning 2005) can use the gazette information, as string format, in CRF model.
 
@@ -160,10 +167,56 @@ However, in some pratical use, the content of the gazette will change greatly an
 
 \section{Outer Dictionary LSTM}
 
+In this chapter, we illustrate the model we use to realize the OD model. We use the character baseline model for Chinese NER task,  inspired by the results of Lattice LSTM (Zhang and Yang 2018) and Lexicon Rething CNN (Gui et al. 2019). In order to better understand the model, we make a appointment that: In Chinsese or other hieroglyphics language, character means a single word; and word is a character phrase which has length longer than one. In English or other letter base language, character means a single letter, and a word is a composition of letters; then a phrase is composited of a set of words. For Chinese NER jobs, only character embedding will we use, and no more word embedding is needed, for we hold the following opinions towards these jobs:
+
+\begin{itemize}
+\item Common characters in hieroglyphics language, can be exhaustive,  especially for Chinese, because there are no more than 100, 000 characters in simplified Chinese. 
+\item Words in hieroglyphics language, will be uncountable, because there are still many new words or pharases are still created every day. Thus, OOV error can not be avoided in these case.
+\end{itemize}
+
+Thus, in Chinese NER jobs, we denote a sentence as a composition of many characters: $s = (c_1, c_2, ..., c_n) $ as the base input to model.
+
 \subsection{Character-Base LSTM}
-pass
+
+We use character embedding lookup table to turn character id to vector:
+
+\begin{equation}
+a_i = e_c(c_i) \label{char_embedding}
+\end{equation}
+
+Usually a dropout layer is connected with the embedding output, which is proved useful in NER jobs (Ma and Hovy 2016). After that, bi-directional LSTM (Bi-LSTM), the most common structure used in NER tasks, is applied to learn the character connection within the sentence. We use the hidden vector for LSTM output, that is, for input: $x = (a_1, a_2, ..., a_n) $,  we get output: $h = (h_1, h_2, ..., h_n)$, where $h_i$ is the concatenation of forward ($\overrightarrow{h_i}$) and backward ($\overleftarrow{h_i}$) LSTM hidden vector:
+
+\begin{equation}
+h_i = [\overrightarrow{h_i};\overleftarrow{h_i}] \label{lstm_out}
+\end{equation}
 
 \subsection{Tag Embedding Model}
+
+As case show in Figure \ref{fig1}, we need to use dictionary for certain NER tasks. However, the constant variation of dictionary may cause constant retrain problem. Therefore, we may not use the specific word in each dictionary, instead, only the outer information will be used, which is called Outer Dictionary (OD) model. Here, we implement our OD model using Tag Embedding (TE), which uses the tag embedding of the dictionary. Cause we use LSTM structure to utilize tag embedding info, we called our model  TE-LSTM.
+
+Specifically, we do this by two step: 
+
+a)  Match sentence with the word in dictionary using certain outer model method.
+
+b)  Turn match result into embedding information, used as the input of LSTM.
+
+\textbf{Match Policy}. In this part, we need to match all the word in given dictionary occured in current sentence. We impletement this by using Aho-Corasick Automation Algorithm (Aho and Corasick 1975). In summary, we complete a KMP (Knuth, Morris, and Pratt 1977) + Trie Tree (Briandais 1959) algorithm to accomplish this task. In methematical, given sentence $s = (c_1, c_2, ..., c_n) $, and a dictionary $d_i$, which is composed of word set $D_i=\{w_1, w_2, ..., w_V\}$. We denote the result of match policy as:
+
+\begin{equation}
+r_{d_i} = [ (f_1, b_1), (f_2 , b_2), ..., (f_k, b_k) ] \label{match_result}
+\end{equation}
+
+Here, $f_i$ and $b_i$ denote the front and back position of each match word. Let $W_{f_i,b_i}$ represent the substring of sentence $s$ with the rank $[f_i, b_i)$ (rank start from 0), then each $(f_i, b_i)$ tuple forms a word in $D_i$. Parameter $k$ means the total number of such word matched in $d_i$, which is uncertain.
+
+\textbf{Tag Embedding Sceme}. After match policy is fullfilled, we need to turn that result into vector so that it can be understood by model. Cause the result of match policy is denoted as position, we can simply use it to get a new sequence form of sentence as:
+
+\begin{equation}
+T(d_i, f_i, b_i) = (` O `, ` O `, ..., ` O `, B-, I-, ..., I-, E-, ` O `, ..., `O `) \label{tag_scheme}
+\end{equation}
+
+
+
+\subsection{Loss and Training}
 pass
 
 \section{Experiments}
@@ -274,5 +327,14 @@ Pennington, J.; Socher, R.; and Manning, C.D. 2014. GloVe: Global Vectors for Wo
 
 \smallskip \noindent
 Mikolov, T.; Grave, E.; Bojanowski, P.; Puhrsch, C.; and Joulin, A. 2017. Advances in Pre-Training Distributed Word Representations. arXiv:1712.09405. 
+
+\smallskip \noindent
+Aho, A. V.; and Corasick, M. J. 1975. Efficient string matching: An aid to bibliographic search. Communications of the ACM. June 1975, 18 (6): 333–340.
+
+\smallskip \noindent
+Knuth, D.; Morris, J. H.; and Pratt, V. 1977. Fast pattern matching in strings. SIAM Journal on Computing. 6 (2): 323–350. 
+
+\smallskip \noindent
+Briandais, D. L. R. 1959. File searching using variable length keys. Proc. Western J. Computer Conf. pp. 295–298. 
 
 \end{document}

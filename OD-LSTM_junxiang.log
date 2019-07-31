@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  30 JUL 2019 18:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  31 JUL 2019 17:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -168,53 +168,86 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 101.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 103.
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no œ in font ptmr7t!
 
-Underfull \vbox (badness 1048) has occurred while \output is active []
+Underfull \vbox (badness 2478) has occurred while \output is active []
 
  [1{d:/software/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 ]
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no œ in font ptmr7t!
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 137.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 143.
 
-Underfull \hbox (badness 6978) in paragraph at lines 194--196
+<gazzete_is_needed.jpg, id=9, 374.90062pt x 114.4275pt>
+File: gazzete_is_needed.jpg Graphic file (type jpg)
+
+<use gazzete_is_needed.jpg>
+Package pdftex.def Info: gazzete_is_needed.jpg used on input line 145.
+(pdftex.def)             Requested size: 215.45348pt x 65.76212pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 150.
+ [2 <./gazzete_is_needed.jpg>]
+Overfull \hbox (28.70778pt too wide) detected at line 215
+\OML/cmm/m/it/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d[]; f[]; b[]\OT1/cmr/m/n/1
+0 ) = (`\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 `\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 `
+\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 `\OML/cmm/m/it/10 ; :::; \OT1/cmr/m/n/10 `\OM
+L/cmm/m/it/10 O\OT1/cmr/m/n/10 `\OML/cmm/m/it/10 ; B\OMS/cmsy/m/n/10 ^^@\OML/cm
+m/m/it/10 ; I\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ; :::; I\OMS/cmsy/m/n/10 ^^@\
+OML/cmm/m/it/10 ; E\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 `\OML
+/cmm/m/it/10 O\OT1/cmr/m/n/10 `\OML/cmm/m/it/10 ; :::; \OT1/cmr/m/n/10 `\OML/cm
+m/m/it/10 O\OT1/cmr/m/n/10 `)[]
+ []
+
+
+Underfull \hbox (badness 6978) in paragraph at lines 247--249
 \OT1/ptm/m/n/10 Collobert, R.; We-ston, J.; Bot-tou, L.; Karlen, M.;
  []
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 194--196
+Underfull \hbox (badness 1137) in paragraph at lines 247--249
 \OT1/ptm/m/n/10 Pro-cess-ing (Al-most) from Scratch. Jour-nal of Ma-chine
  []
 
-[2]
+[3]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
- [3] (./OD-LSTM_junxiang.aux) ) 
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+ [4] (./OD-LSTM_junxiang.aux) ) 
 Here is how much of TeX's memory you used:
- 1656 strings out of 493014
- 24199 string characters out of 6132870
- 88770 words of memory out of 5000000
- 5189 multiletter control sequences out of 15000+600000
+ 1668 strings out of 493014
+ 24389 string characters out of 6132870
+ 90824 words of memory out of 5000000
+ 5198 multiletter control sequences out of 15000+600000
  15090 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,10n,23p,1318b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,12n,23p,1318b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/software/texlive/2016/texmf-dist/fonts/enc/d
 vips/base/8r.enc}<d:/software/texlive/2016/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy10.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy9.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb
-8a.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on OD-LSTM_junxiang.pdf (3 pages, 60552 bytes).
+ts/cm/cmmi10.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi5.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi7.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr10.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr7.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy9.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pf
+b><d:/software/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on OD-LSTM_junxiang.pdf (4 pages, 137280 bytes).
 PDF statistics:
- 31 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+ 55 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
