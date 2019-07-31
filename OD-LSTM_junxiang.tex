@@ -206,15 +206,42 @@ b)  Turn match result into embedding information, used as the input of LSTM.
 r_{d_i} = [ (f_1, b_1), (f_2 , b_2), ..., (f_k, b_k) ] \label{match_result}
 \end{equation}
 
-Here, $f_i$ and $b_i$ denote the front and back position of each match word. Let $W_{f_i,b_i}$ represent the substring of sentence $s$ with the rank $[f_i, b_i)$ (rank start from 0), then each $(f_i, b_i)$ tuple forms a word in $D_i$. Parameter $k$ means the total number of such word matched in $d_i$, which is uncertain.
+Here, $f_i$ and $b_i$ denote the front and back position of each match word. Let $W_{f_i,b_i}$ represent the substring of sentence $s$ with the rank $[f_i, b_i]$, then each $(f_i, b_i)$ tuple forms a word in $D_i$. Parameter $k$ means the total number of such word matched in $d_i$, which is uncertain.
 
-\textbf{Tag Embedding Sceme}. After match policy is fullfilled, we need to turn that result into vector so that it can be understood by model. Cause the result of match policy is denoted as position, we can simply use it to get a new sequence form of sentence as:
+\textbf{Tag Embedding Sceme}. After match policy is fullfilled, we need to turn that result into vector so that it can be understood by model. Cause the result of match policy is denoted as position, we can simply use it to get a new sequence form from original sentence. With dictionary $d_i$ and a matched word position rank range $[f_i, b_i]$, the original sentence can be written as: $ s = (c_1, c_2, ..., c_{f_i - 1}, c_{f_i}, ..., c_{b_i}, c_{b_i + 1}, ..., c_n) $, we perform this function to turn it into a new sequence:
 
 \begin{equation}
-T(d_i, f_i, b_i) = (` O `, ` O `, ..., ` O `, B-, I-, ..., I-, E-, ` O `, ..., `O `) \label{tag_scheme}
+rf(s, i, d_i, f_i, b_i) = \left \{
+\begin{array}{rl}
+' O ' ,& 0 < i < f_i \ or \ b_i < i <= n; \\
+ts(s, i, d_i) ,& f_i <= i <= b_i;
+\end{array}
+\right.
+\label{tag_scheme}
 \end{equation}
 
+where $ts(s, i)$ means a tag scheme function, here, we choose IOBES scheme for it is proved better than IOB1 and IOB2 tag scheme in result by previous works (Ma and Hovy 2016), and the same conclusion is proved by our experement result emprically. 
 
+Here, we need to emphasis the fact that: the dictionary here need not to be the same with the result tag species. As an illustration, to extract \textbf{name} entities, we can use dictionary \textbf{first name} and dictionary \textbf{last name} to do this transformation.
+
+Since there will be one or more matched word for one dictionary, in order to fix the matched word of $d_i$ in certain position, we choose $w$ words from result list. And them choose the best $w$ results from the matched list, in our experiment, here we use the word length, the longer, the best. Then with dictionary $(d_1, d_2, ..., d_m)$, the tag embedding sequence can be denoted as:
+
+\begin{equation}
+ft(s) = \left[
+\begin{array}{rl}
+rf(s, d_1, f_1, b_1), & \\
+rf(s, d_1, f_2, b_2), & \\
+...,  &\\
+rf(s, d_1, f_w, b_w); &\\
+...;  &\\
+rf(s, d_m, f_1, b_1), &\\
+rf(s, d_m, f_2, b_2), &\\
+..., &\\
+rf(s, d_m, f_w, b_w)]
+\end{array}
+\right]
+\label{final_tag_sequence}
+\end{equation}
 
 \subsection{Loss and Training}
 pass

@@ -1,71 +1,63 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  31 JUL 2019 17:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.9.15)  31 JUL 2019 22:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./OD-LSTM_junxiang.tex
+**OD-LSTM_junxiang.tex
 (./OD-LSTM_junxiang.tex
-LaTeX2e <2016/03/31>
-Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
-(d:/software/texlive/2016/texmf-dist/tex/latex/base/article.cls
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(d:/software/texlive/2016/texmf-dist/tex/latex/base/size10.clo
+(c:/texlive/2018/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
-\c@part=\count79
-\c@section=\count80
-\c@subsection=\count81
-\c@subsubsection=\count82
-\c@paragraph=\count83
-\c@subparagraph=\count84
-\c@figure=\count85
-\c@table=\count86
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 ) (./aaai20.sty
 Conference Style for AAAI for LaTeX 2e -- version for the AAAI-20 conference
 \titlebox=\skip43
-) (d:/software/texlive/2016/texmf-dist/tex/latex/psnfss/times.sty
+) (c:/texlive/2018/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-(d:/software/texlive/2016/texmf-dist/tex/latex/psnfss/helvet.sty
+(c:/texlive/2018/texmf-dist/tex/latex/psnfss/helvet.sty
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
 
-(d:/software/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 ))
-(d:/software/texlive/2016/texmf-dist/tex/latex/psnfss/courier.sty
+(c:/texlive/2018/texmf-dist/tex/latex/psnfss/courier.sty
 Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
-(d:/software/texlive/2016/texmf-dist/tex/latex/url/url.sty
+(c:/texlive/2018/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(d:/software/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(d:/software/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-(d:/software/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(d:/software/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 96.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(d:/software/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(d:/software/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-(d:/software/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count87
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
@@ -86,11 +78,9 @@ LaTeX Font Info:    ... okay on input line 99.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
 LaTeX Font Info:    ... okay on input line 99.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 99.
-
-(d:/software/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+ (c:/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-(d:/software/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+) (c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count88
 \scratchdimen=\dimen105
@@ -103,50 +93,59 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 \MPnumerator=\count92
 \makeMPintoPDFobject=\count93
 \everyMPtoPDFconversion=\toks16
-) (d:/software/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
-)
+) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(d:/software/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-(d:/software/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(d:/software/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-
-(d:/software/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-(d:/software/texlive/2016/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-))
-(d:/software/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-(d:/software/texlive/2016/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-(d:/software/texlive/2016/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 
-(d:/software/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(c:/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
@@ -161,7 +160,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 101.
 
 
-(d:/software/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
+(c:/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
@@ -171,83 +170,60 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 
 Underfull \vbox (badness 2478) has occurred while \output is active []
 
- [1{d:/software/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+ [1{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 ]
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no œ in font ptmr7t!
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 137.
-
 <gazzete_is_needed.jpg, id=9, 374.90062pt x 114.4275pt>
 File: gazzete_is_needed.jpg Graphic file (type jpg)
-
 <use gazzete_is_needed.jpg>
-Package pdftex.def Info: gazzete_is_needed.jpg used on input line 145.
+Package pdftex.def Info: gazzete_is_needed.jpg  used on input line 145.
 (pdftex.def)             Requested size: 215.45348pt x 65.76212pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 150.
  [2 <./gazzete_is_needed.jpg>]
-Overfull \hbox (28.70778pt too wide) detected at line 215
-\OML/cmm/m/it/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d[]; f[]; b[]\OT1/cmr/m/n/1
-0 ) = (`\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 `\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 `
-\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 `\OML/cmm/m/it/10 ; :::; \OT1/cmr/m/n/10 `\OM
-L/cmm/m/it/10 O\OT1/cmr/m/n/10 `\OML/cmm/m/it/10 ; B\OMS/cmsy/m/n/10 ^^@\OML/cm
-m/m/it/10 ; I\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ; :::; I\OMS/cmsy/m/n/10 ^^@\
-OML/cmm/m/it/10 ; E\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 `\OML
-/cmm/m/it/10 O\OT1/cmr/m/n/10 `\OML/cmm/m/it/10 ; :::; \OT1/cmr/m/n/10 `\OML/cm
-m/m/it/10 O\OT1/cmr/m/n/10 `)[]
+Overfull \hbox (28.14238pt too wide) detected at line 221
+\OML/cmm/m/it/10 rf\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s; i; d[]; f[]; b[]\OT1/cm
+r/m/n/10 ) = [][]
  []
 
-
-Underfull \hbox (badness 6978) in paragraph at lines 247--249
+[3]
+Underfull \hbox (badness 6978) in paragraph at lines 274--276
 \OT1/ptm/m/n/10 Collobert, R.; We-ston, J.; Bot-tou, L.; Karlen, M.;
  []
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 247--249
+Underfull \hbox (badness 1137) in paragraph at lines 274--276
 \OT1/ptm/m/n/10 Pro-cess-ing (Al-most) from Scratch. Jour-nal of Ma-chine
  []
 
-[3]
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
- [4] (./OD-LSTM_junxiang.aux) ) 
+[4] (./OD-LSTM_junxiang.aux) ) 
 Here is how much of TeX's memory you used:
- 1668 strings out of 493014
- 24389 string characters out of 6132870
- 90824 words of memory out of 5000000
- 5198 multiletter control sequences out of 15000+600000
+ 1618 strings out of 492649
+ 23167 string characters out of 6133384
+ 94635 words of memory out of 5000000
+ 5488 multiletter control sequences out of 15000+600000
  15090 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,12n,23p,1318b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
-{d:/software/texlive/2016/texmf-dist/fonts/enc/d
-vips/base/8r.enc}<d:/software/texlive/2016/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi10.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi5.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi7.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr10.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr7.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy9.pfb><d:/software/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pf
-b><d:/software/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on OD-LSTM_junxiang.pdf (4 pages, 137280 bytes).
+ 41i,12n,25p,1316b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/
+8r.enc}<c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c
+:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive
+/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2018/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2018/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c
+:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/tex
+mf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on OD-LSTM_junxiang.pdf (4 pages, 154290 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
- 38 compressed objects within 1 object stream
+ 63 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
