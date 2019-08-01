@@ -18,8 +18,8 @@
 % For /Author, add all authors within the parentheses, separated by commas. No accents or commands.
 % For /Title, add Title in Mixed Case. No accents or commands. Retain the parentheses.
  \pdfinfo{
-/Title (AAAI Press Formatting Instructions for Authors Using LaTeX -- A Guide)
-/Author (AAAI Press Staff, Pater Patel Schneider, Sunil Issar, J. Scott Penberthy, George Ferguson, Hans Guesgen)
+/Title ( Outer Dictionary LSTM: An Efficient Network For Named Entity Recognition)
+/Author (Junxiang Ge, Qi Zhang, Haizhou Zhao, AI Research Department, Sogou Inc.)
 } %Leave this	
 % /Title ()
 % Put your actual complete title (no codes, scripts, shortcuts, or LaTeX commands) within the parentheses in mixed case
@@ -94,7 +94,7 @@
 %publications20@aaai.org % email address must be in roman text type, not monospace or sans serif
 %}
 \author{Junxiang Ge, Qi Zhang, Haizhou Zhao\\ 
-AI Research Department, Sogou \\
+AI Research Department, Sogou Inc. \\
 Beijing, China}
  \begin{document}
 
@@ -167,7 +167,7 @@ However, in some pratical use, the content of the gazette will change greatly an
 
 \section{Outer Dictionary LSTM}
 
-In this chapter, we illustrate the model we use to realize the OD model. We use the character baseline model for Chinese NER task,  inspired by the results of Lattice LSTM (Zhang and Yang 2018) and Lexicon Rething CNN (Gui et al. 2019). In order to better understand the model, we make a appointment that: In Chinsese or other hieroglyphics language, character means a single word; and word is a character phrase which has length longer than one. In English or other letter base language, character means a single letter, and a word is a composition of letters; then a phrase is composited of a set of words. For Chinese NER jobs, only character embedding will we use, and no more word embedding is needed, for we hold the following opinions towards these jobs:
+In this chapter, we illustrate the model we use to realize the OD model. Our framework is based on Tensorflow (Abadi et al. 2015). We use the character baseline model for Chinese NER task,  inspired by the results of Lattice LSTM (Zhang and Yang 2018) and Lexicon Rething CNN (Gui et al. 2019). In order to better understand the model, we make a appointment that: In Chinsese or other hieroglyphics language, character means a single word; and word is a character phrase which has length longer than one. In English or other letter base language, character means a single letter, and a word is a composition of letters; then a phrase is composited of a set of words. For Chinese NER jobs, only character embedding will we use, and no more word embedding is needed, for we hold the following opinions towards these jobs:
 
 \begin{itemize}
 \item Common characters in hieroglyphics language, can be exhaustive,  especially for Chinese, because there are no more than 100, 000 characters in simplified Chinese. 
@@ -208,47 +208,97 @@ r_{d_i} = [ (f_1, b_1), (f_2 , b_2), ..., (f_k, b_k) ] \label{match_result}
 
 Here, $f_i$ and $b_i$ denote the front and back position of each match word. Let $W_{f_i,b_i}$ represent the substring of sentence $s$ with the rank $[f_i, b_i]$, then each $(f_i, b_i)$ tuple forms a word in $D_i$. Parameter $k$ means the total number of such word matched in $d_i$, which is uncertain.
 
-\textbf{Tag Embedding Sceme}. After match policy is fullfilled, we need to turn that result into vector so that it can be understood by model. Cause the result of match policy is denoted as position, we can simply use it to get a new sequence form from original sentence. With dictionary $d_i$ and a matched word position rank range $[f_i, b_i]$, the original sentence can be written as: $ s = (c_1, c_2, ..., c_{f_i - 1}, c_{f_i}, ..., c_{b_i}, c_{b_i + 1}, ..., c_n) $, we perform this function to turn it into a new sequence:
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.9\columnwidth]{tag_scheme} % Reduce the figure size so that it is slightly narrower than the column. Don't use precise values for figure width.This setup will avoid overfull boxes. 
+\caption{Illustration for tag embedding scheme. For dictionary `song', there are two possible songs, the longer one is put in the first place (column 1). For dictionary `language', only one possible result will be matched, however in this case, since we set the tag blank number to 2, we should add one more padding blank to fill the position, which is showed as column 4. }
+\label{fig2}
+\end{figure}
+
+\textbf{Tag Embedding Scheme}. After match policy is fullfilled, we need to turn that result into vector so that it can be understood by model. Cause the result of match policy is denoted as position, we can simply use it to get a new sequence form from original sentence. With dictionary $d_i$ and a matched word position rank range $[f_i, b_i]$, the original sentence can be written as: $ s = (c_1, c_2, ..., c_{f_i - 1}, c_{f_i}, ..., c_{b_i}, c_{b_i + 1}, ..., c_n) $, we then apply tag scheme for these sequence: turn the match word to correspond tag as shown in Figure \ref{fig2}, the unmatche part is turn to tag ` O `.
+
+Here, we choose \textbf{IOBES} scheme for it is proved better than IOB1 and IOB2 tag scheme in result by previous works (Chiu and Nichols 2016; Ma and Hovy 2016). Yet we need to emphasis that: the dictionary here need not to be the same with the result tag species. As an illustration, to extract \textbf{name} entity, we can use dictionary \textbf{first name} and dictionary \textbf{last name} to do this transformation.
+
+Since there will be one or more matched word for one dictionary, in order to fix the matched word of $d_i$ in certain position, we choose $w$ words from result list. Let us refer $w$ as \textbf{tag blank number}. We choose the best $w$ results from the matched list (in our experiment, here we use the word length, the longer, the prior). Then for dictionary $d_i$, if the number of match results isn't less than $w$, then the best $w$ results will be choose and turn to a new sequence; or the full results will be included, and some padding blank will added to that dictionary's leave position to fill the blank, until the number of sequence of that dictionary is fullfilled.  The full process of producing tag sequence is shown in Figure \ref{fig2}. We do the tag scheme in this way cause we think the position is important for model to understand, Of course, $w$ could be variable for different dictionary, but that needs a bit more efforts and seems low performance increase.
+
+With the tag embedding sequence produced, denoting each tag sequence as: $s_t = (t_1, t_2, ..., t_n)$, we turn the result to vector using: 
 
 \begin{equation}
-rf(s, i, d_i, f_i, b_i) = \left \{
-\begin{array}{rl}
-' O ' ,& 0 < i < f_i \ or \ b_i < i <= n; \\
-ts(s, i, d_i) ,& f_i <= i <= b_i;
-\end{array}
-\right.
-\label{tag_scheme}
+g_i = e_t(t_i) \label{tag_embedding}
 \end{equation}
 
-where $ts(s, i)$ means a tag scheme function, here, we choose IOBES scheme for it is proved better than IOB1 and IOB2 tag scheme in result by previous works (Ma and Hovy 2016), and the same conclusion is proved by our experement result emprically. 
-
-Here, we need to emphasis the fact that: the dictionary here need not to be the same with the result tag species. As an illustration, to extract \textbf{name} entities, we can use dictionary \textbf{first name} and dictionary \textbf{last name} to do this transformation.
-
-Since there will be one or more matched word for one dictionary, in order to fix the matched word of $d_i$ in certain position, we choose $w$ words from result list. And them choose the best $w$ results from the matched list, in our experiment, here we use the word length, the longer, the best. Then with dictionary $(d_1, d_2, ..., d_m)$, the tag embedding sequence can be denoted as:
-
-\begin{equation}
-ft(s) = \left[
-\begin{array}{rl}
-rf(s, d_1, f_1, b_1), & \\
-rf(s, d_1, f_2, b_2), & \\
-...,  &\\
-rf(s, d_1, f_w, b_w); &\\
-...;  &\\
-rf(s, d_m, f_1, b_1), &\\
-rf(s, d_m, f_2, b_2), &\\
-..., &\\
-rf(s, d_m, f_w, b_w)]
-\end{array}
-\right]
-\label{final_tag_sequence}
-\end{equation}
+where $e_t$ is the tag embedding lookup table. We use random generated number to produce this lookup table. Then the char embedding output $a_i$ and tag embeddding output $g_i$ is concatenated together, used as additional property to enrich the input information (Collobert et al. 2011), and then fed into the Bi-LSTM layer.  
 
 \subsection{Loss and Training}
-pass
+
+CRF layer is applied on the top, same with many previous works and proved to be useful (Collobert et al. 2011; Chiu and Nichols 2016; Ma and Hovy 2016; Yang, Liang, and Zhang 2018; Zhang and Yang 2018; Gui et al. 2019). Denote $y_j$ as a possible label sequence for sentence $s$ and $Y$ as the total set of all possible $y_j$, then the probability of $y_j$ is:
+
+\begin{equation}
+p(y_j | s) = softmax(\sum_i{W_{c_i} * h_i} + B_{c_i})_j
+\label{crf_probability}
+\end{equation}
+
+$W_{c_i}$, $B_{c_i}$ is respectively the emission matrix and transformation matrix correlate to $h_i$, and $j$ is the rank for $y_j$ in all possible label sequence set $Y$.  While training, we take the $L_2$ regularization for all parameters into account together with CRF loss. With batch number $N$ and corresponding gold set $(s_i, y_i)$, the final loss can be computed as:
+
+\begin{equation}
+L = \sum_{i=1}^{N}{log(p(y_i | s_i))} + \frac{\lambda}{2}{|| \theta ||}^2
+\label{crf_probability}
+\end{equation}
+
+$\lambda$ is the $L_2$ hyper parameter, and $\theta$ stands for all the training parameters. At decode step, we use the Viterbi algorithm (Viterbi 1967) to decode result, finding the label sequence with the highest score. 
 
 \section{Experiments}
 
-pass
+\subsection{Settings}
+
+We first display the experiment settings within our work.
+
+\textbf{Dataset}. We use the music domain dataset obtained on China Conference on Knowledge Graph and Semantic Computing (CCKS) 2018 music dataset. Cause we can only get the training dataset,  we split that file into three part with portion 8:1:1 as train set, dev set and test set. Call this dataset as \textbf{CCKS} dataset.
+
+\begin{table}[t]
+\caption{Statistics of Music dataset.}\smallskip
+\centering
+\resizebox{.95\columnwidth}{!}{
+\smallskip\begin{tabular}{l|c|c}
+\hline
+Count & Sentences & Entities\\
+\hline
+Train & 7,177 & 8,585 \\
+Dev & 897 & 1,057 \\
+Test & 897 & 1,047 \\
+\hline
+\end{tabular}
+}
+\label{table1}
+\end{table}
+
+Another music domain dataset is annotated by ourselves, and the tag defined is more rich than CCKS. The statistics information of this dataset is listed in Table \ref{table1}.
+
+\textbf{Character Embedding}. In order to compare with Lattice LSTM (Zhang and Yang 2018) and Lexicon Rethinking CNN (Gui et al. 2019), we use the same character embedding provided in their papers (these two paper use the same character embedding and word embedding). 
+
+\textbf{Tag Embedding}. Given tag embedding length $l_t$ as hyper parameter, we use uniform random policy to generate the tag embedding lookup table. 
+
+\subsection{Compared Models}
+
+For compared purposed, we impletement below models:
+
+\textbf{Character LSTM}. We basicly impletement the character-level LSTM as the first model, no any other properties used (like bichar, softword, position etc.). We abbreviate it as C-LSTM.
+
+\textbf{Stanford NER model}. Stanford NER tool is used in our work to do comparision, for it is convenient to add handcrafted features into model. And it can use dictionary (called gazette in its term) directly, which can be compared to our OD model intuitively. For short, denote it as S-NER. 
+
+\textbf{Lattice LSTM}. The author of Lattice LSTM (Zhang and Yang 2018) has generously provided his code on website. We direcly use his code and settings, and run on experiment dataset. We denote it as La-LSTM.
+
+\textbf{Lexicon Rethinking CNN}. Same with Lattice LSTM, we use the code provided by the author (Gui et al. 2019) and run on our dataset. We denote it as LR-CNN.
+
+\textbf{Tag Embedding LSTM}. This is the model which we proposed in this paper. We denote it as TE-LSTM.
+
+\subsection{Hyper Parameters}
+
+pass.
+
+\subsection{Final Results}
+
+pass.
 
 \section{Conclusion}
 
@@ -314,7 +364,13 @@ Chiu, J. P.C.; and Nichols, E. 2016. Named Entity Recognition with Bidirectional
 Huang, Z.; Xu, W.; and Yu, K. 2015. Bidirectional LSTM-CRF Models for Sequence Tagging. arXiv:1508.01991. 
 
 \smallskip \noindent
+Peng, N.; and Dredze, M. 2015. Named Entity Recognition for Chinese Social Media with Jointly Trained Embeddings. In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing (EMNLP). 
+
+\smallskip \noindent
 Peng, N.; and Dredze, M. 2016. Improving Named Entity Recognition for Chinese Social Media with Word Segmentation Representation Learning. arXiv:1603.00786. 
+
+\smallskip \noindent
+He, H.; and Sun, X. 2016. F-Score Driven Max Margin Neural Network for Named Entity Recognition in Chinese Social Media. 	arXiv:1611.04234. 
 
 \smallskip \noindent
 Chen, Q.; Zhuo, Z.; and Wang, W. 2019. BERT for Joint Intent Classification and Slot Filling. arXiv:1902.10909. 
@@ -336,9 +392,6 @@ Finkel, J. R.; Grenager, T.; and Manning, C. 2005. Incorporating non-local infor
 
 \smallskip \noindent
 Okazaki, N. 2007. CRFsuite: a fast implementation of Conditional Random Fields (CRFs). URL http://www. chokkan. org/software/crfsuite. 
-
-\smallskip \noindent
-Peng, N.; and Dredze, M. 2015. Named Entity Recognition for Chinese Social Media with Jointly Trained Embeddings. In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing (EMNLP). 
 
 \smallskip \noindent
 Mikolov, T.; Chen, K.; Corrado, G.; and Dean, J. 2013. Efficient Estimation of Word Representations in Vector Space. In Proceedings of Workshop at ICLR. 
@@ -363,5 +416,11 @@ Knuth, D.; Morris, J. H.; and Pratt, V. 1977. Fast pattern matching in strings. 
 
 \smallskip \noindent
 Briandais, D. L. R. 1959. File searching using variable length keys. Proc. Western J. Computer Conf. pp. 295–298. 
+
+\smallskip \noindent
+Viterbi AJ. 1967. Error bounds for convolutional codes and an asymptotically optimum decoding algorithm. IEEE Transactions on Information Theory. 13 (2): 260–269. doi:10.1109/TIT.1967.1054010. 
+
+\smallskip \noindent
+Martín Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen, Craig Citro, Greg S. Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin, Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael Isard, Rafal Jozefowicz, Yangqing Jia, Lukasz Kaiser, Manjunath Kudlur, Josh Levenberg, Dan Mané, Mike Schuster, Rajat Monga, Sherry Moore, Derek Murray, Chris Olah, Jonathon Shlens, Benoit Steiner, Ilya Sutskever, Kunal Talwar, Paul Tucker, Vincent Vanhoucke, Vijay Vasudevan, Fernanda Viégas, Oriol Vinyals, Pete Warden, Martin Wattenberg, Martin Wicke, Yuan Yu, and Xiaoqiang Zheng. 2015. TensorFlow: Large-scale machine learning on heterogeneous systems. https://www.tensorflow.org.
 
 \end{document}
