@@ -251,14 +251,14 @@ $\lambda$ is the $L_2$ hyper parameter, and $\theta$ stands for all the training
 
 \subsection{Settings}
 
-We first display the experiment settings within our work.
+Here displays the experiment settings within our work.
 
 \textbf{Dataset}. We use the music domain dataset obtained on China Conference on Knowledge Graph and Semantic Computing (CCKS) 2018 music dataset. Cause we can only get the training dataset,  we split that file into three part with portion 8:1:1 as train set, dev set and test set. Call this dataset as \textbf{CCKS} dataset.
 
 \begin{table}[t]
 \caption{Statistics of Music dataset.}\smallskip
 \centering
-\resizebox{.95\columnwidth}{!}{
+\resizebox{.5\columnwidth}{!}{
 \smallskip\begin{tabular}{l|c|c}
 \hline
 Count & Sentences & Entities\\
@@ -274,31 +274,90 @@ Test & 897 & 1,047 \\
 
 Another music domain dataset is annotated by ourselves, and the tag defined is more rich than CCKS. The statistics information of this dataset is listed in Table \ref{table1}.
 
-\textbf{Character Embedding}. In order to compare with Lattice LSTM (Zhang and Yang 2018) and Lexicon Rethinking CNN (Gui et al. 2019), we use the same character embedding provided in their papers (these two paper use the same character embedding and word embedding). 
+\textbf{Character Embedding}. In order to compare with Lattice LSTM (Zhang and Yang 2018) and Lexicon Rethinking CNN (Gui et al. 2019), we use the word vector provided in their papers (these two paper use the same character embedding and word embedding). There are character embedding and word embedding, we use the latter one as character embedding for we find it perform better in both character-level LSTM and OD LSTM.
 
 \textbf{Tag Embedding}. Given tag embedding length $l_t$ as hyper parameter, we use uniform random policy to generate the tag embedding lookup table. 
 
+\textbf{Word Embedding}. For Lattice LSTM and Lexicon Rethinking CNN, they use the same word embedding file, which can not incorparate the word of dictionary directly. For Stanford NER (Finkel, Grenager, and Manning 2005) model and OD model, we use the dictionary file, which in true is a list of word name. For the same dataset, the dictionary they use keep the same.
+
 \subsection{Compared Models}
 
-For compared purposed, we impletement below models:
-
-\textbf{Character LSTM}. We basicly impletement the character-level LSTM as the first model, no any other properties used (like bichar, softword, position etc.). We abbreviate it as C-LSTM.
-
-\textbf{Stanford NER model}. Stanford NER tool is used in our work to do comparision, for it is convenient to add handcrafted features into model. And it can use dictionary (called gazette in its term) directly, which can be compared to our OD model intuitively. For short, denote it as S-NER. 
+For compared purposed, we impletement these models below:
 
 \textbf{Lattice LSTM}. The author of Lattice LSTM (Zhang and Yang 2018) has generously provided his code on website. We direcly use his code and settings, and run on experiment dataset. We denote it as La-LSTM.
 
 \textbf{Lexicon Rethinking CNN}. Same with Lattice LSTM, we use the code provided by the author (Gui et al. 2019) and run on our dataset. We denote it as LR-CNN.
 
-\textbf{Tag Embedding LSTM}. This is the model which we proposed in this paper. We denote it as TE-LSTM.
+\textbf{Character LSTM}. We basicly impletement the character-level LSTM as the first model, no any other properties (like bichar, softword, position etc.) used. We use the word embedding in Lattice LSTM as character embedding here for it gives better performance. We abbreviate it as C-LSTM.
 
-\subsection{Hyper Parameters}
+\textbf{Stanford NER model}. Stanford NER tool (Finkel, Grenager, and Manning 2005) is used in our work to do comparision, for it is convenient to add handcrafted features into model, and use dictionary (called gazette in its term) directly, which can be compared to our OD model intuitively. For short, denote it as S-NER. 
 
-pass.
+\textbf{Tag Embedding LSTM}. This is the model which we proposed in this paper. The character embedding is the same with the word embedding provided by the author of Lattice LSTM (Zhang and Yang 2018). The dictionary used is the same with S-NER model for comparision. We denote it as TE-LSTM.
 
-\subsection{Final Results}
+\subsection{Hyper-parameters}
 
-pass.
+\begin{table}[t]
+\caption{Hyperparameters}\smallskip
+\centering
+\resizebox{.95\columnwidth}{!}{
+\smallskip\begin{tabular}{l|c|c}
+\hline
+Layer & Hyper-parameters & Value \\
+\hline
+Char-layer & embeddding size & 50 \\
+\hline
+Tag-layer & embeddding size & 10 \\
+& tag blank number & 3 \\
+\hline
+LSTM & state size & 200 \\
+ & number of layers & 1 \\
+\hline
+Dropout & dropout rate & [0.0, 0.5] \\
+\hline
+ & batch size & [1, 10] \\
+ & initial learning rate & 0.015 \\
+ & decay rate & 0.05 \\
+ & momentum number & 0.9 \\
+ & gradient clipping & 5.0 \\
+ & L2 $\lambda$ & 1e-8 \\
+ & fine tune & True \\
+\hline
+\end{tabular}
+}
+\label{table2}
+\end{table}
+
+Shown in Table \ref{table2}, we choose the hyper-parameters referring to BLSTM-CNNs-CRF structure (Ma and Hovy 2016). 
+
+\begin{itemize}
+\item \textbf{Fine-tuning}.We apply fine-tuning on all the embedding vector, which is proved useful by previous works (Collobert et al. 2011; Peng and Dredze 2015; Ma and Hovy 2016). 
+\item \textbf{Dropout}. We choose the dropout rate between 0.0 and 0.5, for different dataset, the best result will occur at different rate.
+\item \textbf{SGD policy}. We use stachastic gradient descent (SGD) policy to train model, with momentum set as 0.9.
+\end{itemize}
+
+\subsection{Main Results}
+
+\begin{table}[t]
+\caption{Main Results}\smallskip
+\centering
+\resizebox{.95\columnwidth}{!}{
+\smallskip\begin{tabular}{l|ccc|ccc}
+\hline
+Model & \multicolumn{3}{|c|}{CCKS} & \multicolumn{3}{|c}{Music} \\
+\hline
+ & Precision & Recall & F1 & Precision & Recall & F1 \\
+\hline
+La-LSTM  & 87.34\% & 75.03\% &  80.72\% & 86.24\% & 84.43\% & 85.33\% \\
+LR-CNN  & 88.17\% & 76.98\% & 82.2\% & 85.99\% & 85.00\% & 85.49\% \\
+\hline
+C-LSTM & 75.66\% & 71.12\% & 73.32\% & 84.11\% & 82.50\% & 83.30\% \\
+ST-NER & 91.00\% & 76.15\% & 82.92\% & 88.00\% & 85.48\% & 86.72\% \\
+TE-LSTM & 84.28\% & 84.51\% & 84.40\% & 93.09\% & 92.82\% & 92.96\% \\
+\hline
+\end{tabular}
+}
+\label{table3}
+\end{table}
 
 \section{Conclusion}
 
