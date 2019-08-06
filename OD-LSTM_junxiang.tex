@@ -256,23 +256,23 @@ Here displays the experiment settings within our work.
 \textbf{Dataset}. We use the music domain dataset obtained on China Conference on Knowledge Graph and Semantic Computing (CCKS) 2018 music dataset. Cause we can only get the training dataset,  we split that file into three part with portion 8:1:1 as train set, dev set and test set. Call this dataset as \textbf{CCKS} dataset.
 
 \begin{table}[t]
-\caption{Statistics of Music dataset.}\smallskip
+\caption{Statistics of MusicNER dataset.}\smallskip
 \centering
-\resizebox{.5\columnwidth}{!}{
-\smallskip\begin{tabular}{l|c|c}
+\resizebox{.8\columnwidth}{!}{
+\smallskip\begin{tabular}{l|c|c|c}
 \hline
-Count & Sentences & Entities\\
+Count & Sentences & Tokens & Entities\\
 \hline
-Train & 7,177 & 8,585 \\
-Dev & 897 & 1,057 \\
-Test & 897 & 1,047 \\
+Train & 7,177 & 55,613 & 8,585 \\
+Dev & 897 & 6,858 & 1,057 \\
+Test & 897 & 6,775 & 1,047 \\
 \hline
 \end{tabular}
 }
 \label{table1}
 \end{table}
 
-Another music domain dataset is annotated by ourselves, and the tag defined is more rich than CCKS. The statistics information of this dataset is listed in Table \ref{table1}.
+Another music domain dataset is annotated by ourselves, and the tag defined is richer than CCKS. The statistics information of this dataset is listed in Table \ref{table1}.
 
 \textbf{Character Embedding}. In order to compare with Lattice LSTM (Zhang and Yang 2018) and Lexicon Rethinking CNN (Gui et al. 2019), we use the word vector provided in their papers (these two paper use the same character embedding and word embedding). There are character embedding and word embedding, we use the latter one as character embedding for we find it perform better in both character-level LSTM and OD LSTM.
 
@@ -317,7 +317,7 @@ Dropout & dropout rate & [0.0, 0.5] \\
  & batch size & [1, 10] \\
  & initial learning rate & 0.015 \\
  & decay rate & 0.05 \\
- & momentum number & 0.9 \\
+ & momentum & 0.9 \\
  & gradient clipping & 5.0 \\
  & L2 $\lambda$ & 1e-8 \\
  & fine tune & True \\
@@ -343,7 +343,7 @@ Shown in Table \ref{table2}, we choose the hyper-parameters referring to BLSTM-C
 \resizebox{.95\columnwidth}{!}{
 \smallskip\begin{tabular}{l|ccc|ccc}
 \hline
-Model & \multicolumn{3}{|c|}{CCKS} & \multicolumn{3}{|c}{Music} \\
+Model & \multicolumn{3}{|c|}{CCKS} & \multicolumn{3}{|c}{MusicNER} \\
 \hline
  & Precision & Recall & F1 & Precision & Recall & F1 \\
 \hline
@@ -351,19 +351,29 @@ La-LSTM  & 87.34\% & 75.03\% &  80.72\% & 86.24\% & 84.43\% & 85.33\% \\
 LR-CNN  & 88.17\% & 76.98\% & 82.2\% & 85.99\% & 85.00\% & 85.49\% \\
 \hline
 C-LSTM & 75.66\% & 71.12\% & 73.32\% & 84.11\% & 82.50\% & 83.30\% \\
-ST-NER & 91.00\% & 76.15\% & 82.92\% & 88.00\% & 85.48\% & 86.72\% \\
-TE-LSTM & 84.28\% & 84.51\% & 84.40\% & 93.09\% & 92.82\% & 92.96\% \\
+ST-NER & \textbf{91.00\%} & 76.15\% & 82.92\% & 88.00\% & 85.48\% & 86.72\% \\
+TE-LSTM & 84.28\% & \textbf{84.51\%} & \textbf{84.40\%} & \textbf{93.09\%} & \textbf{92.82\%} & \textbf{92.96\%} \\
 \hline
 \end{tabular}
 }
 \label{table3}
 \end{table}
 
+Compared to previsous work, we report the best result of our experiment here.
+
+\textbf{Music Domain Result}. Table \ref{table3} shows the result of music domain dataset. Results show that our model report the best result on both dataset for F1 score. With dictionary information given, we can see that ST-NER shows better performance than La-LSTM and LR-CNN. That to some extent, cause by the lack of music domain word information. Compared to ST-NER, our model gives \textbf{1.48\%} percent promotion of F1 score on \textbf{CCKS} dataset, and \textbf{6.24\%} percent promotion of F1 score on \textbf{MusicNER} dataset. This result proves that TE-LSTM is useful to utilize the information of dictionary, though without specially making word embedding for each word in lexicon.
+
+\textbf{Without Retraining}. We show it here that TE-LSTM need not to retrain the model when dictionary is greatly changed. The cost of retraining a model turns to the cost of maintaining the dictionaries, which is more convenient and can be human understood and modified. 
+
+\textbf{Insert here a figure to show without retraining.}
+
 \section{Conclusion}
 
-pass
+We proposed a new model to better explored the information of dictionary without make embedding for each word, which helps us need not to retrain a model after the content of dictionary is greatly changed. And the result shows that our model reach higher performance on dictionary-depended task, which certificated that our model is a powerful structure to utilize the information of dictionary. And with OD model, the cost of training a new model is replaced by protecting the dictionaries, which is more understandable to human beings.
 
-\section{ Acknowledgments}
+We have several dicrections to move ahead. For the structure itself, OD model can also be simply implemented using the Lattice LSTM structure, which also, is a power way to use lexicon message. Furthermore, the information of dictionary can be reached on website or knowledge graph, which can be more convinient and promising. On this way, the model need to understand and consult the needed information by itself. Our model is just the start of combining outer knowledge into neural network model. 
+
+\section{ Acknowledgments }
 Especially grateful to Can Cui for denoting the music ner data, to Jindou Wu for advice on data processing of CCKS 2018 music dataset.
 
 \section{References}
@@ -480,6 +490,11 @@ Briandais, D. L. R. 1959. File searching using variable length keys. Proc. Weste
 Viterbi AJ. 1967. Error bounds for convolutional codes and an asymptotically optimum decoding algorithm. IEEE Transactions on Information Theory. 13 (2): 260–269. doi:10.1109/TIT.1967.1054010. 
 
 \smallskip \noindent
+Liu, K.; Guo, S.; Liu, S.; Zhang, Y. 2018. China Conference on Knowledge Graph and Semantic Computing, 2018. https://biendata.com/competition/CCKS2018\_2/data/. 
+
+\smallskip \noindent
 Martín Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen, Craig Citro, Greg S. Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin, Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael Isard, Rafal Jozefowicz, Yangqing Jia, Lukasz Kaiser, Manjunath Kudlur, Josh Levenberg, Dan Mané, Mike Schuster, Rajat Monga, Sherry Moore, Derek Murray, Chris Olah, Jonathon Shlens, Benoit Steiner, Ilya Sutskever, Kunal Talwar, Paul Tucker, Vincent Vanhoucke, Vijay Vasudevan, Fernanda Viégas, Oriol Vinyals, Pete Warden, Martin Wattenberg, Martin Wicke, Yuan Yu, and Xiaoqiang Zheng. 2015. TensorFlow: Large-scale machine learning on heterogeneous systems. https://www.tensorflow.org.
+
+
 
 \end{document}

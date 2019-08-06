@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  2 AUG 2019 17:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  6 AUG 2019 19:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -213,12 +213,12 @@ l,
  []
 
 [4]
-Underfull \hbox (badness 6978) in paragraph at lines 383--385
+Underfull \hbox (badness 6978) in paragraph at lines 393--395
 \OT1/ptm/m/n/10 Collobert, R.; We-ston, J.; Bot-tou, L.; Karlen, M.;
  []
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 383--385
+Underfull \hbox (badness 1137) in paragraph at lines 393--395
 \OT1/ptm/m/n/10 Pro-cess-ing (Al-most) from Scratch. Jour-nal of Ma-chine
  []
 
@@ -239,7 +239,7 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 
-Underfull \hbox (badness 3068) in paragraph at lines 479--481
+Underfull \hbox (badness 3068) in paragraph at lines 489--491
 \OT1/ptm/m/n/10 Trans-ac-tions on In-for-ma-tion The-ory. 13 (2): 260269.
  []
 
@@ -250,22 +250,20 @@ Missing character: There is no © in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
 
-Underfull \hbox (badness 2600) in paragraph at lines 482--484
+Underfull \hbox (badness 2600) in paragraph at lines 495--497
 \OT1/ptm/m/n/10 Martn Abadi, Ashish Agar-wal, Paul Barham, Eu-gene
  []
 
-[6
-
-] (./OD-LSTM_junxiang.aux)
+[6] (./OD-LSTM_junxiang.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1678 strings out of 493014
- 24528 string characters out of 6132870
+ 1679 strings out of 493014
+ 24546 string characters out of 6132870
  92880 words of memory out of 5000000
- 5207 multiletter control sequences out of 15000+600000
+ 5208 multiletter control sequences out of 15000+600000
  15090 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,12n,23p,1318b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -281,7 +279,7 @@ ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/software/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><d:/software/texliv
 e/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d:/software/texlive/2016/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on OD-LSTM_junxiang.pdf (6 pages, 221098 bytes).
+Output written on OD-LSTM_junxiang.pdf (6 pages, 225492 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
