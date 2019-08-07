@@ -7,6 +7,7 @@
 \usepackage{courier}  % DO NOT CHANGE THIS
 \usepackage[hyphens]{url}  % DO NOT CHANGE THIS
 \usepackage{graphicx} % DO NOT CHANGE THIS
+\usepackage{multirow}
 \urlstyle{rm} % DO NOT CHANGE THIS
 \def\UrlFont{\rm}  % DO NOT CHANGE THIS
 \usepackage{graphicx}  % DO NOT CHANGE THIS
@@ -343,9 +344,9 @@ Shown in Table \ref{table2}, we choose the hyper-parameters referring to BLSTM-C
 \resizebox{.95\columnwidth}{!}{
 \smallskip\begin{tabular}{l|ccc|ccc}
 \hline
-Model & \multicolumn{3}{|c|}{CCKS} & \multicolumn{3}{|c}{MusicNER} \\
-\hline
- & Precision & Recall & F1 & Precision & Recall & F1 \\
+\multirow{2}*{Model} & \multicolumn{3}{|c|}{CCKS} & \multicolumn{3}{|c}{MusicNER} \\
+\cline{2-7}
+~ & Precision & Recall & F1 & Precision & Recall & F1 \\
 \hline
 La-LSTM  & 87.34\% & 75.03\% &  80.72\% & 86.24\% & 84.43\% & 85.33\% \\
 LR-CNN  & 88.17\% & 76.98\% & 82.2\% & 85.99\% & 85.00\% & 85.49\% \\

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  6 AUG 2019 19:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  7 AUG 2019 19:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -70,6 +70,9 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
+(d:/software/texlive/2016/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen105
+)
 (./OD-LSTM_junxiang.aux
 
 LaTeX Warning: Label `crf_probability' multiply defined.
@@ -77,32 +80,33 @@ LaTeX Warning: Label `crf_probability' multiply defined.
 )
 \openout1 = `OD-LSTM_junxiang.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 99.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 100.
+
  (d:/software/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (d:/software/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count88
-\scratchdimen=\dimen105
+\scratchdimen=\dimen106
 \scratchbox=\box26
 \nofMPsegments=\count89
 \nofMParguments=\count90
 \everyMPshowfont=\toks15
 \MPscratchCnt=\count91
-\MPscratchDim=\dimen106
+\MPscratchDim=\dimen107
 \MPnumerator=\count92
 \makeMPintoPDFobject=\count93
 \everyMPtoPDFconversion=\toks16
@@ -154,23 +158,23 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 101.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 101.
+(Font)              <7> on input line 102.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 101.
+(Font)              <5> on input line 102.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 101.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 101.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 102.
 
 
 (d:/software/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 101.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 102.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 103.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 104.
 
 Underfull \vbox (badness 2478) has occurred while \output is active []
 
@@ -183,42 +187,42 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no œ in font ptmr7t!
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 137.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 138.
 
 <gazzete_is_needed.jpg, id=9, 365.11406pt x 114.4275pt>
 File: gazzete_is_needed.jpg Graphic file (type jpg)
 
 <use gazzete_is_needed.jpg>
-Package pdftex.def Info: gazzete_is_needed.jpg used on input line 145.
+Package pdftex.def Info: gazzete_is_needed.jpg used on input line 146.
 (pdftex.def)             Requested size: 215.45348pt x 67.52385pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 150.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 151.
  [2 <./gazzete_is_needed.jpg>]
 <tag_scheme.jpg, id=14, 660.96938pt x 351.56343pt>
 File: tag_scheme.jpg Graphic file (type jpg)
  <use tag_scheme.jpg>
-Package pdftex.def Info: tag_scheme.jpg used on input line 213.
+Package pdftex.def Info: tag_scheme.jpg used on input line 214.
 (pdftex.def)             Requested size: 215.45348pt x 114.60007pt.
 
 [3 <./tag_scheme.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 291--292
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
 []\OT1/ptm/b/n/10 Character LSTM\OT1/ptm/m/n/10 . We ba-sicly im-plete-ment the
 
  []
 
 
-Underfull \hbox (badness 2368) in paragraph at lines 293--294
+Underfull \hbox (badness 2368) in paragraph at lines 294--295
 []\OT1/ptm/b/n/10 Stanford NER model\OT1/ptm/m/n/10 . Stan-ford NER tool (Finke
 l,
  []
 
 [4]
-Underfull \hbox (badness 6978) in paragraph at lines 393--395
+Underfull \hbox (badness 6978) in paragraph at lines 394--396
 \OT1/ptm/m/n/10 Collobert, R.; We-ston, J.; Bot-tou, L.; Karlen, M.;
  []
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 393--395
+Underfull \hbox (badness 1137) in paragraph at lines 394--396
 \OT1/ptm/m/n/10 Pro-cess-ing (Al-most) from Scratch. Jour-nal of Ma-chine
  []
 
@@ -239,7 +243,7 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 
-Underfull \hbox (badness 3068) in paragraph at lines 489--491
+Underfull \hbox (badness 3068) in paragraph at lines 490--492
 \OT1/ptm/m/n/10 Trans-ac-tions on In-for-ma-tion The-ory. 13 (2): 260269.
  []
 
@@ -250,7 +254,7 @@ Missing character: There is no © in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
 
-Underfull \hbox (badness 2600) in paragraph at lines 495--497
+Underfull \hbox (badness 2600) in paragraph at lines 496--498
 \OT1/ptm/m/n/10 Martn Abadi, Ashish Agar-wal, Paul Barham, Eu-gene
  []
 
@@ -260,10 +264,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1679 strings out of 493014
- 24546 string characters out of 6132870
- 92880 words of memory out of 5000000
- 5208 multiletter control sequences out of 15000+600000
+ 1691 strings out of 493014
+ 24843 string characters out of 6132870
+ 93079 words of memory out of 5000000
+ 5216 multiletter control sequences out of 15000+600000
  15090 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,12n,23p,1318b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -279,7 +283,7 @@ ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/software/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><d:/software/texliv
 e/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d:/software/texlive/2016/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on OD-LSTM_junxiang.pdf (6 pages, 225492 bytes).
+Output written on OD-LSTM_junxiang.pdf (6 pages, 225502 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
