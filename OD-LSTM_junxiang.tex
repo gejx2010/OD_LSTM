@@ -228,7 +228,11 @@ With the tag embedding sequence produced, denoting each tag sequence as: $s_t = 
 g_i = e_t(t_i) \label{tag_embedding}
 \end{equation}
 
-where $e_t$ is the tag embedding lookup table. We use random generated number to produce this lookup table. Then the char embedding output $a_i$ and tag embeddding output $g_i$ is concatenated together, used as additional property to enrich the input information (Collobert et al. 2011), and then fed into the Bi-LSTM layer.  
+where $e_t$ is the tag embedding lookup table. We use random generated number to produce this lookup table. Then the char embedding output $a_i$ and tag embeddding output $g_i$ is concatenated together:
+\begin{equation}
+x_i = (a_i;g_i) \label{concat}
+\end{equation}
+The concat input is used as additional property to enrich the input information (Collobert et al. 2011), and then fed into the Bi-LSTM layer.  
 
 \subsection{Loss and Training}
 
@@ -366,13 +370,34 @@ Compared to previsous work, we report the best result of our experiment here.
 
 \textbf{Without Retraining}. We show it here that TE-LSTM need not to retrain the model when dictionary is greatly changed. The cost of retraining a model turns to the cost of maintaining the dictionaries, which is more convenient and can be human understood and modified. 
 
-\textbf{Insert here a figure to show without retraining.}
+Here, we use \textbf{song} entities as example. Figure \ref{fig3} shows the difference after adding corresponding words as song, the model can recognize this entities with the new given knowledge. Figure \ref {fig4} shows the change after deleting redundant words in dictionary, the model will ignore these words. But there are also cases which will not change or partly change after deleting the words, shown in Figure \ref{fig5},  these cases exist because there exist certain sentence phrase to discriminate the word as a song,  or part of the word is still in the dictionary.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\columnwidth]{change_after_adding_song} % Reduce the figure size so that it is slightly narrower than the column. Don't use precise values for figure width.This setup will avoid overfull boxes. 
+\caption{After adding words into dictionary, the new entities can be recognized by the model.}
+\label{fig3}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\columnwidth]{change_after_delete_song} % Reduce the figure size so that it is slightly narrower than the column. Don't use precise values for figure width.This setup will avoid overfull boxes. 
+\caption{After delete existing words in dictionary, the corresponding entities can be ignored by the model.}
+\label{fig4}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=1.0\columnwidth]{no_change_after_delete_song} % Reduce the figure size so that it is slightly narrower than the column. Don't use precise values for figure width.This setup will avoid overfull boxes. 
+\caption{After delete existing words in dictionary, some of the the result will not change.}
+\label{fig5}
+\end{figure}
 
 \section{Conclusion}
 
 We proposed a new model to better explored the information of dictionary without make embedding for each word, which helps us need not to retrain a model after the content of dictionary is greatly changed. And the result shows that our model reach higher performance on dictionary-depended task, which certificated that our model is a powerful structure to utilize the information of dictionary. And with OD model, the cost of training a new model is replaced by protecting the dictionaries, which is more understandable to human beings.
 
-We have several dicrections to move ahead. For the structure itself, OD model can also be simply implemented using the Lattice LSTM structure, which also, is a power way to use lexicon message. Furthermore, the information of dictionary can be reached on website or knowledge graph, which can be more convinient and promising. On this way, the model need to understand and consult the needed information by itself. Our model is just the start of combining outer knowledge into neural network model. 
+We have several dicrections to move ahead. For the structure itself, OD model can also be simply implemented using the Lattice LSTM structure, which also, is a powerful way to use lexicon message. Furthermore, the information of dictionary can be reached on website or knowledge graph, which can be more convinient and promising. On this way, the model need to understand and consult the needed information by itself. Our model is just the start of combining outer knowledge into neural network model. 
 
 \section{ Acknowledgments }
 Especially grateful to Can Cui for denoting the music ner data, to Jindou Wu for advice on data processing of CCKS 2018 music dataset.
