@@ -103,7 +103,7 @@ Beijing, China}
 
 \begin{abstract}
 %AAAI creates proceedings, working notes, and technical reports directly from electronic source furnished by the authors. To ensure that all papers in the publication have a uniform appearance, authors must adhere to the following instructions. 
-With the risen use of AI application, we need to understand some specific type of message from user's query. Named Entity Recognition (NER) is a basic task for that use. Dictionary information is very useful when doing NER, howerver, most of the current method use it in word embedding format, which will bring out the situation that we need to retrain model when the list of words in dictionary is greatly changed. In this paper, we propose a new conception, called Outer Dictionary (OD) model, which means to use the outer type info of gazzete for each word, without using the specific word or word embedding vector. In other word, we try to combine information of knowledge graph into Neural Network (NN). To implement the OD model, we propose a new structure, called Tag Embedding LSTM (TE-LSTM). Experiment results shows that our model acheive a great improvement on tasks within which gazzete is heavily depended on, with comparison with current state-of-the-art methods. 
+With the risen use of AI application, we need to understand some specific type of message from user's query. Named Entity Recognition (NER) is a basic task for that use. Dictionary information is very useful when doing NER, howerver, most of the current method use it in word embedding format, which will bring out the situation that we need to retrain model when the list of words in dictionary is greatly changed. In this paper, we propose a new conception, called Outer Dictionary Model (ODM), which means to use the outer type info of gazzete for each word, without using the specific word or word embedding vector. In other word, we try to combine information of knowledge graph into Neural Networks (NN). To implement the ODM, we propose a new structure, called Tag Embedding LSTM (TE-LSTM). Experiment results shows that our model acheive a great improvement on tasks within which gazzete is heavily depended on, with comparison with current state-of-the-art methods. 
 \end{abstract}
 
 %\noindent Congratulations on having a paper selected for inclusion in an AAAI Press proceedings or technical report! This document details the requirements necessary to get your accepted paper published using PDF\LaTeX{}. If you are using Microsoft Word, instructions are provided in a different document. AAAI Press does not support any other formatting software. 
@@ -139,7 +139,7 @@ In some situations, word backgound knowledge, namely dictionary (the same meanin
 \item Retrain problem. When the content of dictionary changes abundantly, the trained model would have poor performance doing the same jobs. Still use the \textbf{song} entity as an example, the dictionary would be changed monthly or even daily, thus we need to retrain our model synchronously. 
 \end{itemize}
 
-Faced with this problem, we proposed a new conception, called Outer Dictionary (OD) models, which means using the dictionary's outer trait, without using its specific content. For example, we use the word type `` song ``, rather than a specific song name, to help model understand the outer information. In these way, word embedding is no longer needed for Chinese NER task. Exprement result show that in gazzete depended-on task, OD model gives the best result among state-of-the-art method. And when the content of dictionary changed, the model can synchronously update its result without retraining.
+Faced with this problem, we proposed a new conception, called Outer Dictionary Model (ODM), which means using the dictionary's outer trait, without using its specific content. For example, we use the word type `` song ``, rather than a specific song name, to help model understand the outer information. In these way, word embedding is no longer needed for Chinese NER task. Exprement result show that in gazzete depended-on task, ODM gives the best result among state-of-the-art method. And when the content of dictionary changed, the model can synchronously update its result without retraining.
 
 \begin{figure}[t]
 \centering
@@ -153,8 +153,8 @@ Faced with this problem, we proposed a new conception, called Outer Dictionary (
 In summary, we make these contributions:
 
 \begin{itemize}
-\item We proposed a new conception: Outer Dictionary (OD) model, which is used to update the content of dictionary without retraining the model.
-\item In order to realize OD model, we explored Tag Embedding LSTM (TE-LSTM), using the word type, rather the word itself, to improve the performance of NER tasks.
+\item We proposed a new conception: Outer Dictionary Model (ODM), which is used to update the content of dictionary without retraining the model.
+\item In order to realize ODM, we explored Tag Embedding LSTM (TE-LSTM), using the word type, rather the word itself, to improve the performance of NER tasks.
 \item Experiment result shows our model gives significant improvements on gazzete depended-on tasks among state-of-the-art models.
 \item We release the music service dataset, which we use in our paper, for further scientific research.
 \end{itemize}
@@ -164,11 +164,21 @@ Success of BERT (Devlin et al. 2018) and XLNet (Yang et al. 2019) show that word
 
 Most of the recent models use gazette as word embedding input, or its string format, to give the model related message. Lattice LSTM (Zhang and Yang 2018) use the embedding as additional input to character baseline LSTM, which can give the model more sentence information. Lexivon Rethinking CNN (Gui et al. 2019), corparate the word embedding vector to correlated CNN layer, and the coflict word segment could be learned by rethinking. Stanford NER (Finkel, Grenager, and Manning 2005) can use the gazette information, as string format, in CRF model.
 
-However, in some pratical use, the content of the gazette will change greatly and constantly. In this way, most of the recent model need to be retrained after every abundantly change of gazette. To solve this problem, we need to construct a model which can still be used after such change. We then came out with the OD models, and use TE-LSTM to realize these model. As a result, with no more word embedding is needed, and model needed only to be trained once.  What we need is the word tag information to help the model better understand user's intention.
+However, in some pratical use, the content of the gazette will change greatly and constantly. In this way, most of the recent model need to be retrained after every abundantly change of gazette. To solve this problem, we need to construct a model which can still be used after such change. We then came out with the ODM, and use TE-LSTM to realize these model. As a result, with no more word embedding is needed, and model needed only to be trained once.  What we need is the word tag information to help the model better understand user's intention.
+
+
 
 \section{Outer Dictionary LSTM}
 
-In this chapter, we illustrate the model we use to realize the OD model. Our framework is based on Tensorflow (Abadi et al. 2015). We use the character baseline model for Chinese NER task,  inspired by the results of Lattice LSTM (Zhang and Yang 2018) and Lexicon Rething CNN (Gui et al. 2019). In order to better understand the model, we make a appointment that: In Chinsese or other hieroglyphics language, character means a single word; and word is a character phrase which has length longer than one. In English or other letter base language, character means a single letter, and a word is a composition of letters; then a phrase is composited of a set of words. For Chinese NER jobs, only character embedding will we use, and no more word embedding is needed, for we hold the following opinions towards these jobs:
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.9\columnwidth]{tag_scheme} % Reduce the figure size so that it is slightly narrower than the column. Don't use precise values for figure width.This setup will avoid overfull boxes. 
+\caption{Illustration for tag embedding scheme. For dictionary `song', there are two possible songs, the longer one is put in the first place (column 1). For dictionary `language', only one possible result will be matched, however in this case, since we set the tag blank number to 2, we should add one more padding blank to fill the position, which is showed as column 4. }
+\label{tag_scheme}
+\end{figure}
+
+In this chapter, we illustrate the specific method we use to realize the ODM. Our framework is based on Tensorflow (Abadi et al. 2015). We use the character baseline model for Chinese NER task,  inspired by the results of Lattice LSTM (Zhang and Yang 2018) and Lexicon Rething CNN (Gui et al. 2019). In order to better understand the model, we make a appointment that: In Chinsese or other hieroglyphics language, character means a single word; and word is a character phrase which has length longer than one. In English or other letter base language, character means a single letter, and a word is a composition of letters; then a phrase is composited of a set of words. For Chinese NER jobs, only character embedding will we use, and no more word embedding is needed, for we hold the following opinions towards these jobs:
 
 \begin{itemize}
 \item Common characters in hieroglyphics language, can be exhaustive,  especially for Chinese, because there are no more than 100, 000 characters in simplified Chinese. 
@@ -193,7 +203,7 @@ h_i = [\overrightarrow{h_i};\overleftarrow{h_i}] \label{lstm_out}
 
 \subsection{Tag Embedding Model}
 
-As case show in Figure \ref{fig1}, we need to use dictionary for certain NER tasks. However, the constant variation of dictionary may cause constant retrain problem. Therefore, we may not use the specific word in each dictionary, instead, only the outer information will be used, which is called Outer Dictionary (OD) model. Here, we implement our OD model using Tag Embedding (TE), which uses the tag embedding of the dictionary. Cause we use LSTM structure to utilize tag embedding info, we called our model  TE-LSTM.
+As case show in Figure \ref{fig1}, we need to use dictionary for certain NER tasks. However, the constant variation of dictionary may cause constant retrain problem. Therefore, we may not use the specific word in each dictionary, instead, only the outer information will be used, which is the main idea in ODM. Here, we implement our ODM through Tag Embedding (TE), which uses the tag embedding of the dictionary. Cause we use LSTM structure to utilize tag embedding info, we called our network  TE-LSTM.
 
 Specifically, we do this by two step: 
 
@@ -204,23 +214,21 @@ b)  Turn match result into embedding information, used as the input of LSTM.
 \textbf{Match Policy}. In this part, we need to match all the word in given dictionary occured in current sentence. We impletement this by using Aho-Corasick Automation Algorithm (Aho and Corasick 1975). In summary, we complete a KMP (Knuth, Morris, and Pratt 1977) + Trie Tree (Briandais 1959) algorithm to accomplish this task. In methematical, given sentence $s = (c_1, c_2, ..., c_n) $, and a dictionary $d_i$, which is composed of word set $D_i=\{w_1, w_2, ..., w_V\}$. We denote the result of match policy as:
 
 \begin{equation}
-r_{d_i} = [ (f_1, b_1), (f_2 , b_2), ..., (f_k, b_k) ] \label{match_result}
+r_{d_i, j} = [ (f_1, b_1), (f_2 , b_2), ..., (f_k, b_k) ] \label{match_result}
 \end{equation}
 
-Here, $f_i$ and $b_i$ denote the front and back position of each match word. Let $W_{f_i,b_i}$ represent the substring of sentence $s$ with the rank $[f_i, b_i]$, then each $(f_i, b_i)$ tuple forms a word in $D_i$. Parameter $k$ means the total number of such word matched in $d_i$, which is uncertain.
+Here, $f_i$ and $b_i$ denote the front and back position of each match word. Let $W_{f_i,b_i}$ represent the substring of sentence $s$ with the rank $[f_i, b_i]$, then each $(f_i, b_i)$ tuple forms a word in $D_i$. Parameter $k$ means the total number of such word matched in $d_i$, which is uncertain. Cause there will be conflict intervals after AC algorithm is performed, we need to select the meaningful intervals, the footnote $j$ thus means that there will be many valid interval arrays. To format the input, we make the following policy to select our valid interval arrays:
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.9\columnwidth]{tag_scheme} % Reduce the figure size so that it is slightly narrower than the column. Don't use precise values for figure width.This setup will avoid overfull boxes. 
-\caption{Illustration for tag embedding scheme. For dictionary `song', there are two possible songs, the longer one is put in the first place (column 1). For dictionary `language', only one possible result will be matched, however in this case, since we set the tag blank number to 2, we should add one more padding blank to fill the position, which is showed as column 4. }
-\label{fig2}
-\end{figure}
+\begin{itemize}
+\item We choose certain number of valid interval arrays, which is called \textbf{tag blank number}, denoted as $w$. If there is not enough candidate interval arrays, the padding interval arrays will be use, as showed in Figure \ref{tag_scheme}. 
+\item We choose the interval arrays which cover the most characters in sentence (words for English), and have no conflict intervals inside itself. And the more characters the interval array has, the prior it will be in embedding position.
+\end{itemize}
 
-\textbf{Tag Embedding Scheme}. After match policy is fullfilled, we need to turn that result into vector so that it can be understood by model. Cause the result of match policy is denoted as position, we can simply use it to get a new sequence form from original sentence. With dictionary $d_i$ and a matched word position rank range $[f_i, b_i]$, the original sentence can be written as: $ s = (c_1, c_2, ..., c_{f_i - 1}, c_{f_i}, ..., c_{b_i}, c_{b_i + 1}, ..., c_n) $, we then apply tag scheme for these sequence: turn the match word to correspond tag as shown in Figure \ref{fig2}, the unmatche part is turn to tag ` O `.
+\textbf{Tag Embedding Scheme}. After match policy is fullfilled, we need to turn that result into vector so that it can be understood by model. Cause the result of match policy is denoted as position, we can simply use it to get a new sequence form from original sentence. With dictionary $d_i$ and a matched word position rank range $[f_i, b_i]$, we then apply tag scheme for these sequence: turn the match word to correspond tag as shown in Figure \ref{tag_scheme}, the unmatched part is turn to tag \textbf{O}.
 
-Here, we choose \textbf{IOBES} scheme for it is proved better than IOB1 and IOB2 tag scheme in result by previous works (Chiu and Nichols 2016; Ma and Hovy 2016). Yet we need to emphasis that: the dictionary here need not to be the same with the result tag species. As an illustration, to extract \textbf{name} entity, we can use dictionary \textbf{first name} and dictionary \textbf{last name} to do this transformation.
+Here, we choose \textbf{IOBES} scheme for it is proved better than IOB1 and IOB2 tag scheme in result by previous works (Chiu and Nichols 2016; Ma and Hovy 2016). Yet we need to emphasis that: the tag of dictionary here need not to be the same with the result tag species. As an illustration, to extract \textbf{name} entity, we can use dictionary \textbf{first name} and dictionary \textbf{last name} to match the sentence.
 
-Since there will be one or more matched word for one dictionary, in order to fix the matched word of $d_i$ in certain position, we choose $w$ words from result list. Let us refer $w$ as \textbf{tag blank number}. We choose the best $w$ results from the matched list (in our experiment, here we use the word length, the longer, the prior). Then for dictionary $d_i$, if the number of match results isn't less than $w$, then the best $w$ results will be choose and turn to a new sequence; or the full results will be included, and some padding blank will added to that dictionary's leave position to fill the blank, until the number of sequence of that dictionary is fullfilled.  The full process of producing tag sequence is shown in Figure \ref{fig2}. We do the tag scheme in this way cause we think the position is important for model to understand, Of course, $w$ could be variable for different dictionary, but that needs a bit more efforts and seems low performance increase.
+As related before, we choose \textbf{tag blank number}, $w$, of valid interval arrays and perform the tag scheme. We do the tag scheme in this way cause we think the position is important for model to understand, to fix the certain tag result in certain position and to fix the better result on the certain position. Of course, $w$ could be variable for different dictionary, but that needs a bit more efforts and seems low performance increase.
 
 With the tag embedding sequence produced, denoting each tag sequence as: $s_t = (t_1, t_2, ..., t_n)$, we turn the result to vector using: 
 
@@ -250,20 +258,12 @@ L = \sum_{i=1}^{N}{log(p(y_i | s_i))} + \frac{\lambda}{2}{|| \theta ||}^2
 \label{crf_probability}
 \end{equation}
 
-$\lambda$ is the $L_2$ hyper parameter, and $\theta$ stands for all the training parameters. At decode step, we use the Viterbi algorithm (Viterbi 1967) to decode result, finding the label sequence with the highest score: 
+$\lambda$ is the $L_2$ hyper parameter, and $\theta$ stands for all the training parameters. At decoding step, we use the Viterbi algorithm (Viterbi 1967) to decode result, finding the label sequence with the highest score: 
 
 \begin{equation}
 y^* = \mathop{\arg\max}_{y_i \in Y}{p(y_i | s_i)}
 \label{crf_decode}
 \end{equation}
-
-\section{Experiments}
-
-\subsection{Settings}
-
-Here displays the experiment settings within our work.
-
-\textbf{Dataset}. For Chinese NER task, We explore \textbf{MSRA} (Levow, 2006), \textbf{Weibo NER} (Peng and Dredze, 2015) and \textbf{ResumeNER} (Zhang and Yang, 2018). On music domain, We use the music domain dataset obtained on China Conference on Knowledge Graph and Semantic Computing (CCKS) 2018 music dataset. Cause we can only get the training dataset,  we split that file into three part with portion 8:1:1 as train set, dev set and test set. Call this dataset as \textbf{CCKS} dataset. Another music domain dataset is annotated by ourselves, and the tags defined is richer than CCKS. The statistics information of this dataset is listed in Table \ref{table1}. Call it \textbf{Sogou MusicNER} dataset. For English NER task, we report the result on \textbf{CoNLL} 2003 shared English NER (Sang and Meulder, 2003).
 
 \begin{table}[t]
 \caption{Statistics of Sogou MusicNER dataset.}\smallskip
@@ -282,13 +282,23 @@ Test & 897 & 6,775 & 1,047 \\
 \label{table1}
 \end{table}
 
+\section{Experiments}
 
+\subsection{Settings}
+
+Here displays the experiment settings within our work.
+
+\textbf{Dataset}. For Chinese NER task, We explore \textbf{MSRA} (Levow, 2006), \textbf{Weibo NER} (Peng and Dredze, 2015) and \textbf{ResumeNER} (Zhang and Yang, 2018). On music domain, We use the music domain dataset obtained on China Conference on Knowledge Graph and Semantic Computing (CCKS) 2018 music dataset. Cause we can only get the training dataset,  we split that file into three part with portion 8:1:1 as train set, dev set and test set. Call this dataset as \textbf{CCKS} dataset. Another music domain dataset is annotated by ourselves, and the tags defined is richer than CCKS. The statistics information of this dataset is listed in Table \ref{table1}. Call it \textbf{Sogou MusicNER} dataset. For English NER task, we report the result on \textbf{CoNLL} 2003 shared English NER (Sang and Meulder, 2003).
+
+\textbf{Data Preprocessing}. In our paper, all input file is turned to a certain jsonalized format, which we call standard NER format. For example, \textbf{Peter/B-PER Blackburn/E-PER} is turned to jsonalized string as \textbf{\{‘text’: ‘Peter Blackburn’, ‘slot’: [0, 15, ‘PER’]\}}. The numbers stand for the start position and end position in the original sentence. We do it this way since we can get the original input sentence without spliting words, and turn it into all other tag scheme (mainly IOB1, IOB2, IOBES) easily. Furthermore, we can easily statistics the sentence number and entity numbers in this format. On training, we turn the standard NER format into the tag scheme we appointed. In this way, take the CoNLL 2003 dataset as example, it will first be transformed into standard format, and turn to IOBES tag scheme when training. In truth, this transformation doesn't change the content of dataset at all, but make it easier to process different format of input file, and allow us to get the original input sentence.
 
 \textbf{Character Embedding}. In order to compare with Lattice LSTM (Zhang and Yang 2018) and Lexicon Rethinking CNN (Gui et al. 2019), we use the word vector provided in their papers (these two paper use the same character embedding and word embedding). There are character embedding and word embedding, we use the latter one as character embedding.
 
 \textbf{Tag Embedding}. Given tag embedding length $l_t$ as hyper parameter, we use uniform random policy to generate the tag embedding lookup table. 
 
-\textbf{Word Embedding}. For Lattice LSTM and Lexicon Rethinking CNN, they use the same word embedding file, which can not incorparate the word of dictionary directly. For Stanford NER (Finkel, Grenager, and Manning 2005) model and OD model, we use the dictionary file, which in true is a list of word name. For the same dataset, the dictionary they used keep the same. We make up the dictionary according to the follow principles:
+\textbf{Word Embedding}. For Lattice LSTM and Lexicon Rethinking CNN, they use the same word embedding file, which can not incorparate the word of dictionary directly. For Stanford NER (Finkel, Grenager, and Manning 2005) model and ODM, we use the dictionary file, which in true is a list of word name. For the same dataset, the dictionary they used keep the same. We make up the dictionary according to the follow principles:
+
+\textbf{Handcrafted Features}. Handcrafted features is only used in Stanford NER model. Main features include previous word, next words, NGrams and so on. 
 
 \begin{itemize}
 \item For exhaustive tag, we list all the items of that tag as a dictionary. For example, entity \textbf{Country} and \textbf{Project}.
@@ -340,7 +350,7 @@ For compared purposed, we impletement these models below:
 
 \textbf{Character LSTM}. We basicly impletement the character-level LSTM as the first model, no any other properties (like bichar, softword, position etc.) used. We use the word embedding in Lattice LSTM as character embedding here for it gives better performance. We abbreviate it as C-LSTM.
 
-\textbf{Stanford NER model}. Stanford NER tool (Finkel, Grenager, and Manning 2005) is used in our work to do comparision, for it is convenient to add handcrafted features into model, and use dictionary (called gazette in its term) directly, which can be compared to our OD model intuitively. For short, denote it as S-NER. 
+\textbf{Stanford NER model}. Stanford NER tool (Finkel, Grenager, and Manning 2005) is used in our work to do comparision, for it is convenient to add handcrafted features into model, and use dictionary (called gazette in its term) directly, which can be compared to our ODM intuitively. For short, denote it as S-NER. 
 
 \textbf{Tag Embedding LSTM}. This is the model which we proposed in this paper. The character embedding is the same with the word embedding provided by the author of Lattice LSTM (Zhang and Yang 2018). The dictionary used is the same with S-NER model for comparision. We denote it as TE-LSTM.
 
@@ -368,8 +378,8 @@ La-LSTM  & 93.57\% & 92.79\% &  93.18\%  \\
 LR-CNN  & 94.50\% & 92.93\% & 93.71\%  \\
 \hline
 C-LSTM & 92.49\% & 89.87\% &91.16\%  \\
-ST-NER & --- & --- & ---  \\
-TE-LSTM & --- & --- & ---  \\
+ST-NER(*) & --- & --- & ---  \\
+TE-LSTM(*) & --- & --- & ---  \\
 \hline
 \end{tabular}
 }
@@ -388,7 +398,7 @@ La-LSTM  & 53.04\% & 62.25\% &  58.79\%  \\
 LR-CNN  & 57.14\% & 66.67\% & 59.92\%  \\
 \hline
 C-LSTM & 51.03\% &47.58\% & 49.25\%  \\
-ST-NER(*) & --- & --- & --- \\
+ST-NER(*) & 46.34\% & 54.32\% & 51.89\% \\
 TE-LSTM(*) & 64.73\% & 54.1\% & 58.94\%  \\
 \hline
 \end{tabular}
@@ -408,7 +418,7 @@ La-LSTM  & 94.81\% & 94.11\% &  94.46\%  \\
 LR-CNN  & 95.37\% & 694.84\% & 95.11\% \\
 \hline
 C-LSTM & 94.31\% &94.27\% & 94.29\%  \\
-ST-NER & --- & --- & ---  \\
+ST-NER(*) & --- & --- & ---  \\
 TE-LSTM & 95.31\% & 94.9\% & 95.11\%  \\
 \hline
 \end{tabular}
@@ -510,12 +520,12 @@ Here, we use \textbf{song} entities as example. Figure \ref{fig3} shows the diff
 
 \section{Conclusion}
 
-We proposed a new model to better explored the information of dictionary without make embedding for each word, which helps us need not to retrain a model after the content of dictionary is greatly changed. And the result shows that our model reach higher performance on dictionary-depended task, which certificated that our model is a powerful structure to utilize the information of dictionary. And with OD model, the cost of training a new model is replaced by protecting the dictionaries, which is more understandable to human beings.
+We proposed a new model to better explored the information of dictionary without make embedding for each word, which helps us need not to retrain a model after the content of dictionary is greatly changed. And the result shows that our model reach higher performance on dictionary-depended task, which certificated that our model is a powerful structure to utilize the information of dictionary. And with ODM, the cost of training a new model is replaced by protecting the dictionaries, which is more understandable to human beings.
 
-We have several dicrections to move ahead. For the structure itself, OD model can also be simply implemented using the Lattice LSTM structure, which also, is a powerful way to use lexicon message. Furthermore, the information of dictionary can be reached on website or knowledge graph, which can be more convinient and promising. On this way, the model need to understand and consult the needed information by itself. Our model is just the start of combining outer knowledge into neural network model. 
+We have several dicrections to move ahead. For the structure itself, ODM can also be simply implemented using the Lattice LSTM structure, which also, is a powerful way to use lexicon message. Furthermore, the information of dictionary can be reached on website or knowledge graph, which can be more convinient and promising. On this way, the model need to understand and consult the needed information by itself. Our model is just the start of combining outer knowledge into neural network model. 
 
 \section{ Acknowledgments }
-Especially grateful to Can Cui (Chengdu, Operational Platform Department, Sogou Inc.) for cooperation on the Sogou MusicNER dataset, to Jindou Wu (Hangzhou, AI Research Department, Sogou Inc.) for advice on data processing of CCKS 2018 music dataset.
+Especially grateful to Can Cui (Chengdu, Operational Platform Department, Sogou Inc.) for cooperation on the Sogou MusicNER dataset, to Jindou Wu (Hangzhou, AI Research Department, Sogou Inc.) for advice on data processing of CCKS 2018 music dataset and handcrafted features on StanfordNER tools.
 
 \section{References}
 
