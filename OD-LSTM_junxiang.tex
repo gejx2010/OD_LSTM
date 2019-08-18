@@ -160,7 +160,7 @@ In summary, we make these contributions:
 \end{itemize}
 
 \section{Related Work}
-Success of BERT (Devlin et al. 2018) and XLNet (Yang et al. 2019) show that word embedding is important and useful for many upper NLP tasks. More useful information is there in the vector, more efficiently the model would work. To a great degree, embedding layer decides the performance. Same conclusion can be made from a lot of NER models, as for character level message, word level message, position message, handwriting message and so on. Especially in some specific NER task, like music service, gazzete is heavilly depended on to make better performance. 
+Success of BERT (Devlin et al. 2018) and XLNet (Yang et al. 2019) show that word embedding is important and useful for many upper NLP tasks. More useful information is there in the input vector, more efficiently the model would work. To a great degree, embedding layer decides the performance. Same conclusion can be made from a lot of NER models, as for character level message, word level message, position message, handwriting message and so on. Especially in some specific NER task, like music service,	 gazzete is heavilly depended on to make better performance. 
 
 Most of the recent models use gazette as word embedding input, or its string format, to give the model related message. Lattice LSTM (Zhang and Yang 2018) use the embedding as additional input to character baseline LSTM, which can give the model more sentence information. Lexivon Rethinking CNN (Gui et al. 2019), corparate the word embedding vector to correlated CNN layer, and the coflict word segment could be learned by rethinking. Stanford NER (Finkel, Grenager, and Manning 2005) can use the gazette information, as string format, in CRF model.
 
@@ -232,7 +232,7 @@ where $e_t$ is the tag embedding lookup table. We use random generated number to
 \begin{equation}
 x_i = (a_i;g_i) \label{concat}
 \end{equation}
-The concat input is used as additional property to enrich the input information (Collobert et al. 2011), and then fed into the Bi-LSTM layer.  
+The concat input is then fed into the Bi-LSTM layer.  
 
 \subsection{Loss and Training}
 
@@ -263,7 +263,7 @@ y^* = \mathop{\arg\max}_{y_i \in Y}{p(y_i | s_i)}
 
 Here displays the experiment settings within our work.
 
-\textbf{Dataset}. We use the music domain dataset obtained on China Conference on Knowledge Graph and Semantic Computing (CCKS) 2018 music dataset. Cause we can only get the training dataset,  we split that file into three part with portion 8:1:1 as train set, dev set and test set. Call this dataset as \textbf{CCKS} dataset. 
+\textbf{Dataset}. For Chinese NER task, We explore \textbf{MSRA} (Levow, 2006), \textbf{Weibo NER} (Peng and Dredze, 2015) and \textbf{ResumeNER} (Zhang and Yang, 2018). On music domain, We use the music domain dataset obtained on China Conference on Knowledge Graph and Semantic Computing (CCKS) 2018 music dataset. Cause we can only get the training dataset,  we split that file into three part with portion 8:1:1 as train set, dev set and test set. Call this dataset as \textbf{CCKS} dataset. Another music domain dataset is annotated by ourselves, and the tags defined is richer than CCKS. The statistics information of this dataset is listed in Table \ref{table1}. Call it \textbf{Sogou MusicNER} dataset. For English NER task, we report the result on \textbf{CoNLL} 2003 shared English NER (Sang and Meulder, 2003).
 
 \begin{table}[t]
 \caption{Statistics of Sogou MusicNER dataset.}\smallskip
@@ -282,13 +282,13 @@ Test & 897 & 6,775 & 1,047 \\
 \label{table1}
 \end{table}
 
-Another music domain dataset is annotated by ourselves, and the tags defined is richer than CCKS. The statistics information of this dataset is listed in Table \ref{table1}. Call it \textbf{Sogou MusicNER} dataset.
 
-\textbf{Character Embedding}. In order to compare with Lattice LSTM (Zhang and Yang 2018) and Lexicon Rethinking CNN (Gui et al. 2019), we use the word vector provided in their papers (these two paper use the same character embedding and word embedding). There are character embedding and word embedding, we use the latter one as character embedding for we find it perform better in both character-level LSTM and OD LSTM.
+
+\textbf{Character Embedding}. In order to compare with Lattice LSTM (Zhang and Yang 2018) and Lexicon Rethinking CNN (Gui et al. 2019), we use the word vector provided in their papers (these two paper use the same character embedding and word embedding). There are character embedding and word embedding, we use the latter one as character embedding.
 
 \textbf{Tag Embedding}. Given tag embedding length $l_t$ as hyper parameter, we use uniform random policy to generate the tag embedding lookup table. 
 
-\textbf{Word Embedding}. For Lattice LSTM and Lexicon Rethinking CNN, they use the same word embedding file, which can not incorparate the word of dictionary directly. For Stanford NER (Finkel, Grenager, and Manning 2005) model and OD model, we use the dictionary file, which in true is a list of word name. For the same dataset, the dictionary they used keep the same. We choose the dictionary according to the follow principles:
+\textbf{Word Embedding}. For Lattice LSTM and Lexicon Rethinking CNN, they use the same word embedding file, which can not incorparate the word of dictionary directly. For Stanford NER (Finkel, Grenager, and Manning 2005) model and OD model, we use the dictionary file, which in true is a list of word name. For the same dataset, the dictionary they used keep the same. We make up the dictionary according to the follow principles:
 
 \begin{itemize}
 \item For exhaustive tag, we list all the items of that tag as a dictionary. For example, entity \textbf{Country} and \textbf{Project}.
@@ -313,7 +313,7 @@ Layer & Hyper-parameters & Value \\
 Char-layer & embeddding size & 50 \\
 \hline
 Tag-layer & embeddding size & 10 \\
-& tag blank number & 3 \\
+& tag blank number & [1, 3] \\
 \hline
 LSTM & state size & 200 \\
  & number of layers & 1 \\
@@ -321,12 +321,11 @@ LSTM & state size & 200 \\
 Dropout & dropout rate & [0.0, 0.5] \\
 \hline
  & batch size & [1, 10] \\
- & initial learning rate & 0.015 \\
+ & initial learning rate & [0.01, 0.03] \\
  & decay rate & 0.05 \\
  & momentum & 0.9 \\
  & gradient clipping & 5.0 \\
  & L2 $\lambda$ & 1e-8 \\
- & fine tune & True \\
 \hline
 \end{tabular}
 }
@@ -358,25 +357,124 @@ Shown in Table \ref{table2}, we choose the hyper-parameters referring to BLSTM-C
 \subsection{Main Results}
 
 \begin{table}[t]
-\caption{Main Results}\smallskip
+\caption{Main Results on MSRA.}\smallskip
 \centering
 \resizebox{.95\columnwidth}{!}{
-\smallskip\begin{tabular}{l|ccc|ccc}
+\smallskip\begin{tabular}{l|ccc}
 \hline
-\multirow{2}*{Model} & \multicolumn{3}{|c|}{CCKS} & \multicolumn{3}{|c}{MusicNER} \\
-\cline{2-7}
-~ & Precision & Recall & F1 & Precision & Recall & F1 \\
+Model & Precision & Recall & F1  \\
 \hline
-La-LSTM  & 87.34\% & 75.03\% &  80.72\% & 86.24\% & 84.43\% & 85.33\% \\
-LR-CNN  & 88.17\% & 76.98\% & 82.2\% & 85.99\% & 85.00\% & 85.49\% \\
+La-LSTM  & 93.57\% & 92.79\% &  93.18\%  \\
+LR-CNN  & 94.50\% & 92.93\% & 93.71\%  \\
 \hline
-C-LSTM & 75.66\% & 71.12\% & 73.32\% & 84.11\% & 82.50\% & 83.30\% \\
-ST-NER & \textbf{91.00\%} & 76.15\% & 82.92\% & 88.00\% & 85.48\% & 86.72\% \\
-TE-LSTM & 84.28\% & \textbf{84.51\%} & \textbf{84.40\%} & \textbf{93.09\%} & \textbf{92.82\%} & \textbf{92.96\%} \\
+C-LSTM & 92.49\% & 89.87\% &91.16\%  \\
+ST-NER & --- & --- & ---  \\
+TE-LSTM & --- & --- & ---  \\
 \hline
 \end{tabular}
 }
-\label{table3}
+\label{table_msra}
+\end{table}
+
+\begin{table}[t]
+\caption{Main Results on Weibo NER.}\smallskip
+\centering
+\resizebox{.95\columnwidth}{!}{
+\smallskip\begin{tabular}{l|ccc}
+\hline
+Model & NE & NM & Overall  \\
+\hline
+La-LSTM  & 53.04\% & 62.25\% &  58.79\%  \\
+LR-CNN  & 57.14\% & 66.67\% & 59.92\%  \\
+\hline
+C-LSTM & 51.03\% &47.58\% & 49.25\%  \\
+ST-NER(*) & --- & --- & --- \\
+TE-LSTM(*) & 64.73\% & 54.1\% & 58.94\%  \\
+\hline
+\end{tabular}
+}
+\label{table_weibo}
+\end{table}
+
+\begin{table}[t]
+\caption{Main Results on ResumeNER.}\smallskip
+\centering
+\resizebox{.95\columnwidth}{!}{
+\smallskip\begin{tabular}{l|ccc}
+\hline
+Model & Precision & Recall & F1  \\
+\hline
+La-LSTM  & 94.81\% & 94.11\% &  94.46\%  \\
+LR-CNN  & 95.37\% & 694.84\% & 95.11\% \\
+\hline
+C-LSTM & 94.31\% &94.27\% & 94.29\%  \\
+ST-NER & --- & --- & ---  \\
+TE-LSTM & 95.31\% & 94.9\% & 95.11\%  \\
+\hline
+\end{tabular}
+}
+\label{table_resume}
+\end{table}
+
+\begin{table}[t]
+\caption{Main Results on CCKS.}\smallskip
+\centering
+\resizebox{.95\columnwidth}{!}{
+\smallskip\begin{tabular}{l|ccc}
+\hline
+Model & Precision & Recall & F1  \\
+\hline
+La-LSTM  & 87.34\% & 75.03\% &  80.72\%  \\
+LR-CNN  & 88.17\% & 76.98\% & 82.2\%  \\
+\hline
+C-LSTM & 75.66\% & 71.12\% & 73.32\%  \\
+ST-NER & \textbf{91.00\%} & 76.15\% & 82.92\%  \\
+TE-LSTM & 84.28\% & \textbf{84.51\%} & \textbf{84.40\%}  \\
+\hline
+\end{tabular}
+}
+\label{table_ccks}
+\end{table}
+
+\begin{table}[t]
+\caption{Main Results on Sogou MusicNER.}\smallskip
+\centering
+\resizebox{.95\columnwidth}{!}{
+\smallskip\begin{tabular}{l|ccc}
+\hline
+Model & Precision & Recall & F1  \\
+\hline
+La-LSTM   & 86.24\% & 84.43\% & 85.33\% \\
+LR-CNN   & 85.99\% & 85.00\% & 85.49\% \\
+\hline
+C-LSTM  & 84.11\% & 82.50\% & 83.30\% \\
+ST-NER  & 88.00\% & 85.48\% & 86.72\% \\
+TE-LSTM  & \textbf{93.09\%} & \textbf{92.82\%} & \textbf{92.96\%} \\
+\hline
+\end{tabular}
+}
+\label{table_sogou}
+\end{table}
+
+\begin{table}[t]
+\caption{Main Results on CoNLL 2003.}\smallskip
+\centering
+\resizebox{.95\columnwidth}{!}{
+\smallskip\begin{tabular}{l|ccc}
+\hline
+Model & Precision & Recall & F1  \\
+\hline
+Ma and Hovy, 2016   & 91.35\% & 91.06\% & 91.21\% \\
+Yang et al, 2018 & --- & --- & 91.35\% \\
+Devlin et al., 2018   & --- & --- & 92.80\% \\
+\hline
+C-LSTM  & 87.32\% & 85.25\% & 86.27\% \\
+ST-NER(*)  & --- & --- & --- \\
+TE-LSTM  & \textbf{96.63\%} & \textbf{96.67\%} & \textbf{96.65\%} \\
+\hline
+\end{tabular}
+}
+\label{table_conll}
 \end{table}
 
 \begin{figure}[t]
@@ -417,7 +515,7 @@ We proposed a new model to better explored the information of dictionary without
 We have several dicrections to move ahead. For the structure itself, OD model can also be simply implemented using the Lattice LSTM structure, which also, is a powerful way to use lexicon message. Furthermore, the information of dictionary can be reached on website or knowledge graph, which can be more convinient and promising. On this way, the model need to understand and consult the needed information by itself. Our model is just the start of combining outer knowledge into neural network model. 
 
 \section{ Acknowledgments }
-Especially grateful to Can Cui (Chengdu, AI Research Department, Sogou Inc.) for cooperation on the Sogou MusicNER dataset, to Jindou Wu (Hangzhou, AI Research Department, Sogou Inc.) for advice on data processing of CCKS 2018 music dataset.
+Especially grateful to Can Cui (Chengdu, Operational Platform Department, Sogou Inc.) for cooperation on the Sogou MusicNER dataset, to Jindou Wu (Hangzhou, AI Research Department, Sogou Inc.) for advice on data processing of CCKS 2018 music dataset.
 
 \section{References}
 
