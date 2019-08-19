@@ -298,8 +298,6 @@ Here displays the experiment settings within our work.
 
 \textbf{Word Embedding}. For Lattice LSTM and Lexicon Rethinking CNN, they use the same word embedding file, which can not incorparate the word of dictionary directly. For Stanford NER (Finkel, Grenager, and Manning 2005) model and ODM, we use the dictionary file, which in true is a list of word name. For the same dataset, the dictionary they used keep the same. We make up the dictionary according to the follow principles:
 
-\textbf{Handcrafted Features}. Handcrafted features is only used in Stanford NER model. Main features include previous word, next words, NGrams and so on. 
-
 \begin{itemize}
 \item For exhaustive tag, we list all the items of that tag as a dictionary. For example, entity \textbf{Country} and \textbf{Project}.
 \item For limited but updated constantly tag, we list the current item of that tag as a dictionary. For example, entity \textbf{Singer} and \textbf{Song}.
@@ -307,6 +305,10 @@ Here displays the experiment settings within our work.
 \item For unlimited and no rule tag, we don't use dictionary for it.
 \item We build the content of tag mainly through knowledge graph we collected, some of the dictionary are enriched with the dataset.
 \end{itemize}
+
+\textbf{Handcrafted Features}. Handcrafted features is only used in Stanford NER model. Main features include previous word, next words, NGrams and so on. 
+
+
 
 \subsection{Compared Models}
 
@@ -398,7 +400,7 @@ La-LSTM  & 53.04\% & 62.25\% &  58.79\%  \\
 LR-CNN  & 57.14\% & 66.67\% & 59.92\%  \\
 \hline
 C-LSTM & 51.03\% &47.58\% & 49.25\%  \\
-ST-NER(*) & 46.34\% & 54.32\% & 51.89\% \\
+ST-NER & 46.69\% & 57.32\% & 52.04\% \\
 TE-LSTM(*) & 64.73\% & 54.1\% & 58.94\%  \\
 \hline
 \end{tabular}
@@ -439,7 +441,7 @@ LR-CNN  & 88.17\% & 76.98\% & 82.2\%  \\
 \hline
 C-LSTM & 75.66\% & 71.12\% & 73.32\%  \\
 ST-NER & \textbf{91.00\%} & 76.15\% & 82.92\%  \\
-TE-LSTM & 84.28\% & \textbf{84.51\%} & \textbf{84.40\%}  \\
+TE-LSTM(*) & 84.28\% & \textbf{84.51\%} & \textbf{84.40\%}  \\
 \hline
 \end{tabular}
 }
@@ -510,7 +512,15 @@ TE-LSTM  & \textbf{96.63\%} & \textbf{96.67\%} & \textbf{96.65\%} \\
 
 Compared to previsous work, we report the best result of our experiment here.
 
-\textbf{Music Domain Result}. Table \ref{table3} shows the result of music domain dataset. Results show that our model report the best result on both dataset for F1 score. With dictionary information given, we can see that ST-NER shows better performance than La-LSTM and LR-CNN. That, to some extent, cause by the lack of music domain word information. Compared to ST-NER, our model gives \textbf{1.48\%} percent promotion of F1 score on \textbf{CCKS} dataset, and \textbf{6.24\%} percent promotion of F1 score on \textbf{MusicNER} dataset. This result proves that TE-LSTM is useful to utilize the information of dictionary, though without specially making word embedding vector for each word in lexicon.
+\textbf{MSRA Dataset}. 
+
+\textbf{Weibo NER Dataset}. 
+
+\textbf{ResumeNER Dataset}. 
+
+\textbf{CCKS/Sogou MusicNER Dataset}. Table \ref{table_ccks} and \ref{table_sogou} shows the result of music domain dataset. Results show that our model report the best result on both dataset for F1 score. With dictionary information given, we can see that ST-NER shows better performance than La-LSTM and LR-CNN. That, to some extent, cause by the lack of music domain word information in La-LSTM and LR-CNN. Compared to ST-NER, our model gives \textbf{1.48\%} percent promotion of F1 score on \textbf{CCKS} dataset, and \textbf{6.24\%} percent promotion of F1 score on \textbf{MusicNER} dataset. This result proves that TE-LSTM is useful to utilize the information of dictionary, though without specially making word embedding vector for each word in lexicon.
+
+\textbf{CoNLL Dataset}. 
 
 \textbf{Without Retraining}. We show it here that TE-LSTM need not to retrain the model when dictionary is greatly changed. The cost of retraining a model turns to the cost of maintaining the dictionaries, which is more convenient and can be human understood and modified. 
 
