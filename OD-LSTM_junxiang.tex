@@ -80,7 +80,7 @@
 \setlength\titlebox{2.5in} % If your paper contains an overfull \vbox too high warning at the beginning of the document, use this
 % command to correct it. You may not alter the value below 2.5 in
 %\title{AAAI Press Formatting Instructions \\for Authors Using \LaTeX{} --- A Guide }
-\title{ Outer Dictionary Model: An Efficient Network For Named Entity Recognition }
+\title{ Outer Dictionary Network: An Efficient Network For Named Entity Recognition }
 %Your title must be in mixed case, not sentence case. 
 % That means all verbs (including short verbs like be, is, using,and go), 
 % nouns, adverbs, adjectives should be capitalized, including both words in hyphenated terms, while
@@ -282,38 +282,6 @@ Test & 897 & 6,775 & 1,047 \\
 \label{table1}
 \end{table}
 
-\section{Experiments}
-
-\subsection{Settings}
-
-Here displays the experiment settings within our work.
-
-\textbf{Dataset}. For Chinese NER task, We explore \textbf{MSRA} (Levow, 2006), \textbf{Weibo NER} (Peng and Dredze, 2015) and \textbf{ResumeNER} (Zhang and Yang, 2018). On music domain, We use the music domain dataset obtained on China Conference on Knowledge Graph and Semantic Computing (CCKS) 2018 music dataset. Cause we can only get the training dataset,  we split that file into three part with portion 8:1:1 as train set, dev set and test set. Call this dataset as \textbf{CCKS} dataset. Another music domain dataset is annotated by ourselves, and the tags defined is richer than CCKS. The statistics information of this dataset is listed in Table \ref{table1}. Call it \textbf{Sogou MusicNER} dataset. For English NER task, we report the result on \textbf{CoNLL} 2003 shared English NER (Sang and Meulder, 2003).
-
-\textbf{Data Preprocessing}. In our paper, all input file is turned to a certain jsonalized format, which we call standard NER format. For example, \textbf{Peter/B-PER Blackburn/E-PER} is turned to jsonalized string as \textbf{\{‘text’: ‘Peter Blackburn’, ‘slot’: [0, 15, ‘PER’]\}}. The numbers stand for the start position and end position in the original sentence. We do it this way since we can get the original input sentence without spliting words, and turn it into all other tag scheme (mainly IOB1, IOB2, IOBES) easily. Furthermore, we can easily statistics the sentence number and entity numbers in this format. On training, we turn the standard NER format into the tag scheme we appointed. In this way, take the CoNLL 2003 dataset as example, it will first be transformed into standard format, and turn to IOBES tag scheme when training. In truth, this transformation doesn't change the content of dataset at all, but make it easier to process different format of input file, and allow us to get the original input sentence.
-
-\textbf{Character Embedding}. In order to compare with Lattice LSTM (Zhang and Yang 2018) and Lexicon Rethinking CNN (Gui et al. 2019), we use the word vector provided in their papers (these two paper use the same character embedding and word embedding). There are character embedding and word embedding, we use the latter one as character embedding.
-
-\textbf{Tag Embedding}. Given tag embedding length $l_t$ as hyper parameter, we use uniform random policy to generate the tag embedding lookup table. 
-
-\textbf{Word Embedding}. For Lattice LSTM and Lexicon Rethinking CNN, they use the same word embedding file, which can not incorparate the word of dictionary directly. For Stanford NER (Finkel, Grenager, and Manning 2005) model and ODM, we use the dictionary file, which in true is a list of word name. For the same dataset, the dictionary they used keep the same. We make up the dictionary according to the follow principles:
-
-\begin{itemize}
-\item For exhaustive tag, we list all the items of that tag as a dictionary. For example, entity \textbf{Country} and \textbf{Project}.
-\item For limited but updated constantly tag, we list the current item of that tag as a dictionary. For example, entity \textbf{Singer} and \textbf{Song}.
-\item For tag that is unlimited but has common prefix or suffix, we list all the common prefix or suffix for it as a dictionary. For example, entity \textbf{Organization} usually has a common suffix, such as: inc., company, league.
-\item For unlimited and no rule tag, we don't use dictionary for it.
-\item We build the content of tag mainly through knowledge graph we collected, some of the dictionary are enriched with the dataset.
-\end{itemize}
-
-\textbf{Handcrafted Features}. Handcrafted features is only used in Stanford NER model. Main features include previous word, next words, NGrams and so on. 
-
-
-
-\subsection{Compared Models}
-
-
-
 \begin{table}[t]
 \caption{Hyperparameters}\smallskip
 \centering
@@ -344,29 +312,32 @@ Dropout & dropout rate & [0.0, 0.5] \\
 \label{table2}
 \end{table}
 
-For compared purposed, we impletement these models below:
+\section{Experiments}
 
-\textbf{Lattice LSTM}. The author of Lattice LSTM (Zhang and Yang 2018) has generously provided his code on website. We direcly use his code and settings, and run on experiment dataset. We denote it as La-LSTM.
+\subsection{Settings}
 
-\textbf{Lexicon Rethinking CNN}. Same with Lattice LSTM, we use the code provided by the author (Gui et al. 2019) and run on our dataset. We denote it as LR-CNN.
+Here displays the experiment settings within our work.
 
-\textbf{Character LSTM}. We basicly impletement the character-level LSTM as the first model, no any other properties (like bichar, softword, position etc.) used. We use the word embedding in Lattice LSTM as character embedding here for it gives better performance. We abbreviate it as C-LSTM.
+\textbf{Dataset}. For Chinese NER task, We explore \textbf{MSRA} (Levow, 2006), \textbf{Weibo NER} (Peng and Dredze, 2015) and \textbf{ResumeNER} (Zhang and Yang, 2018). On music domain, We use the music domain dataset obtained on China Conference on Knowledge Graph and Semantic Computing (CCKS) 2018 music dataset. Cause we can only get the training dataset,  we split that file into three part with portion 8:1:1 as train set, dev set and test set. Call this dataset as \textbf{CCKS} dataset. Another music domain dataset is annotated by ourselves, and the tags defined is richer than CCKS. The statistics information of this dataset is listed in Table \ref{table1}. We call it \textbf{Sogou MusicNER} dataset. For English NER task, we report the result on \textbf{CoNLL} 2003 shared English NER (Sang and Meulder, 2003).
 
-\textbf{Stanford NER model}. Stanford NER tool (Finkel, Grenager, and Manning 2005) is used in our work to do comparision, for it is convenient to add handcrafted features into model, and use dictionary (called gazette in its term) directly, which can be compared to our ODM intuitively. For short, denote it as S-NER. 
+\textbf{Data Preprocessing}. In our paper, all input file is turned to a certain jsonalized format, which we call standard NER format. For example, \textbf{Peter/B-PER Blackburn/E-PER} is turned to jsonalized string as \textbf{\{‘text’: ‘Peter Blackburn’, ‘slot’: [0, 15, ‘PER’]\}}. The numbers stand for the start position and end position in the original sentence. We do it this way since we can get the original input sentence without spliting words, and turn it into all other tag scheme (mainly IOB1, IOB2, IOBES) easily. Furthermore, we can easily statistics the sentence number and entity numbers in this format. On training, we turn the standard NER format into the tag scheme we appointed. In this way, take the CoNLL 2003 dataset as example, it will first be transformed into standard format, and turn to IOBES tag scheme when training. In truth, this transformation doesn't change the content of dataset at all, but make it easier to process different format of input file, and allow us to get the original input sentence.
 
-\textbf{Tag Embedding LSTM}. This is the model which we proposed in this paper. The character embedding is the same with the word embedding provided by the author of Lattice LSTM (Zhang and Yang 2018). The dictionary used is the same with S-NER model for comparision. We denote it as TE-LSTM.
+\textbf{Character Embedding}. In order to compare with Lattice LSTM (Zhang and Yang 2018) and Lexicon Rethinking CNN (Gui et al. 2019), we use the word vector provided in their papers (these two paper use the same character embedding and word embedding). There are character embedding and word embedding, we use the latter one as character embedding.
 
-\subsection{Hyper-parameters}
+\textbf{Tag Embedding}. Given tag embedding length $l_t$ as hyper parameter, we use uniform random policy to generate the tag embedding lookup table. 
 
-Shown in Table \ref{table2}, we choose the hyper-parameters referring to BLSTM-CNNs-CRF structure (Ma and Hovy 2016). 
+\textbf{Word Embedding}. For Lattice LSTM and Lexicon Rethinking CNN, they use the same word embedding file, which can not incorparate the word of dictionary directly. For Stanford NER (Finkel, Grenager, and Manning 2005) model and ODM, we use the dictionary file, which in true is a list of word name. For the same dataset, the dictionary they used keep the same. We make up the dictionary according to the follow principles:
 
 \begin{itemize}
-\item \textbf{Fine-tuning}.We apply fine-tuning on all the embedding vector, which is proved useful by previous works (Collobert et al. 2011; Peng and Dredze 2015; Ma and Hovy 2016). 
-\item \textbf{Dropout}. We choose the dropout rate between 0.0 and 0.5, for different dataset, the best result will occur at different rate.
-\item \textbf{SGD policy}. We use stochastic gradient descent (SGD) policy to train model, with momentum set as 0.9.
+\item For exhaustive tag, we list all the items of that tag as a dictionary. For example, entity \textbf{Country} and \textbf{Project}.
+\item For tag which is limited but updated constantly, we list the current item of that tag as a dictionary. For example, entity \textbf{Singer} and \textbf{Song}.
+\item For tag that is unlimited but has common prefix or suffix, we list all the common prefix or suffix for it as a dictionary. For example, entity \textbf{Organization} usually has a common suffix, such as: inc., company, league.
+\item For unlimited and no rule tag, we don't use dictionary for it.
+\item We build the content of tag mainly through knowledge graph we collected, some of the dictionary are enriched with the dataset.
 \end{itemize}
 
-\subsection{Main Results}
+\textbf{Handcrafted Features}. Handcrafted features is only used in Stanford NER model. Main features include previous word, next words, NGrams and so on. 
+
 
 \begin{table}[t]
 \caption{Main Results on MSRA.}\smallskip
@@ -397,11 +368,11 @@ TE-LSTM(*) & --- & --- & ---  \\
 Model & NE & NM & Overall  \\
 \hline
 La-LSTM  & 53.04\% & 62.25\% &  58.79\%  \\
-LR-CNN  & 57.14\% & 66.67\% & 59.92\%  \\
+LR-CNN  & \textbf{57.14}\% & 66.67\% & 59.92\%  \\
 \hline
 C-LSTM & 51.03\% &47.58\% & 49.25\%  \\
 ST-NER & 46.69\% & 57.32\% & 52.04\% \\
-TE-LSTM(*) & 64.73\% & 54.1\% & 58.94\%  \\
+TE-LSTM & 48.78\% & \textbf{71.31}\% & \textbf{60.10}\%  \\
 \hline
 \end{tabular}
 }
@@ -417,11 +388,11 @@ TE-LSTM(*) & 64.73\% & 54.1\% & 58.94\%  \\
 Model & Precision & Recall & F1  \\
 \hline
 La-LSTM  & 94.81\% & 94.11\% &  94.46\%  \\
-LR-CNN  & 95.37\% & 694.84\% & 95.11\% \\
+LR-CNN  & \textbf{95.37}\% & 94.84\% & 95.11\% \\
 \hline
 C-LSTM & 94.31\% &94.27\% & 94.29\%  \\
 ST-NER(*) & --- & --- & ---  \\
-TE-LSTM & 95.31\% & 94.9\% & 95.11\%  \\
+TE-LSTM & 95.31\% & \textbf{94.90}\% & \textbf{95.11}\%  \\
 \hline
 \end{tabular}
 }
@@ -489,6 +460,39 @@ TE-LSTM  & \textbf{96.63\%} & \textbf{96.67\%} & \textbf{96.65\%} \\
 \label{table_conll}
 \end{table}
 
+
+\subsection{Compared Models}
+
+
+
+
+
+For compared purposed, we impletement these models below:
+
+\textbf{Lattice LSTM}. The author of Lattice LSTM (Zhang and Yang 2018) has generously provided his code on website. We direcly use his code and settings, and run on experiment dataset. We denote it as La-LSTM.
+
+\textbf{Lexicon Rethinking CNN}. Same with Lattice LSTM, we use the code provided by the author (Gui et al. 2019) and run on our dataset. We denote it as LR-CNN.
+
+\textbf{Character LSTM}. We basicly impletement the character-level LSTM as the first model, no any other properties (like bichar, softword, position etc.) used. We use the word embedding in Lattice LSTM as character embedding here for it gives better performance. We abbreviate it as C-LSTM.
+
+\textbf{Stanford NER model}. Stanford NER tool (Finkel, Grenager, and Manning 2005) is used in our work to do comparision, for it is convenient to add handcrafted features into model, and use dictionary (called gazette in its term) directly, which can be compared to our ODM intuitively. For short, denote it as ST-NER. 
+
+\textbf{Tag Embedding LSTM}. This is the model which we proposed in this paper. The character embedding is the same with C-LSTM, and the dictionary used is the same with ST-NER model for comparision. We denote it as TE-LSTM.
+
+\subsection{Hyper-parameters and Strategies}
+
+Shown in Table \ref{table2}, we choose the hyper-parameters referring to BLSTM-CNNs-CRF structure (Ma and Hovy 2016). 
+
+\begin{itemize}
+\item \textbf{Fine-tuning}.We apply fine-tuning on all the embedding vector, which is proved useful by previous works (Collobert et al. 2011; Peng and Dredze 2015; Ma and Hovy 2016). 
+\item \textbf{Dropout}. We choose the dropout rate between 0.0 and 0.5, for different dataset, the best result will occur at different rate.
+\item \textbf{SGD policy}. We use stochastic gradient descent (SGD) policy to train model, with momentum set as 0.9.
+\end{itemize}
+
+\subsection{Main Results}
+
+
+
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.8\columnwidth]{change_after_adding_song} % Reduce the figure size so that it is slightly narrower than the column. Don't use precise values for figure width.This setup will avoid overfull boxes. 
@@ -512,19 +516,25 @@ TE-LSTM  & \textbf{96.63\%} & \textbf{96.67\%} & \textbf{96.65\%} \\
 
 Compared to previsous work, we report the best result of our experiment here.
 
-\textbf{MSRA Dataset}. 
+\textbf{MSRA Dataset}. There is no dev set on this dataset. We split the training file and report results on the test set. Table \ref{table_msra} shows the experiment results. On this dataset, dictionary for \textbf{Chinese Last Name}, \textbf{Location}, \textbf{Organization Suffix} is used in both ST-NER and TE-LSTM. 
 
-\textbf{Weibo NER Dataset}. 
+\textbf{Weibo NER Dataset}. As comparison to previous works, shown in Table \ref{table_weibo}, we report the F1-score for named entities (NE), nominal  entities (NM) and overall entities. The dictionaries we use here are the set of \textbf{GPE\_NAM}, \textbf{ORG\_NOM}, \textbf{PER\_NOM}, \textbf{LOC\_NOM} and \textbf{Chinese Last Name}. 
 
-\textbf{ResumeNER Dataset}. 
+\textbf{ResumeNER Dataset}. We use the same train, dev and test file as La-LSTM and LR-CNN. Dictionary for \textbf{Title Suffix}, \textbf{Organization Suffix}, \textbf{Project}, \textbf{China Peoples} is used here on ST-NER and TE-LSTM. Results on this dataset also prove the efficiency of ODM.
 
-\textbf{CCKS/Sogou MusicNER Dataset}. Table \ref{table_ccks} and \ref{table_sogou} shows the result of music domain dataset. Results show that our model report the best result on both dataset for F1 score. With dictionary information given, we can see that ST-NER shows better performance than La-LSTM and LR-CNN. That, to some extent, cause by the lack of music domain word information in La-LSTM and LR-CNN. Compared to ST-NER, our model gives \textbf{1.48\%} percent promotion of F1 score on \textbf{CCKS} dataset, and \textbf{6.24\%} percent promotion of F1 score on \textbf{MusicNER} dataset. This result proves that TE-LSTM is useful to utilize the information of dictionary, though without specially making word embedding vector for each word in lexicon.
+\textbf{CCKS / Sogou MusicNER Dataset}. Table \ref{table_ccks} and \ref{table_sogou} shows the result of music domain dataset. The mainly dictionary used here is \textbf{Singer} and \textbf{Song}. Results show that our model report the best result on both dataset for F1 score. With dictionary information given, we can see that ST-NER shows better performance than La-LSTM and LR-CNN. That, to some extent, cause by the lack of music domain word information in La-LSTM and LR-CNN. Compared to ST-NER, our model gives \textbf{1.48\%} percent promotion of F1 score on \textbf{CCKS} dataset, and \textbf{6.24\%} percent promotion of F1 score on \textbf{MusicNER} dataset. This result proves that TE-LSTM is useful to utilize the information of dictionary, though without specially making word embedding vector for each word in lexicon.
 
-\textbf{CoNLL Dataset}. 
+\textbf{CoNLL Dataset}. On this dataset, we list some of the effective model results reportes by previous works. And we use dictionary \textbf{English Last Name}, \textbf{Location}, \textbf{Organization}, \textbf{MISC} here. We make a suppose here that we can get all the name of location, organization and miscellaneous in English. With this prerequisite, we could see significant improvement on this dataset, shown in Table \ref{table_conll}. Though the result is amazing, \textbf{we need to emphasis here that, it is hard and burdensome to collect all the entities in these dictionaries in reality}. For simplicity, we use the set of entities extracted from the dataset here. So the result is a powerful proof to suport ODM in dictionary message using, but not usually pratical in fact.
 
-\textbf{Without Retraining}. We show it here that TE-LSTM need not to retrain the model when dictionary is greatly changed. The cost of retraining a model turns to the cost of maintaining the dictionaries, which is more convenient and can be human understood and modified. 
+\subsection{Analysis}
 
-Here, we use \textbf{song} entities as example. Figure \ref{fig3} shows the difference after adding corresponding words as song, the model can recognize this entities with the new given knowledge. Figure \ref {fig4} shows the change after deleting redundant words in dictionary, the model will ignore these words. But there are also cases which will not change or partly change after deleting the words, shown in Figure \ref{fig5},  these cases exist because there exist certain sentence phrase to discriminate the word as a song,  or part of the word is still in the dictionary.
+\textbf{Conflict Solving}. Though given dictionary information, there exists many conflict items, labeled with different tag, to challenge the model. For example, \textbf{French Open}, The word \textbf{French} will be given both the \textbf{S-MISC} tag and \textbf{B-ORG} tag here, according to the message in the dictionary. As results shown in Table \ref{table_conll}, TE-LSTM can solve the conflict cases very well by using all the message in dictionary together with the character embedding knowledge.
+
+\textbf{Helpful to Improve Recall}. All the experiment results on different dataset get the highest recall score, proving that ODM is a powerful tool to get higher recall, mainly because we better utilize the message in dictionary.
+
+\textbf{Without Retraining}. We show it here that TE-LSTM need not to retrain the model when dictionary is greatly changed. The cost of retraining a model is changed to be the cost of maintaining the dictionaries, which is more convenient and can be better understood and modified by human. 
+
+Here, we use entity \textbf{Song}, in CCKS dataset, as example. Figure \ref{fig3} shows the difference after adding corresponding words as song, the model can recognize this entities with the new given knowledge. Figure \ref {fig4} shows the change after deleting redundant words in dictionary, the model will ignore these words. But there are also cases which will not change or partly change after deleting the words, shown in Figure \ref{fig5},  these cases exist because there exist certain sentence phrase to discriminate the word as a song,  or part of the word is still in the dictionary.
 
 
 
