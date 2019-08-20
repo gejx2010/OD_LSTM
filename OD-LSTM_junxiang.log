@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  20 AUG 2019 12:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  20 AUG 2019 22:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -183,11 +183,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no œ in font ptmr7t!
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 138.
+
+Underfull \hbox (badness 1442) in paragraph at lines 139--140
+[]\OT1/ptm/m/n/10 Retraining prob-lem. When the con-tent of dic-tio-nary
+ []
 
 <gazzete_is_needed.jpg, id=9, 365.11406pt x 114.4275pt>
 File: gazzete_is_needed.jpg Graphic file (type jpg)
@@ -201,87 +202,67 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 File: tag_scheme.jpg Graphic file (type jpg)
 
 <use tag_scheme.jpg>
-Package pdftex.def Info: tag_scheme.jpg used on input line 176.
+Package pdftex.def Info: tag_scheme.jpg used on input line 174.
 (pdftex.def)             Requested size: 215.45348pt x 114.60007pt.
- [2 <./gazzete_is_needed.jpg>] [3 <./tag_scheme.jpg>]
+
+Underfull \vbox (badness 1325) has occurred while \output is active []
+
+ [2 <./gazzete_is_needed.jpg>]
+
+LaTeX Warning: Reference `fig1' on page 3 undefined on input line 204.
+
+[3 <./tag_scheme.jpg>]
 
 LaTeX Font Warning: Font shape `OMS/ptm/bx/n' undefined
 (Font)              using `OMS/ptm/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 323.
+(Font)              for symbol `textbraceleft' on input line 321.
 
-Missing character: There is no â in font ptmb7t!
-Missing character: There is no € in font ptmb7t!
-Missing character: There is no ˜ in font ptmb7t!
-Missing character: There is no â in font ptmb7t!
-Missing character: There is no € in font ptmb7t!
-Missing character: There is no ™ in font ptmb7t!
-Missing character: There is no â in font ptmb7t!
-Missing character: There is no € in font ptmb7t!
-Missing character: There is no ˜ in font ptmb7t!
-Missing character: There is no â in font ptmb7t!
-Missing character: There is no € in font ptmb7t!
-Missing character: There is no ™ in font ptmb7t!
-Missing character: There is no â in font ptmb7t!
-Missing character: There is no € in font ptmb7t!
-Missing character: There is no ˜ in font ptmb7t!
-Missing character: There is no â in font ptmb7t!
-Missing character: There is no € in font ptmb7t!
-Missing character: There is no ™ in font ptmb7t!
-Missing character: There is no â in font ptmb7t!
-Missing character: There is no € in font ptmb7t!
-Missing character: There is no ˜ in font ptmb7t!
-Missing character: There is no â in font ptmb7t!
-Missing character: There is no € in font ptmb7t!
-Missing character: There is no ™ in font ptmb7t!
 LaTeX Font Info:    Font shape `OMS/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 323.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 321.
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 476--477
+Underfull \hbox (badness 10000) in paragraph at lines 474--475
 []\OT1/ptm/b/n/10 Character LSTM\OT1/ptm/m/n/10 . We ba-sicly im-plete-ment the
 
  []
 
 
-Underfull \hbox (badness 2368) in paragraph at lines 478--479
+Underfull \hbox (badness 2368) in paragraph at lines 476--477
 []\OT1/ptm/b/n/10 Stanford NER model\OT1/ptm/m/n/10 . Stan-ford NER tool (Finke
 l,
  []
 
-<change_after_adding_song.jpg, id=28, 950.04938pt x 237.13594pt>
+[5] <change_after_adding_song.jpg, id=31, 950.04938pt x 237.13594pt>
 File: change_after_adding_song.jpg Graphic file (type jpg)
 
 <use change_after_adding_song.jpg>
-Package pdftex.def Info: change_after_adding_song.jpg used on input line 498.
+Package pdftex.def Info: change_after_adding_song.jpg used on input line 496.
 (pdftex.def)             Requested size: 191.51622pt x 47.80266pt.
 
-<change_after_delete_song.jpg, id=29, 946.28531pt x 228.10219pt>
+<change_after_delete_song.jpg, id=32, 946.28531pt x 228.10219pt>
 File: change_after_delete_song.jpg Graphic file (type jpg)
 
 <use change_after_delete_song.jpg>
-Package pdftex.def Info: change_after_delete_song.jpg used on input line 505.
+Package pdftex.def Info: change_after_delete_song.jpg used on input line 503.
 (pdftex.def)             Requested size: 191.51622pt x 46.16258pt.
 
-<no_change_after_delete_song.jpg, id=30, 1190.19656pt x 207.02344pt>
+<no_change_after_delete_song.jpg, id=33, 1190.19656pt x 207.02344pt>
 File: no_change_after_delete_song.jpg Graphic file (type jpg)
 
 <use no_change_after_delete_song.jpg>
-Package pdftex.def Info: no_change_after_delete_song.jpg used on input line 512
+Package pdftex.def Info: no_change_after_delete_song.jpg used on input line 510
 .
 (pdftex.def)             Requested size: 239.39438pt x 41.63771pt.
- [5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <./change_after_adding_song.jpg> <./change_after_delete_song.jpg>]
-Underfull \hbox (badness 6978) in paragraph at lines 567--569
+ [6 <./change_after_adding_song.jpg>]
+Underfull \hbox (badness 6978) in paragraph at lines 565--567
 \OT1/ptm/m/n/10 Collobert, R.; We-ston, J.; Bot-tou, L.; Karlen, M.;
  []
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 567--569
+Underfull \hbox (badness 1137) in paragraph at lines 565--567
 \OT1/ptm/m/n/10 Pro-cess-ing (Al-most) from Scratch. Jour-nal of Ma-chine
  []
 
-[7 <./no_change_after_delete_song.jpg>]
+[7 <./change_after_delete_song.jpg> <./no_change_after_delete_song.jpg>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -298,7 +279,7 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 
-Underfull \hbox (badness 3068) in paragraph at lines 663--665
+Underfull \hbox (badness 3068) in paragraph at lines 661--663
 \OT1/ptm/m/n/10 Trans-ac-tions on In-for-ma-tion The-ory. 13 (2): 260269.
  []
 
@@ -309,7 +290,7 @@ Missing character: There is no © in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
 
-Underfull \hbox (badness 2600) in paragraph at lines 669--671
+Underfull \hbox (badness 2600) in paragraph at lines 667--669
 \OT1/ptm/m/n/10 Martn Abadi, Ashish Agar-wal, Paul Barham, Eu-gene
  []
 
@@ -318,17 +299,20 @@ Underfull \hbox (badness 2600) in paragraph at lines 669--671
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1720 strings out of 493014
- 25510 string characters out of 6132870
- 98166 words of memory out of 5000000
- 5242 multiletter control sequences out of 15000+600000
+ 1721 strings out of 493014
+ 25523 string characters out of 6132870
+ 99166 words of memory out of 5000000
+ 5243 multiletter control sequences out of 15000+600000
  15090 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,12n,23p,1318b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,12n,23p,1619b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/software/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/software
 /texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/software
 /texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/software
@@ -341,7 +325,7 @@ ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/software/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><d:/software/texliv
 e/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d:/software/texlive/2016/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on OD-LSTM_junxiang.pdf (8 pages, 471362 bytes).
+Output written on OD-LSTM_junxiang.pdf (8 pages, 472514 bytes).
 PDF statistics:
  81 PDF objects out of 1000 (max. 8388607)
  54 compressed objects within 1 object stream
