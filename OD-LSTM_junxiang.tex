@@ -19,8 +19,8 @@
 % For /Author, add all authors within the parentheses, separated by commas. No accents or commands.
 % For /Title, add Title in Mixed Case. No accents or commands. Retain the parentheses.
  \pdfinfo{
-/Title ( Outer Dictionary Model: An Efficient Network For Named Entity Recognition)
-/Author (Junxiang Ge, Qi Zhang, Haizhou Zhao, AI Research Department, Sogou Inc.)
+/Title ( Outer Dictionary Network: An Efficient Network to Join Knowledge for Named Entity Recognition )
+/Author (Junxiang Ge, Qi Zhang, Haizhou Zhao)
 } %Leave this	
 % /Title ()
 % Put your actual complete title (no codes, scripts, shortcuts, or LaTeX commands) within the parentheses in mixed case
@@ -80,7 +80,7 @@
 \setlength\titlebox{2.5in} % If your paper contains an overfull \vbox too high warning at the beginning of the document, use this
 % command to correct it. You may not alter the value below 2.5 in
 %\title{AAAI Press Formatting Instructions \\for Authors Using \LaTeX{} --- A Guide }
-\title{ Outer Dictionary Network: An Efficient Network For Named Entity Recognition }
+\title{ Outer Dictionary Network: An Efficient Network to Join Knowledge for Named Entity Recognition }
 %Your title must be in mixed case, not sentence case. 
 % That means all verbs (including short verbs like be, is, using,and go), 
 % nouns, adverbs, adjectives should be capitalized, including both words in hyphenated terms, while
@@ -103,7 +103,7 @@ Beijing, China}
 
 \begin{abstract}
 %AAAI creates proceedings, working notes, and technical reports directly from electronic source furnished by the authors. To ensure that all papers in the publication have a uniform appearance, authors must adhere to the following instructions. 
-With the risen use of AI application, we need to understand some specific type of message from user's query. Named Entity Recognition (NER) is a basic task for that use. Dictionary information is very useful when doing NER, howerver, most of the current method use it in word embedding format, which will bring out the situation that we need to retrain model when the list of words in dictionary is greatly changed. In this paper, we propose a new conception, called Outer Dictionary Model (ODM), which means to use the outer type info of gazzete for each word, without using the specific word or word embedding vector. In other word, we try to combine information of knowledge graph into Neural Networks (NN). To implement the ODM, we propose a new structure, called Tag Embedding LSTM (TE-LSTM). Experiment results shows that our model acheive a great improvement on tasks within which gazzete is heavily depended on, with comparison with current state-of-the-art methods. 
+With the risen use of AI application, we need to extract some specific type of message from user's query, which is the main content of Named Entity Recognition (NER) task. In recent years, dictionary, one kind of outer knowledge, is proved to be useful and neccessary, and applied more and more constantly in NER tasks. Howerver, most of the current method use it as word embedding vector, which will bring out such problems: a) out of vocabulary problem; b) we need to retrain model when the list of words in dictionary is greatly changed. In this paper, we propose a new conception, called Outer Dictionary Network (ODN), which means to join the outer type knowledge of dictionary into Neural Networks (NN), without using the specific word or word embedding vector. We then propose a new structure, called Tag Embedding LSTM (TE-LSTM) to implement the ODN. Experiment results shows that our model acheive a great improvement on several tasks within which gazzete is heavily depended on, with comparison with current state-of-the-art methods. 
 \end{abstract}
 
 %\noindent Congratulations on having a paper selected for inclusion in an AAAI Press proceedings or technical report! This document details the requirements necessary to get your accepted paper published using PDF\LaTeX{}. If you are using Microsoft Word, instructions are provided in a different document. AAAI Press does not support any other formatting software. 
@@ -139,7 +139,7 @@ In some situations, word backgound knowledge, namely dictionary (the same meanin
 \item Retrain problem. When the content of dictionary changes abundantly, the trained model would have poor performance doing the same jobs. Still use the \textbf{song} entity as an example, the dictionary would be changed monthly or even daily, thus we need to retrain our model synchronously. 
 \end{itemize}
 
-Faced with this problem, we proposed a new conception, called Outer Dictionary Model (ODM), which means using the dictionary's outer trait, without using its specific content. For example, we use the word type `` song ``, rather than a specific song name, to help model understand the outer information. In these way, word embedding is no longer needed for Chinese NER task. Exprement result show that in gazzete depended-on task, ODM gives the best result among state-of-the-art method. And when the content of dictionary changed, the model can synchronously update its result without retraining.
+Faced with this problem, we proposed a new conception, called Outer Dictionary Network (ODN), which means using the dictionary's outer trait, without using its specific content. For example, we use the word type `` song ``, rather than a specific song name, to help model understand the outer information. In these way, word embedding is no longer needed for Chinese NER task. Exprement result show that in gazzete depended-on task, ODN gives the best result among state-of-the-art method. And when the content of dictionary changed, the model can synchronously update its result without retraining.
 
 \begin{figure}[t]
 \centering
@@ -153,8 +153,8 @@ Faced with this problem, we proposed a new conception, called Outer Dictionary M
 In summary, we make these contributions:
 
 \begin{itemize}
-\item We proposed a new conception: Outer Dictionary Model (ODM), which is used to update the content of dictionary without retraining the model.
-\item In order to realize ODM, we explored Tag Embedding LSTM (TE-LSTM), using the word type, rather the word itself, to improve the performance of NER tasks.
+\item We proposed a new conception: Outer Dictionary Network (ODN), which is used to update the content of dictionary without retraining the model.
+\item In order to realize ODN, we explored Tag Embedding LSTM (TE-LSTM), using the word type, rather the word itself, to improve the performance of NER tasks.
 \item Experiment result shows our model gives significant improvements on gazzete depended-on tasks among state-of-the-art models.
 \item We release the music service dataset, which we use in our paper, for further scientific research.
 \end{itemize}
@@ -164,7 +164,7 @@ Success of BERT (Devlin et al. 2018) and XLNet (Yang et al. 2019) show that word
 
 Most of the recent models use gazette as word embedding input, or its string format, to give the model related message. Lattice LSTM (Zhang and Yang 2018) use the embedding as additional input to character baseline LSTM, which can give the model more sentence information. Lexivon Rethinking CNN (Gui et al. 2019), corparate the word embedding vector to correlated CNN layer, and the coflict word segment could be learned by rethinking. Stanford NER (Finkel, Grenager, and Manning 2005) can use the gazette information, as string format, in CRF model.
 
-However, in some pratical use, the content of the gazette will change greatly and constantly. In this way, most of the recent model need to be retrained after every abundantly change of gazette. To solve this problem, we need to construct a model which can still be used after such change. We then came out with the ODM, and use TE-LSTM to realize these model. As a result, with no more word embedding is needed, and model needed only to be trained once.  What we need is the word tag information to help the model better understand user's intention.
+However, in some pratical use, the content of the gazette will change greatly and constantly. In this way, most of the recent model need to be retrained after every abundantly change of gazette. To solve this problem, we need to construct a model which can still be used after such change. We then came out with the ODN, and use TE-LSTM to realize these model. As a result, with no more word embedding is needed, and model needed only to be trained once.  What we need is the word tag information to help the model better understand user's intention.
 
 
 
@@ -178,7 +178,7 @@ However, in some pratical use, the content of the gazette will change greatly an
 \label{tag_scheme}
 \end{figure}
 
-In this chapter, we illustrate the specific method we use to realize the ODM. Our framework is based on Tensorflow (Abadi et al. 2015). We use the character baseline model for Chinese NER task,  inspired by the results of Lattice LSTM (Zhang and Yang 2018) and Lexicon Rething CNN (Gui et al. 2019). In order to better understand the model, we make a appointment that: In Chinsese or other hieroglyphics language, character means a single word; and word is a character phrase which has length longer than one. In English or other letter base language, character means a single letter, and a word is a composition of letters; then a phrase is composited of a set of words. For Chinese NER jobs, only character embedding will we use, and no more word embedding is needed, for we hold the following opinions towards these jobs:
+In this chapter, we illustrate the specific method we use to realize the ODN. Our framework is based on Tensorflow (Abadi et al. 2015). We use the character baseline model for Chinese NER task,  inspired by the results of Lattice LSTM (Zhang and Yang 2018) and Lexicon Rething CNN (Gui et al. 2019). In order to better understand the model, we make a appointment that: In Chinsese or other hieroglyphics language, character means a single word; and word is a character phrase which has length longer than one. In English or other letter base language, character means a single letter, and a word is a composition of letters; then a phrase is composited of a set of words. For Chinese NER jobs, only character embedding will we use, and no more word embedding is needed, for we hold the following opinions towards these jobs:
 
 \begin{itemize}
 \item Common characters in hieroglyphics language, can be exhaustive,  especially for Chinese, because there are no more than 100, 000 characters in simplified Chinese. 
@@ -203,7 +203,7 @@ h_i = [\overrightarrow{h_i};\overleftarrow{h_i}] \label{lstm_out}
 
 \subsection{Tag Embedding Model}
 
-As case show in Figure \ref{fig1}, we need to use dictionary for certain NER tasks. However, the constant variation of dictionary may cause constant retrain problem. Therefore, we may not use the specific word in each dictionary, instead, only the outer information will be used, which is the main idea in ODM. Here, we implement our ODM through Tag Embedding (TE), which uses the tag embedding of the dictionary. Cause we use LSTM structure to utilize tag embedding info, we called our network  TE-LSTM.
+As case show in Figure \ref{fig1}, we need to use dictionary for certain NER tasks. However, the constant variation of dictionary may cause constant retrain problem. Therefore, we may not use the specific word in each dictionary, instead, only the outer information will be used, which is the main idea in ODN. Here, we implement our ODN through Tag Embedding (TE), which uses the tag embedding of the dictionary. Cause we use LSTM structure to utilize tag embedding info, we called our network  TE-LSTM.
 
 Specifically, we do this by two step: 
 
@@ -322,18 +322,18 @@ Here displays the experiment settings within our work.
 
 \textbf{Data Preprocessing}. In our paper, all input file is turned to a certain jsonalized format, which we call standard NER format. For example, \textbf{Peter/B-PER Blackburn/E-PER} is turned to jsonalized string as \textbf{\{‘text’: ‘Peter Blackburn’, ‘slot’: [0, 15, ‘PER’]\}}. The numbers stand for the start position and end position in the original sentence. We do it this way since we can get the original input sentence without spliting words, and turn it into all other tag scheme (mainly IOB1, IOB2, IOBES) easily. Furthermore, we can easily statistics the sentence number and entity numbers in this format. On training, we turn the standard NER format into the tag scheme we appointed. In this way, take the CoNLL 2003 dataset as example, it will first be transformed into standard format, and turn to IOBES tag scheme when training. In truth, this transformation doesn't change the content of dataset at all, but make it easier to process different format of input file, and allow us to get the original input sentence.
 
-\textbf{Character Embedding}. In order to compare with Lattice LSTM (Zhang and Yang 2018) and Lexicon Rethinking CNN (Gui et al. 2019), we use the word vector provided in their papers (these two paper use the same character embedding and word embedding). There are character embedding and word embedding, we use the latter one as character embedding.
+\textbf{Character Embedding}. In order to compare with Lattice LSTM (Zhang and Yang 2018) and Lexicon Rethinking CNN (Gui et al. 2019), we use the word vector provided in their papers (these two paper use the same character embedding and word embedding). There are character embedding and word embedding, we use the latter one as character embedding for we treat English word as a character in Chinese case, not a set of single English characters.
 
 \textbf{Tag Embedding}. Given tag embedding length $l_t$ as hyper parameter, we use uniform random policy to generate the tag embedding lookup table. 
 
-\textbf{Word Embedding}. For Lattice LSTM and Lexicon Rethinking CNN, they use the same word embedding file, which can not incorparate the word of dictionary directly. For Stanford NER (Finkel, Grenager, and Manning 2005) model and ODM, we use the dictionary file, which in true is a list of word name. For the same dataset, the dictionary they used keep the same. We make up the dictionary according to the follow principles:
+\textbf{Word Embedding}. For Lattice LSTM and Lexicon Rethinking CNN, they use the same word embedding file, which can not incorparate the word of dictionary directly. For Stanford NER (Finkel, Grenager, and Manning 2005) model and ODN, we use the dictionary file, which in true is a list of word name. For the same dataset, the dictionary they used keep the same. We make up the dictionary according to the follow principles:
 
 \begin{itemize}
-\item For exhaustive tag, we list all the items of that tag as a dictionary. For example, entity \textbf{Country} and \textbf{Project}.
-\item For tag which is limited but updated constantly, we list the current item of that tag as a dictionary. For example, entity \textbf{Singer} and \textbf{Song}.
+\item For exhaustive tag, we list all the items of that tag, extracted from \textbf{Knowledge Graph}, as a dictionary. For example, entity \textbf{Country} and \textbf{Project}.
+\item For tag which is limited but updated constantly, we list the current item of that tag, collected from \textbf{Knowledge Graph}, as a dictionary. For example, entity \textbf{Singer} and \textbf{Song}.
 \item For tag that is unlimited but has common prefix or suffix, we list all the common prefix or suffix for it as a dictionary. For example, entity \textbf{Organization} usually has a common suffix, such as: inc., company, league.
-\item For unlimited and no rule tag, we don't use dictionary for it.
-\item We build the content of tag mainly through knowledge graph we collected, some of the dictionary are enriched with the dataset.
+\item For tag which is unlimited and seems no rule inside, we don't use dictionary for it.
+\item We build the content of tag mainly through \textbf{Knowledge Graph} we build, some of the dictionary are enriched with the dataset.
 \end{itemize}
 
 \textbf{Handcrafted Features}. Handcrafted features is only used in Stanford NER model. Main features include previous word, next words, NGrams and so on. 
@@ -351,7 +351,7 @@ La-LSTM  & 93.57\% & 92.79\% &  93.18\%  \\
 LR-CNN  & 94.50\% & 92.93\% & 93.71\%  \\
 \hline
 C-LSTM & 92.49\% & 89.87\% &91.16\%  \\
-ST-NER(*) & --- & --- & ---  \\
+ST-NER & 93.45\% & 89.80\% & 91.59\% \\
 TE-LSTM(*) & --- & --- & ---  \\
 \hline
 \end{tabular}
@@ -390,8 +390,8 @@ Model & Precision & Recall & F1  \\
 La-LSTM  & 94.81\% & 94.11\% &  94.46\%  \\
 LR-CNN  & \textbf{95.37}\% & 94.84\% & 95.11\% \\
 \hline
-C-LSTM & 94.31\% &94.27\% & 94.29\%  \\
-ST-NER(*) & --- & --- & ---  \\
+C-LSTM & 94.31\% & 94.27\% & 94.29\%  \\
+ST-NER & 94.15\% & 93.74\% & 93.94\%  \\
 TE-LSTM & 95.31\% & \textbf{94.90}\% & \textbf{95.11}\%  \\
 \hline
 \end{tabular}
@@ -473,15 +473,15 @@ For compared purposed, we impletement these models below:
 
 \textbf{Lexicon Rethinking CNN}. Same with Lattice LSTM, we use the code provided by the author (Gui et al. 2019) and run on our dataset. We denote it as LR-CNN.
 
-\textbf{Character LSTM}. We basicly impletement the character-level LSTM as the first model, no any other properties (like bichar, softword, position etc.) used. We use the word embedding in Lattice LSTM as character embedding here for it gives better performance. We abbreviate it as C-LSTM.
+\textbf{Character LSTM}. We basicly impletement the character-level LSTM as the first model, no any other properties (like bichar, softword, position etc.) used. We use the word embedding in Lattice LSTM as character embedding here for we need to match English word and treat it as a whole.
 
-\textbf{Stanford NER model}. Stanford NER tool (Finkel, Grenager, and Manning 2005) is used in our work to do comparision, for it is convenient to add handcrafted features into model, and use dictionary (called gazette in its term) directly, which can be compared to our ODM intuitively. For short, denote it as ST-NER. 
+\textbf{Stanford NER model}. Stanford NER tool (Finkel, Grenager, and Manning 2005) is used in our work to do comparision, for it is convenient to add handcrafted features into model, and use dictionary (called gazette in its term) directly, which can be compared to our ODN intuitively. For short, denote it as ST-NER. 
 
 \textbf{Tag Embedding LSTM}. This is the model which we proposed in this paper. The character embedding is the same with C-LSTM, and the dictionary used is the same with ST-NER model for comparision. We denote it as TE-LSTM.
 
 \subsection{Hyper-parameters and Strategies}
 
-Shown in Table \ref{table2}, we choose the hyper-parameters referring to BLSTM-CNNs-CRF structure (Ma and Hovy 2016). 
+Shown in Table \ref{table2}, we choose the hyper-parameters referring to BLSTM-CNNs-CRF structure (Ma and Hovy 2016). Other training strategies we used are list as follow:
 
 \begin{itemize}
 \item \textbf{Fine-tuning}.We apply fine-tuning on all the embedding vector, which is proved useful by previous works (Collobert et al. 2011; Peng and Dredze 2015; Ma and Hovy 2016). 
@@ -520,29 +520,32 @@ Compared to previsous work, we report the best result of our experiment here.
 
 \textbf{Weibo NER Dataset}. As comparison to previous works, shown in Table \ref{table_weibo}, we report the F1-score for named entities (NE), nominal  entities (NM) and overall entities. The dictionaries we use here are the set of \textbf{GPE\_NAM}, \textbf{ORG\_NOM}, \textbf{PER\_NOM}, \textbf{LOC\_NOM} and \textbf{Chinese Last Name}. 
 
-\textbf{ResumeNER Dataset}. We use the same train, dev and test file as La-LSTM and LR-CNN. Dictionary for \textbf{Title Suffix}, \textbf{Organization Suffix}, \textbf{Project}, \textbf{China Peoples} is used here on ST-NER and TE-LSTM. Results on this dataset also prove the efficiency of ODM.
+\textbf{ResumeNER Dataset}. We use the same train, dev and test file as La-LSTM and LR-CNN. Dictionary for \textbf{Title Suffix}, \textbf{Organization Suffix}, \textbf{Project}, \textbf{China Peoples} is used here on ST-NER and TE-LSTM. Results on this dataset also prove the efficiency of ODN.
 
 \textbf{CCKS / Sogou MusicNER Dataset}. Table \ref{table_ccks} and \ref{table_sogou} shows the result of music domain dataset. The mainly dictionary used here is \textbf{Singer} and \textbf{Song}. Results show that our model report the best result on both dataset for F1 score. With dictionary information given, we can see that ST-NER shows better performance than La-LSTM and LR-CNN. That, to some extent, cause by the lack of music domain word information in La-LSTM and LR-CNN. Compared to ST-NER, our model gives \textbf{1.48\%} percent promotion of F1 score on \textbf{CCKS} dataset, and \textbf{6.24\%} percent promotion of F1 score on \textbf{MusicNER} dataset. This result proves that TE-LSTM is useful to utilize the information of dictionary, though without specially making word embedding vector for each word in lexicon.
 
-\textbf{CoNLL Dataset}. On this dataset, we list some of the effective model results reportes by previous works. And we use dictionary \textbf{English Last Name}, \textbf{Location}, \textbf{Organization}, \textbf{MISC} here. We make a suppose here that we can get all the name of location, organization and miscellaneous in English. With this prerequisite, we could see significant improvement on this dataset, shown in Table \ref{table_conll}. Though the result is amazing, \textbf{we need to emphasis here that, it is hard and burdensome to collect all the entities in these dictionaries in reality}. For simplicity, we use the set of entities extracted from the dataset here. So the result is a powerful proof to suport ODM in dictionary message using, but not usually pratical in fact.
+\textbf{CoNLL Dataset}. On this dataset, we list some of the effective model results reportes by previous works. And we use dictionary \textbf{English Last Name}, \textbf{Location}, \textbf{Organization}, \textbf{MISC} here. We make a suppose here that we can get all the name of location, organization and miscellaneous in English. With this prerequisite, we could see significant improvement on this dataset, shown in Table \ref{table_conll}. Though the result is amazing, \textbf{we need to emphasis here that, it is hard and burdensome to collect all the entities in these dictionaries in reality}. For simplicity, we use the set of entities extracted from the dataset here. So the result is a powerful proof to suport ODN in dictionary message using, but not usually pratical in fact.
 
 \subsection{Analysis}
 
-\textbf{Conflict Solving}. Though given dictionary information, there exists many conflict items, labeled with different tag, to challenge the model. For example, \textbf{French Open}, The word \textbf{French} will be given both the \textbf{S-MISC} tag and \textbf{B-ORG} tag here, according to the message in the dictionary. As results shown in Table \ref{table_conll}, TE-LSTM can solve the conflict cases very well by using all the message in dictionary together with the character embedding knowledge.
+As a further summarization for experiment results, we can make the follow conclusion:
 
-\textbf{Helpful to Improve Recall}. All the experiment results on different dataset get the highest recall score, proving that ODM is a powerful tool to get higher recall, mainly because we better utilize the message in dictionary.
+\textbf{Out of vacabulary (OOV)}. We don't need to consider OOV problem for the networks in ODN, for we make the appointment that we only collect the dictionary which is exhaustive, among all time or a certain time range, and only the tag knowledge is used in ODN, not a specified word in that dictionary.
+
+\textbf{Conflict Solving}. Though given dictionary knowledge, there exists many conflict items, labeled with different tag, to challenge the model. For example, \textbf{French Open}, The word \textbf{French} will be given both the \textbf{S-MISC} tag and \textbf{B-ORG} tag here, according to the message in the dictionary. As results shown in Table \ref{table_conll}, TE-LSTM can solve the conflict cases very well by using all the message in dictionary together with the character embedding knowledge.
+
+\textbf{Helpful to Improve Recall}. All the experiment results on different dataset get the highest recall score, proving that ODN is a powerful tool to get higher recall, mainly because we better utilize the message in dictionary.
 
 \textbf{Without Retraining}. We show it here that TE-LSTM need not to retrain the model when dictionary is greatly changed. The cost of retraining a model is changed to be the cost of maintaining the dictionaries, which is more convenient and can be better understood and modified by human. 
 
 Here, we use entity \textbf{Song}, in CCKS dataset, as example. Figure \ref{fig3} shows the difference after adding corresponding words as song, the model can recognize this entities with the new given knowledge. Figure \ref {fig4} shows the change after deleting redundant words in dictionary, the model will ignore these words. But there are also cases which will not change or partly change after deleting the words, shown in Figure \ref{fig5},  these cases exist because there exist certain sentence phrase to discriminate the word as a song,  or part of the word is still in the dictionary.
 
 
-
 \section{Conclusion}
 
-We proposed a new model to better explored the information of dictionary without make embedding for each word, which helps us need not to retrain a model after the content of dictionary is greatly changed. And the result shows that our model reach higher performance on dictionary-depended task, which certificated that our model is a powerful structure to utilize the information of dictionary. And with ODM, the cost of training a new model is replaced by protecting the dictionaries, which is more understandable to human beings.
+We proposed a new model to better explored the information of dictionary without make embedding for each word, which helps us need not to retrain a model after the content of dictionary is greatly changed. And the result shows that our model reach higher performance on dictionary-depended task, which certificated that our model is a powerful structure to utilize the information of dictionary. And with ODN, the cost of training a new model is replaced by protecting the dictionaries, which is more understandable to human beings.
 
-We have several dicrections to move ahead. For the structure itself, ODM can also be simply implemented using the Lattice LSTM structure, which also, is a powerful way to use lexicon message. Furthermore, the information of dictionary can be reached on website or knowledge graph, which can be more convinient and promising. On this way, the model need to understand and consult the needed information by itself. Our model is just the start of combining outer knowledge into neural network model. 
+We have several dicrections to move ahead. For the structure itself, ODN can also be simply implemented using the Lattice LSTM structure, which also, is a powerful way to use lexicon message. Furthermore, the information of dictionary can be reached on website or knowledge graph, which can be more convinient and promising. On this way, the model need to understand and consult the needed information by itself. Our model is just the start of combining outer knowledge into neural network model. 
 
 \section{ Acknowledgments }
 Especially grateful to Can Cui (Chengdu, Operational Platform Department, Sogou Inc.) for cooperation on the Sogou MusicNER dataset, to Jindou Wu (Hangzhou, AI Research Department, Sogou Inc.) for advice on data processing of CCKS 2018 music dataset and handcrafted features on StanfordNER tools.
