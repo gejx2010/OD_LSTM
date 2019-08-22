@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  21 AUG 2019 19:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  22 AUG 2019 11:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -194,60 +194,59 @@ Underfull \hbox (badness 1442) in paragraph at lines 139--140
 File: gazzete_is_needed.jpg Graphic file (type jpg)
  <use gazzete_is_needed.jpg>
 Package pdftex.def Info: gazzete_is_needed.jpg used on input line 146.
-(pdftex.def)             Requested size: 215.45348pt x 121.18945pt.
+(pdftex.def)             Requested size: 239.39438pt x 134.65404pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 151.
 
-[2 <./gazzete_is_needed.jpg>]
-<tag_scheme.jpg, id=14, 660.96938pt x 351.56343pt>
+[2 <./gazzete_is_needed.jpg>] <tag_scheme.jpg, id=14, 779.91376pt x 542.025pt>
 File: tag_scheme.jpg Graphic file (type jpg)
- <use tag_scheme.jpg>
-Package pdftex.def Info: tag_scheme.jpg used on input line 174.
-(pdftex.def)             Requested size: 215.45348pt x 114.60007pt.
 
-[3 <./tag_scheme.jpg>] [4]
+<use tag_scheme.jpg>
+Package pdftex.def Info: tag_scheme.jpg used on input line 174.
+(pdftex.def)             Requested size: 215.45348pt x 149.73138pt.
+ [3 <./tag_scheme.jpg>] [4]
 
 LaTeX Font Warning: Font shape `OMS/ptm/bx/n' undefined
 (Font)              using `OMS/ptm/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 444.
+(Font)              for symbol `textbraceleft' on input line 434.
 
 LaTeX Font Info:    Font shape `OMS/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 444.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 434.
 [5]
-Underfull \hbox (badness 2368) in paragraph at lines 481--482
+Underfull \hbox (badness 2368) in paragraph at lines 471--472
 []\OT1/ptm/b/n/10 Stanford NER model\OT1/ptm/m/n/10 . Stan-ford NER tool (Finke
 l,
  []
 
-<change_after_adding_song.jpg, id=31, 950.04938pt x 237.13594pt>
+<change_after_adding_song.jpg, id=31, 714.41907pt x 307.90031pt>
 File: change_after_adding_song.jpg Graphic file (type jpg)
 
 <use change_after_adding_song.jpg>
-Package pdftex.def Info: change_after_adding_song.jpg used on input line 501.
-(pdftex.def)             Requested size: 191.51622pt x 47.80266pt.
+Package pdftex.def Info: change_after_adding_song.jpg used on input line 491.
+(pdftex.def)             Requested size: 191.51622pt x 82.53752pt.
 
-<change_after_delete_song.jpg, id=32, 946.28531pt x 228.10219pt>
+<change_after_delete_song.jpg, id=32, 663.98062pt x 304.13625pt>
 File: change_after_delete_song.jpg Graphic file (type jpg)
 
 <use change_after_delete_song.jpg>
-Package pdftex.def Info: change_after_delete_song.jpg used on input line 508.
-(pdftex.def)             Requested size: 191.51622pt x 46.16258pt.
+Package pdftex.def Info: change_after_delete_song.jpg used on input line 498.
+(pdftex.def)             Requested size: 179.54578pt x 82.23854pt.
 
-<no_change_after_delete_song.jpg, id=33, 1190.19656pt x 207.02344pt>
+<no_change_after_delete_song.jpg, id=33, 654.19406pt x 311.66437pt>
 File: no_change_after_delete_song.jpg Graphic file (type jpg)
 
 <use no_change_after_delete_song.jpg>
-Package pdftex.def Info: no_change_after_delete_song.jpg used on input line 515
+Package pdftex.def Info: no_change_after_delete_song.jpg used on input line 505
 .
-(pdftex.def)             Requested size: 239.39438pt x 41.63771pt.
+(pdftex.def)             Requested size: 191.51622pt x 91.23636pt.
  [6 <./change_after_adding_song.jpg> <./change_after_delete_song.jpg> <./no_cha
 nge_after_delete_song.jpg>]
-Underfull \hbox (badness 6978) in paragraph at lines 574--576
+Underfull \hbox (badness 6978) in paragraph at lines 564--566
 \OT1/ptm/m/n/10 Collobert, R.; We-ston, J.; Bot-tou, L.; Karlen, M.;
  []
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 574--576
+Underfull \hbox (badness 1137) in paragraph at lines 564--566
 \OT1/ptm/m/n/10 Pro-cess-ing (Al-most) from Scratch. Jour-nal of Ma-chine
  []
 
@@ -268,7 +267,7 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 
-Underfull \hbox (badness 3068) in paragraph at lines 670--672
+Underfull \hbox (badness 3068) in paragraph at lines 660--662
 \OT1/ptm/m/n/10 Trans-ac-tions on In-for-ma-tion The-ory. 13 (2): 260269.
  []
 
@@ -277,7 +276,7 @@ Missing character: There is no © in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
 
-Underfull \hbox (badness 1867) in paragraph at lines 676--678
+Underfull \hbox (badness 1867) in paragraph at lines 666--668
 \OT1/ptm/m/n/10 Martin Abadi, Ashish Agar-wal, Paul Barham, Eu-gene
  []
 
@@ -309,7 +308,7 @@ ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/software/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><d:/software/texliv
 e/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d:/software/texlive/2016/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on OD-LSTM_junxiang.pdf (8 pages, 533685 bytes).
+Output written on OD-LSTM_junxiang.pdf (8 pages, 705887 bytes).
 PDF statistics:
  81 PDF objects out of 1000 (max. 8388607)
  54 compressed objects within 1 object stream
