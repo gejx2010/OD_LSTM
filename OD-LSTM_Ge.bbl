@@ -1,0 +1,269 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Abadi \bgroup et al\mbox.\egroup
+  }{2015}]{tensor}
+Abadi, M.; Agarwal, A.; Barham, P.; Brevdo, E.; Chen, Z.; Citro, C.; Corrado,
+  G.~S.; Davis, A.; Dean, J.; Devin, M.; Ghemawat, S.; Goodfellow, I.; Harp,
+  A.; Irving, G.; Isard, M.; Jia, Y.; Jozefowicz, R.; Kaiser, L.; Kudlur, M.;
+  Levenberg, J.; Man\'{e}, D.; Monga, R.; Moore, S.; Murray, D.; Olah, C.;
+  Schuster, M.; Shlens, J.; Steiner, B.; Sutskever, I.; Talwar, K.; Tucker, P.;
+  Vanhoucke, V.; Vasudevan, V.; Vi\'{e}gas, F.; Vinyals, O.; Warden, P.;
+  Wattenberg, M.; Wicke, M.; Yu, Y.; and Zheng, X.
+\newblock 2015.
+\newblock {TensorFlow}: Large-scale machine learning on heterogeneous systems.
+\newblock Software available from tensorflow.org.
+
+\bibitem[\protect\citeauthoryear{Aho and Corasick}{1975}]{acalg}
+Aho, A.~V., and Corasick, M.~J.
+\newblock 1975.
+\newblock Efficient string matching: An aid to bibliographic search.
+\newblock {\em Commun. ACM} 18(6):333--340.
+
+\bibitem[\protect\citeauthoryear{Chen, Zhuo, and Wang}{2019}]{bertslot}
+Chen, Q.; Zhuo, Z.; and Wang, W.
+\newblock 2019.
+\newblock {BERT} for joint intent classification and slot filling.
+\newblock {\em CoRR} abs/1902.10909.
+
+\bibitem[\protect\citeauthoryear{Chiu and Nichols}{2015}]{char-fea1}
+Chiu, J. P.~C., and Nichols, E.
+\newblock 2015.
+\newblock Named entity recognition with bidirectional lstm-cnns.
+\newblock {\em CoRR} abs/1511.08308.
+
+\bibitem[\protect\citeauthoryear{Collobert \bgroup et al\mbox.\egroup
+  }{2011}]{nlp}
+Collobert, R.; Weston, J.; Bottou, L.; Karlen, M.; Kavukcuoglu, K.; and Kuksa,
+  P.
+\newblock 2011.
+\newblock Natural language processing (almost) from scratch.
+\newblock {\em Machine Learning Research} 12 (2011):2493--2537.
+
+\bibitem[\protect\citeauthoryear{De~La~Briandais}{1959}]{trietree}
+De~La~Briandais, R.
+\newblock 1959.
+\newblock File searching using variable length keys.
+\newblock In {\em Papers Presented at the the March 3-5, 1959, Western Joint
+  Computer Conference}, IRE-AIEE-ACM '59 (Western),  295--298.
+\newblock New York, NY, USA: ACM.
+
+\bibitem[\protect\citeauthoryear{Devlin \bgroup et al\mbox.\egroup
+  }{2018}]{bert}
+Devlin, J.; Chang, M.; Lee, K.; and Toutanova, K.
+\newblock 2018.
+\newblock {BERT:} pre-training of deep bidirectional transformers for language
+  understanding.
+\newblock {\em CoRR} abs/1810.04805.
+
+\bibitem[\protect\citeauthoryear{dos Santos, Xiang, and Zhou}{2015}]{santos}
+dos Santos, C.; Xiang, B.; and Zhou, B.
+\newblock 2015.
+\newblock Classifying relations by ranking with convolutional neural networks.
+\newblock In {\em Proceedings of the 53rd Annual Meeting of the Association for
+  Computational Linguistics and the 7th International Joint Conference on
+  Natural Language Processing (Volume 1: Long Papers)},  626--634.
+\newblock Beijing, China: Association for Computational Linguistics.
+
+\bibitem[\protect\citeauthoryear{Finkel, Grenager, and Manning}{2005}]{stner}
+Finkel, J.~R.; Grenager, T.; and Manning, C.
+\newblock 2005.
+\newblock Incorporating non-local information into information extraction
+  systems by gibbs sampling.
+\newblock In {\em Proceedings of the 43rd Annual Meeting on Association for
+  Computational Linguistics}, ACL '05,  363--370.
+\newblock Stroudsburg, PA, USA: Association for Computational Linguistics.
+
+\bibitem[\protect\citeauthoryear{Gui \bgroup et al\mbox.\egroup }{2019}]{lrcnn}
+Gui, T.; Ma, R.; Zhang, Q.; Zhao, L.; Jiang, Y.-G.; and Huang, X.
+\newblock 2019.
+\newblock Cnn-based chinese ner with lexicon rethinking.
+\newblock  4982--4988.
+
+\bibitem[\protect\citeauthoryear{He and Sun}{2016}]{hesun16}
+He, H., and Sun, X.
+\newblock 2016.
+\newblock F-score driven max margin neural network for named entity recognition
+  in chinese social media.
+\newblock {\em CoRR} abs/1611.04234.
+
+\bibitem[\protect\citeauthoryear{Huang, Xu, and Yu}{2015}]{huang15}
+Huang, Z.; Xu, W.; and Yu, K.
+\newblock 2015.
+\newblock Bidirectional {LSTM-CRF} models for sequence tagging.
+\newblock {\em CoRR} abs/1508.01991.
+
+\bibitem[\protect\citeauthoryear{Kim}{2014}]{kim}
+Kim, Y.
+\newblock 2014.
+\newblock Convolutional neural networks for sentence classification.
+\newblock In {\em arXiv:1408.5882}.
+
+\bibitem[\protect\citeauthoryear{Knuth, Morris, and Pratt}{1977}]{kmp}
+Knuth, D.; Morris, Jr., J.; and Pratt, V.
+\newblock 1977.
+\newblock Fast pattern matching in strings.
+\newblock {\em SIAM Journal on Computing} 6(2):323--350.
+
+\bibitem[\protect\citeauthoryear{Krizhevsky, Sutskever, and
+  Geoffrey}{2012}]{cnn}
+Krizhevsky, A.; Sutskever, I.; and Geoffrey, E.~H.
+\newblock 2012.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In {\em In Proceedings of Advances in Neural Information Processing
+  Systems 25 (NIPS 2012)}.
+
+\bibitem[\protect\citeauthoryear{Lafferty, McCallum, and Pereira}{2001}]{crf}
+Lafferty, J.; McCallum, A.; and Pereira, F.
+\newblock 2001.
+\newblock Conditional random fields: Probabilistic models for segmenting and
+  labeling sequence data.
+\newblock  282--289.
+
+\bibitem[\protect\citeauthoryear{Levow}{2006}]{msra}
+Levow, G.-A.
+\newblock 2006.
+\newblock The third international {C}hinese language processing bakeoff: Word
+  segmentation and named entity recognition.
+\newblock In {\em Proceedings of the Fifth {SIGHAN} Workshop on {C}hinese
+  Language Processing},  108--117.
+\newblock Sydney, Australia: Association for Computational Linguistics.
+
+\bibitem[\protect\citeauthoryear{Liu \bgroup et al\mbox.\egroup }{2018}]{ccks}
+Liu, K.; Guo, S.; Liu, S.; and Zhang, Y.
+\newblock 2018.
+\newblock China conference on knowledge graph and semantic computing (2018).
+
+\bibitem[\protect\citeauthoryear{Ma and Hovy}{2016}]{mahovy}
+Ma, X., and Hovy, E.~H.
+\newblock 2016.
+\newblock End-to-end sequence labeling via bi-directional lstm-cnns-crf.
+\newblock {\em CoRR} abs/1603.01354.
+
+\bibitem[\protect\citeauthoryear{Mikolov \bgroup et al\mbox.\egroup
+  }{2017}]{fasttext}
+Mikolov, T.; Grave, E.; Bojanowski, P.; Puhrsch, C.; and Joulin, A.
+\newblock 2017.
+\newblock Advances in pre-training distributed word representations.
+\newblock {\em CoRR} abs/1712.09405.
+
+\bibitem[\protect\citeauthoryear{Okazaki}{2007}]{CRFsuite}
+Okazaki, N.
+\newblock 2007.
+\newblock Crfsuite: a fast implementation of conditional random fields (crfs).
+
+\bibitem[\protect\citeauthoryear{Peng and Dredze}{2015}]{peng15}
+Peng, N., and Dredze, M.
+\newblock 2015.
+\newblock Named entity recognition for chinese social media with jointly
+  trained embeddings.
+\newblock In {\em Processings of the Conference on Empirical Methods in Natural
+  Language Processing (EMNLP)},  548–--554.
+
+\bibitem[\protect\citeauthoryear{Peng and Dredze}{2016}]{peng16}
+Peng, N., and Dredze, M.
+\newblock 2016.
+\newblock Improving named entity recognition for chinese social media with word
+  segmentation representation learning.
+\newblock In {\em Proceedings of the 54th Annual Meeting of the Association for
+  Computational Linguistics (ACL)}, volume~2,  149--155.
+
+\bibitem[\protect\citeauthoryear{Pennington, Socher, and Manning}{2014}]{glove}
+Pennington, J.; Socher, R.; and Manning, C.~D.
+\newblock 2014.
+\newblock Glove: Global vectors for word representation.
+\newblock In {\em Empirical Methods in Natural Language Processing (EMNLP)},
+  1532--1543.
+
+\bibitem[\protect\citeauthoryear{Peters \bgroup et al\mbox.\egroup
+  }{2017}]{peter2017}
+Peters, M.~E.; Ammar, W.; Bhagavatula, C.; and Power, R.
+\newblock 2017.
+\newblock Semi-supervised sequence tagging with bidirectional language models.
+\newblock {\em CoRR} abs/1705.00108.
+
+\bibitem[\protect\citeauthoryear{Peters \bgroup et al\mbox.\egroup
+  }{2018}]{peter2018}
+Peters, M.~E.; Neumann, M.; Iyyer, M.; Gardner, M.; Clark, C.; Lee, K.; and
+  Zettlemoyer, L.
+\newblock 2018.
+\newblock Deep contextualized word representations.
+\newblock {\em CoRR} abs/1802.05365.
+
+\bibitem[\protect\citeauthoryear{Radford \bgroup et al\mbox.\egroup
+  }{2018}]{openai}
+Radford, A.; Narasimhan, K.; Salimans, T.; and Sutskever, I.
+\newblock 2018.
+\newblock Improving language understanding by generative pre-training.
+
+\bibitem[\protect\citeauthoryear{Sak, Senior, and Beaufays}{2014}]{lstm}
+Sak, H.; Senior, A.; and Beaufays, F.
+\newblock 2014.
+\newblock Long short-term memory based recurrent neural network architectures
+  for large vocabulary speech recognition.
+\newblock In {\em arXiv:1402.1128}.
+
+\bibitem[\protect\citeauthoryear{Sang and Meulder}{2003}]{conll}
+Sang, E. F. T.~K., and Meulder, F.~D.
+\newblock 2003.
+\newblock Introduction to the conll-2003 shared task: Language-independent
+  named entity recognition.
+\newblock {\em CoRR} cs.CL/0306050.
+
+\bibitem[\protect\citeauthoryear{Socher, Manning, and Ng}{2010}]{lstmbcp}
+Socher, R.; Manning, C.~D.; and Ng, A.~Y.
+\newblock 2010.
+\newblock Learning continuous phrase representations and syntactic parsing with
+  recursive neural networks.
+\newblock In {\em In Proceedings of the NIPS-2010 Deep Learning and
+  Unsupervised Feature Learning Workshop}.
+
+\bibitem[\protect\citeauthoryear{Strubell \bgroup et al\mbox.\egroup
+  }{2017}]{strubell}
+Strubell, E.; Verga, P.; Belanger, D.; and McCallum, A.
+\newblock 2017.
+\newblock Fast and accurate entity recognition with iterated dilated
+  convolutions.
+\newblock In {\em arXiv:1702.02098}.
+
+\bibitem[\protect\citeauthoryear{Sutskever, Vinyals, and Le}{2014}]{rnn}
+Sutskever, I.; Vinyals, O.; and Le, Q.
+\newblock 2014.
+\newblock Sequence to sequence learning with neural networks.
+\newblock In {\em Proceedings of Advances in Neural Information Processing
+  Systems 27 (NIPS 2014)}.
+
+\bibitem[\protect\citeauthoryear{Vaswani \bgroup et al\mbox.\egroup
+  }{2017}]{vaswani}
+Vaswani, A.; Shazeer, N.; Parmar, N.; Uszkoreit, J.; Jones, L.; Gomez, A.~N.;
+  Kaiser, L.; and Polosukhin, I.
+\newblock 2017.
+\newblock Attention is all you need.
+\newblock {\em CoRR} abs/1706.03762.
+
+\bibitem[\protect\citeauthoryear{{Viterbi}}{1967}]{viterbi}
+{Viterbi}, A.
+\newblock 1967.
+\newblock Error bounds for convolutional codes and an asymptotically optimum
+  decoding algorithm.
+\newblock {\em IEEE Transactions on Information Theory} 13(2):260--269.
+
+\bibitem[\protect\citeauthoryear{Yang \bgroup et al\mbox.\egroup
+  }{2019}]{xlnet}
+Yang, Z.; Dai, Z.; Yang, Y.; Carbonell, J.~G.; Salakhutdinov, R.; and Le, Q.~V.
+\newblock 2019.
+\newblock Xlnet: Generalized autoregressive pretraining for language
+  understanding.
+\newblock {\em CoRR} abs/1906.08237.
+
+\bibitem[\protect\citeauthoryear{Yang, Liang, and Zhang}{2018}]{comb}
+Yang, J.; Liang, S.; and Zhang, Y.
+\newblock 2018.
+\newblock Design challenges and misconceptions in neural sequence labeling.
+\newblock {\em CoRR} abs/1806.04470.
+
+\bibitem[\protect\citeauthoryear{Zhang and Yang}{2018}]{lattice}
+Zhang, Y., and Yang, J.
+\newblock 2018.
+\newblock Chinese ner using lattice lstm.
+
+\end{thebibliography}
