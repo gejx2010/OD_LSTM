@@ -19,6 +19,16 @@ Aho, A.~V., and Corasick, M.~J.
 \newblock Efficient string matching: An aid to bibliographic search.
 \newblock {\em Commun. ACM} 18(6):333--340.
 
+\bibitem[\protect\citeauthoryear{Chen \bgroup et al\mbox.\egroup
+  }{2015}]{bichar}
+Chen, X.; Qiu, X.; Zhu, C.; Liu, P.; and Huang, X.
+\newblock 2015.
+\newblock Long short-term memory neural networks for {C}hinese word
+  segmentation.
+\newblock In {\em Proceedings of the 2015 Conference on Empirical Methods in
+  Natural Language Processing},  1197--1206.
+\newblock Lisbon, Portugal: Association for Computational Linguistics.
+
 \bibitem[\protect\citeauthoryear{Chen, Zhuo, and Wang}{2019}]{bertslot}
 Chen, Q.; Zhuo, Z.; and Wang, W.
 \newblock 2019.
@@ -78,6 +88,7 @@ Gui, T.; Ma, R.; Zhang, Q.; Zhao, L.; Jiang, Y.-G.; and Huang, X.
 \newblock 2019.
 \newblock Cnn-based chinese ner with lexicon rethinking.
 \newblock  4982--4988.
+\newblock doi:10.24963/ijcai.2019/692.
 
 \bibitem[\protect\citeauthoryear{He and Sun}{2016}]{hesun16}
 He, H., and Sun, X.
@@ -96,7 +107,7 @@ Huang, Z.; Xu, W.; and Yu, K.
 Kim, Y.
 \newblock 2014.
 \newblock Convolutional neural networks for sentence classification.
-\newblock In {\em arXiv:1408.5882}.
+\newblock arXiv:1408.5882.
 
 \bibitem[\protect\citeauthoryear{Knuth, Morris, and Pratt}{1977}]{kmp}
 Knuth, D.; Morris, Jr., J.; and Pratt, V.
@@ -117,7 +128,8 @@ Lafferty, J.; McCallum, A.; and Pereira, F.
 \newblock 2001.
 \newblock Conditional random fields: Probabilistic models for segmenting and
   labeling sequence data.
-\newblock  282--289.
+\newblock In {\em Proceedings of the 18th International Conference on Machine
+  Learning 2001 (ICML 2001)},  282--289.
 
 \bibitem[\protect\citeauthoryear{Levow}{2006}]{msra}
 Levow, G.-A.
@@ -150,6 +162,7 @@ Mikolov, T.; Grave, E.; Bojanowski, P.; Puhrsch, C.; and Joulin, A.
 Okazaki, N.
 \newblock 2007.
 \newblock Crfsuite: a fast implementation of conditional random fields (crfs).
+\newblock http://www.chokkan.org/software/crfsuite/.
 
 \bibitem[\protect\citeauthoryear{Peng and Dredze}{2015}]{peng15}
 Peng, N., and Dredze, M.
@@ -190,10 +203,10 @@ Peters, M.~E.; Neumann, M.; Iyyer, M.; Gardner, M.; Clark, C.; Lee, K.; and
 \newblock {\em CoRR} abs/1802.05365.
 
 \bibitem[\protect\citeauthoryear{Radford \bgroup et al\mbox.\egroup
-  }{2018}]{openai}
+  }{}]{openai}
 Radford, A.; Narasimhan, K.; Salimans, T.; and Sutskever, I.
-\newblock 2018.
 \newblock Improving language understanding by generative pre-training.
+\newblock Technical report, OpenAI.
 
 \bibitem[\protect\citeauthoryear{Sak, Senior, and Beaufays}{2014}]{lstm}
 Sak, H.; Senior, A.; and Beaufays, F.
@@ -214,8 +227,8 @@ Socher, R.; Manning, C.~D.; and Ng, A.~Y.
 \newblock 2010.
 \newblock Learning continuous phrase representations and syntactic parsing with
   recursive neural networks.
-\newblock In {\em In Proceedings of the NIPS-2010 Deep Learning and
-  Unsupervised Feature Learning Workshop}.
+\newblock In {\em Proceedings of the NIPS-2010 Deep Learning and Unsupervised
+  Feature Learning Workshop}.
 
 \bibitem[\protect\citeauthoryear{Strubell \bgroup et al\mbox.\egroup
   }{2017}]{strubell}
@@ -265,5 +278,7 @@ Yang, J.; Liang, S.; and Zhang, Y.
 Zhang, Y., and Yang, J.
 \newblock 2018.
 \newblock Chinese ner using lattice lstm.
+\newblock In {\em Proceedings of the 56th Annual Meeting of the Association for
+  Computational Linguistics (ACL)}.
 
 \end{thebibliography}

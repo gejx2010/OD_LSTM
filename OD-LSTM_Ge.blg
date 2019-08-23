@@ -3,49 +3,54 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: OD-LSTM_Ge.aux
 The style file: aaai.bst
 Database file #1: OD-LSTM_GE.bib
+I was expecting a `,' or a `}'---line 787 of file OD-LSTM_GE.bib
+ :   
+ :   year={2018}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--empty booktitle in lrcnn
-Warning--empty booktitle in crf
+Warning--empty booktitle in kim
+Warning--empty year in openai
 Warning--empty booktitle in openai
-Warning--empty journal in lattice
-You've used 37 entries,
+You've used 38 entries,
             2568 wiz_defined-function locations,
-            761 strings with 11461 characters,
-and the built_in function-call counts, 16461 in all, are:
-= -- 1694
-> -- 881
-< -- 10
-+ -- 311
-- -- 310
-* -- 1318
-:= -- 2713
-add.period$ -- 185
-call.type$ -- 37
-change.case$ -- 303
-chr.to.int$ -- 37
-cite$ -- 41
-duplicate$ -- 612
-empty$ -- 1031
-format.name$ -- 379
-if$ -- 3370
+            771 strings with 11904 characters,
+and the built_in function-call counts, 17174 in all, are:
+= -- 1774
+> -- 909
+< -- 11
++ -- 321
+- -- 320
+* -- 1370
+:= -- 2815
+add.period$ -- 194
+call.type$ -- 38
+change.case$ -- 312
+chr.to.int$ -- 38
+cite$ -- 42
+duplicate$ -- 642
+empty$ -- 1085
+format.name$ -- 390
+if$ -- 3533
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 34
-newline$ -- 225
-num.names$ -- 111
-pop$ -- 282
+missing$ -- 35
+newline$ -- 235
+num.names$ -- 114
+pop$ -- 293
 preamble$ -- 1
-purify$ -- 340
+purify$ -- 350
 quote$ -- 0
-skip$ -- 521
+skip$ -- 540
 stack$ -- 0
-substring$ -- 587
-swap$ -- 162
-text.length$ -- 10
+substring$ -- 632
+swap$ -- 176
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 296
+type$ -- 304
 warning$ -- 4
-while$ -- 103
-width$ -- 42
-write$ -- 510
-(There were 4 warnings)
+while$ -- 108
+width$ -- 43
+write$ -- 533
+(There was 1 error message)
