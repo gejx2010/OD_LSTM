@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  23 AUG 2019 11:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.7.29)  26 AUG 2019 16:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -165,14 +165,15 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 103.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 103.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 103.
 
+
+LaTeX Warning: No \author given.
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 103.
 
 (d:/software/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 103.
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 103.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
@@ -185,11 +186,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 139.
+
 Underfull \hbox (badness 1442) in paragraph at lines 140--141
 []\OT1/ptm/m/n/10 Retraining prob-lem. When the con-tent of dic-tio-nary
  []
 
-<gazzete_is_needed.jpg, id=10, 666.99188pt x 540.51938pt>
+<gazzete_is_needed.jpg, id=9, 666.99188pt x 540.51938pt>
 File: gazzete_is_needed.jpg Graphic file (type jpg)
 
 <use gazzete_is_needed.jpg>
@@ -264,7 +268,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  1764 strings out of 493014
  25816 string characters out of 6132870
- 101352 words of memory out of 5000000
+ 101067 words of memory out of 5000000
  5281 multiletter control sequences out of 15000+600000
  16774 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -282,7 +286,7 @@ ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><d:/software/texliv
 e/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d:/software/texlive/2016/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/software/texlive/2016/texmf-dist/
 fonts/type1/urw/times/utmri8a.pfb>
-Output written on OD-LSTM_Ge.pdf (8 pages, 725454 bytes).
+Output written on OD-LSTM_Ge.pdf (8 pages, 724259 bytes).
 PDF statistics:
  85 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream

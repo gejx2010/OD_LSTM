@@ -18,10 +18,10 @@
 %PDF Info Is REQUIRED.
 % For /Author, add all authors within the parentheses, separated by commas. No accents or commands.
 % For /Title, add Title in Mixed Case. No accents or commands. Retain the parentheses.
- \pdfinfo{
-/Title ( Outer Dictionary Network: An Efficient Network to Join Knowledge for Named Entity Recognition )
-/Author (Junxiang Ge, Qi Zhang, Haizhou Zhao)
-} %Leave this	
+% \pdfinfo{
+%/Title ( Outer Dictionary Network: An Efficient Network to Join Knowledge for Named Entity Recognition )
+%/Author (Junxiang Ge)
+%} %Leave this	
 % /Title ()
 % Put your actual complete title (no codes, scripts, shortcuts, or LaTeX commands) within the parentheses in mixed case
 % Leave the space between \Title and the beginning parenthesis alone
@@ -94,11 +94,11 @@
 %Palo Alto, California 94303\\
 %publications20@aaai.org % email address must be in roman text type, not monospace or sans serif
 %}
-\author{Junxiang Ge, Qi Zhang, Haizhou Zhao\\ 
-AI Research Department, Sogou Inc. \\
-Beijing, China \\
-\{gejunxiang, zhangqi215814, zhaohaizhou\}@sogou-inc.com}
- \begin{document}
+%\author{Junxiang Ge\\ 
+%Beijing, China \\
+%gejx2010@gmail.com}
+
+\begin{document}
 
 \maketitle
 
@@ -256,7 +256,7 @@ x_i = (a_i;g_i) \label{concat}
 Same to Character Based LSTM, a dropout layer is used on the concatenated result. Then the input is fed into the Bi-LSTM layer.  
 
 \begin{table}[t]
-\caption{Statistics of Sogou MusicNER dataset.}\smallskip
+\caption{Statistics of MusicNER dataset.}\smallskip
 \centering
 \resizebox{.8\columnwidth}{!}{
 \smallskip\begin{tabular}{l|c|c|c}
@@ -306,7 +306,7 @@ y^* = \mathop{\arg\max}_{y_i \in Y}{p(y_i | s_i)}
 
 Here display the experiment settings within our work.
 
-\textbf{Dataset}. For Chinese NER tasks in social domain, we explore the dataset, \textbf{Weibo NER} \cite{peng15,hesun16} and \textbf{ResumeNER} \cite{lattice}, also used in Lattice LSTM \cite{lattice} and Lexicon Rethinking CNN \cite{lrcnn}. In music domain, We use the dataset obtained from China Conference on Knowledge Graph and Semantic Computing (CCKS) 2018 \cite{ccks}. Call this dataset as \textbf{CCKS} dataset. Another music domain dataset is annotated by ourselves, and the tags are richer than CCKS. The statistics information of this dataset is listed in Table \ref{table1}. We call it \textbf{Sogou MusicNER} dataset. For English NER task, we report the result on \textbf{CoNLL 2003} shared task \cite{conll}.
+\textbf{Dataset}. For Chinese NER tasks in social domain, we explore the dataset, \textbf{Weibo NER} \cite{peng15,hesun16} and \textbf{ResumeNER} \cite{lattice}, also used in Lattice LSTM \cite{lattice} and Lexicon Rethinking CNN \cite{lrcnn}. In music domain, We use the dataset obtained from China Conference on Knowledge Graph and Semantic Computing (CCKS) 2018 \cite{ccks}. Call this dataset as \textbf{CCKS} dataset. Another music domain dataset is annotated by ourselves, and the tags are richer than CCKS. The statistics information of this dataset is listed in Table \ref{table1}. We call it \textbf{MusicNER} dataset. For English NER task, we report the result on \textbf{CoNLL 2003} shared task \cite{conll}.
 
 \textbf{Data Preprocessing}. In our paper, all input file is turned to a certain format, which we call standard NER format. For example, ``\textbf{Peter/B-PER Blackburn/E-PER}'' is turned to string as \textbf{\{``text'': ``Peter Blackburn'', ``slot'': [0, 15, ``PER'''\}}. The numbers stand for the start position and end position in the original sentence. We do it this way since we can get the original input sentence without spliting sentence, and turn it into all other tag scheme (mainly IOB1, IOB2, IOBES) conveniently. Furthermore, we can easily statistics the sentence number and entity number in this format. On training, we turn the standard NER format into the tag scheme we appointed in hyperparameter file. In this way, take the CoNLL 2003 dataset as example, it will first be transformed into standard format, and then turned to IOBES tag scheme when training. In truth, this transformation doesn't change the content of dataset at all, but make it easier to process different format of dataset, and allow us to get the original input sentence to match the dictionary.
 
@@ -436,7 +436,7 @@ TE-LSTM & 84.28\% & \textbf{84.51\%} & \textbf{84.40\%}  \\
 \end{table}
 
 \begin{table}[t]
-\caption{Main Results on Sogou MusicNER.}\smallskip
+\caption{Main Results on MusicNER.}\smallskip
 \centering
 \resizebox{.8\columnwidth}{!}{
 \smallskip\begin{tabular}{l|ccc}
@@ -484,7 +484,7 @@ Compared to previous work, we report the best result of our experiment here.
 
 \textbf{ResumeNER Dataset}. Dictionary \textbf{Title Suffix}, \textbf{Organization Suffix}, \textbf{Project} and \textbf{China Peoples} is used here on ST-NER and TE-LSTM. Results on this dataset also support the efficiency of ODN.
 
-\textbf{CCKS / Sogou MusicNER Dataset}. Cause we could only get the training dataset from CCKS website, we split that file into three part with portion 8:1:1 as train set, dev set and test set. Table \ref{table_ccks} and \ref{table_sogou} show the result of music domain dataset. The mainly dictionaries used here is \textbf{Singer} and \textbf{Song}. Results show that our model report the best result on both dataset on F1-score. With dictionary information given, we can see that ST-NER shows better performance than La-LSTM and LR-CNN. That, to some extent, cause by the lack of music domain knowledge in La-LSTM and LR-CNN. Compared to ST-NER, our model gives \textbf{1.48\%} percent promotion of F1-score on \textbf{CCKS} dataset, and \textbf{6.24\%} percent promotion on \textbf{MusicNER} dataset. The results prove that TE-LSTM is effective to utilize the knowledge of dictionary, though, without specially making word embedding vector for each word.
+\textbf{CCKS / MusicNER Dataset}. Cause we could only get the training dataset from CCKS website, we split that file into three part with portion 8:1:1 as train set, dev set and test set. Table \ref{table_ccks} and \ref{table_sogou} show the result of music domain dataset. The mainly dictionaries used here is \textbf{Singer} and \textbf{Song}. Results show that our model report the best result on both dataset on F1-score. With dictionary information given, we can see that ST-NER shows better performance than La-LSTM and LR-CNN. That, to some extent, cause by the lack of music domain knowledge in La-LSTM and LR-CNN. Compared to ST-NER, our model gives \textbf{1.48\%} percent promotion of F1-score on \textbf{CCKS} dataset, and \textbf{6.24\%} percent promotion on \textbf{MusicNER} dataset. The results prove that TE-LSTM is effective to utilize the knowledge of dictionary, though, without specially making word embedding vector for each word.
 
 \textbf{CoNLL Dataset}. On this dataset, we list some of the effective model results reported by previous works. And we use dictionary \textbf{English Last Name}, \textbf{Location}, \textbf{Organization}, \textbf{MISC}. We make a suppose here that we can get all the real entities of location, organization and miscellaneous in English. With this prerequisite, we could see significant improvement on this dataset, 3.85\% percent over BERT \cite{bert} on F1-score, shown in Table \ref{table_conll}. Though the result is amazing, \textbf{we need to emphasis that, it is hard and burdensome to collect all the entities in these dictionaries in reality}. For simplicity, we use the set of entities extracted from the dataset instead. So the result is only used to show that, ODN is powerful in using dictionary knowledge, but the way to collect dictionaries on this dataset is impratical, conflict with the principles we build dictionaries before.
 
@@ -502,7 +502,7 @@ As a further summarization for experiment results, we make the following conclus
 
 \textbf{Helpful to Improve Recall}. All the experiment results on different dataset get the highest recall score, proving that ODN is a powerful tool on recall.
 
-\textbf{More efficient when dictionary is more necessary}. By comparing the results on CCKS and Sogou MusicNER dataset to La-LSTM and LR-CNN, our model give significant improvement on these dataset, mainly because dictionary is necessary in music domain and, both La-LSTM and LR-CNN lack the knowledge of that. Results on CoNLL can also prove this view if the necessary dictionary can be built. On other datasets, the improvement is not so significant.
+\textbf{More efficient when dictionary is more necessary}. By comparing the results on CCKS and MusicNER dataset to La-LSTM and LR-CNN, our model give significant improvement on these dataset, mainly because dictionary is necessary in music domain and, both La-LSTM and LR-CNN lack the knowledge of that. Results on CoNLL can also prove this view if the necessary dictionary can be built. On other datasets, the improvement is not so significant.
 
 \textbf{Conflict Solving}. Though given dictionary knowledge, there exist many conflict items, labeled with different tag, to challenge the model. For example,  ``\textbf{French Open}'', The word ``\textbf{French}'' will be given both the \textbf{S-MISC} tag and \textbf{B-ORG} tag here. TE-LSTM can solve these conflict cases well by using the dictionary knowledge together with the character embedding knowledge, as we could see in Table \ref{table_conll}, 
 
@@ -536,10 +536,6 @@ Here, we use entity \textbf{Song}, in CCKS dataset, as example. Figure \ref{fig3
 We proposed a new model to better explore the knowledge of dictionary without making embedding vector for each word, which helps us need not to retrain a model after the content of dictionary is greatly changed. And the results show that our model reach higher performance on dictionary-depended task, which certificated that our model is a powerful structure to utilize the knowledge of dictionary. And with ODN, the cost of training a new model is replaced by protecting the dictionaries, which is more understandable to human beings.
 
 We have several directions to move ahead. For the structure itself, ODN can also be simply implemented using other structure, like the Lattice LSTM structure or CNNs structure, which also, is a powerful way to use dictionary knowledge. To solve the problem that, entity is still be recognized by the model after it is deleted from dictionary, we can construct a negative dictionary that contains list of words which we don't want it to be recognized. Furthermore, we can investigate networks that could search the needed knowledge from website or knowledge graph by itself, which is more useful and promising in pratical.
-
-\section{ Acknowledgments }
-
-Especially grateful to Can Cui (Chengdu, Operational Platform Department, Sogou Inc.) for cooperation on the Sogou MusicNER dataset, to Jindou Wu (Hangzhou, AI Research Department, Sogou Inc.) for advice on data processing of CCKS 2018 music dataset and handcrafted features on StanfordNER tools.
 
 \small
 \bibliographystyle{aaai}
